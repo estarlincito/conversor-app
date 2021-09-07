@@ -14,8 +14,10 @@ a{
 }
 
 nav{
-    background-color: black;
+    background-color: rgb(45, 119, 204);
     color: white;
+    min-height: 40px;
+    padding: 10px;
 }
 
 main{

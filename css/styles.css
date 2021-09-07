@@ -1,1 +1,35 @@
+*{
+    padding: auto;
+    margin: 10px;
+    border-radius: 10px;
+}
 
+body{
+    background-color: rgba(211, 210, 210, 0.76);
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+nav{
+    background-color: black;
+    color: white;
+}
+
+main{
+    margin: auto;
+    max-width: 90%;
+    min-width: 50px;
+}
+
+.divisas{
+    background-color: violet;
+    height: 400px;
+}
+
+.longitud{
+    background-color:turquoise;
+    height: 400px;
+}

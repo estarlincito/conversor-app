@@ -7,6 +7,17 @@ body{
     text-decoration: none;
     color: white;
   }
+  .conteiner {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+
+  }
+
+  .conteiner a {
+    color: black;
+  }
   .padre{
     margin: auto;
     margin-top: 40px;
@@ -38,6 +49,7 @@ body{
   }
   .bi-list{
     font-size: 50px;
+    cursor: pointer;
   
   }
   

@@ -8,7 +8,7 @@ body{
     color: white;
   }
   .conteiner {
-    font-size: 30px;
+    font-size: 1.875rem;
     display: flex;
     align-items: center;
     justify-content:space-around;
@@ -20,35 +20,35 @@ body{
   }
   .padre{
     margin: auto;
-    margin-top: 40px;
+    margin-top: 2.5rem;
     background-color: white;
-    width: 400px;
-    height: 600px;
-    border-radius: 10px;
+    width: 25rem;
+    height: 37.5rem;
+    border-radius: 0.625rem;
     background: rgb(131,58,180);
     background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
   }
   
   .hijoUno{
-    padding: 10px;
-    height: 200px;
-    border-radius: 10px 10px 0px 0px;
+    padding: 0.625rem;
+    height: 12.5rem;
+    border-radius: 0.625rem 0.625rem 0rem 0rem;
     color: white;
     display: flex;
     align-items: center;
     justify-content:center;
   }
   .menu{
-    padding: 10px;
+    padding: 0.625rem;
     display: flex;
     align-items: center;
     justify-content:space-between;
   }
   .title{
-    font-size: 20px;
+    font-size: 1.25rem;
   }
   .bi-list{
-    font-size: 50px;
+    font-size: 3.125rem;
     cursor: pointer;
   
   }
@@ -61,17 +61,17 @@ body{
     outline:0;
     border:0!important;
     cursor:pointer;
-    font-size: 25px;
+    font-size: 1.5625rem;
     background: none;
     color: white;
     font-weight: lighter;
-    padding: 10px;
+    padding: 0.625rem;
   }
   .select {
-    box-shadow: 0 0 10px -1px black;
-    width: 160px;
+    box-shadow: 0 0 0.625rem -0.0625rem black;
+    width: 10rem;
     margin: auto;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     opacity: 0.8;
   }
 
@@ -85,12 +85,12 @@ body{
   
   /* .select select:focus{
     outline: none;
-    box-shadow: 0 0 10px -1px black;
+    box-shadow: 0 0 0.625rem -0.0625rem black;
   } */
 
   .select i{
     cursor: pointer;
-    margin-top: 18px;
+    margin-top: 1.125rem;
     color: white;
   }
   
@@ -108,7 +108,7 @@ body{
     outline:0;
     border:0!important;
     cursor:pointer;
-    font-size: 20px;
+    font-size: 1.25rem;
     background: none;
     color: white;
     font-weight: lighter;
@@ -116,21 +116,21 @@ body{
   
   /* .choice{
     float:right;
-    padding: 10px;
+    padding: 0.625rem;
   } */
   
   .bi-arrow-down-up{
-    font-size: 30px;
+    font-size: 1.875rem;
   }
   
   .hijoDos{
-    padding: 10px;
-    height: 295px;
+    padding: 0.625rem;
+    height: 18.4375rem;
     display: flex;
     align-items: center;
     justify-content:center;
     background-color: white;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 0rem 0rem 0.625rem 0.625rem;
   }
   
   .hijoDos input {
@@ -141,7 +141,7 @@ body{
     outline:0;
     border:0!important;
     cursor:pointer;
-    font-size: 20px;
+    font-size: 1.25rem;
     background: none;
     color: black;
     font-weight: lighter;

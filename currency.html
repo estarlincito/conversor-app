@@ -9,56 +9,48 @@
   <link rel="stylesheet" href="icons/bootstrap-icons.css">
 </head>
 <body>
-  <div class="padre">
-    
-    <div class="menu">
-      <header class="title"><a href="#">ConversorApp</a></header>
-      <i class="bi bi-list"></i>
-    </div>
+  <div class="contenedor">
+    <div class="form"> <!--bloque__form-->
+      <div class="form__menu">
+        <header class="form__title"><a href="#">ConversorApp</a></header>
+        <i class="bi bi-list"></i>
+      </div>
 
-    <div class="select">
-      <select>
-        <option value="1">Currency</option>
-        <option value="2">Length</option>
-      </select>
-
-      <i class="bi bi-chevron-down"></i>
-    </div>
-    <div class="hijoUno">
-
-      <form class="form">
-          <input value="1">
-
-          <select>
-            <option>USD</option>
-            <option>DOP</option>
-            <option>EUR</option>
-            <option>HTG</option>
-          </select>
-
+      <div class="form__selectMenu">
+        <select class="form__select form__select2">
+          <option value="1">Currency</option>
+          <option value="2">Length</option>
+        </select>
         <i class="bi bi-chevron-down"></i>
-      </form>
+      </div>
+
+        <form class="form__form">
+          <input class="form__input" value="1">
+            <select class="form__select">
+              <option>USD</option>
+              <option>DOP</option>
+              <option>EUR</option>
+              <option>HTG</option>
+            </select>
+          <i class="bi bi-chevron-down"></i>
+        </form>
+  
+      <!-- <div class="form__choice">
+        <i class="bi bi-arrow-down-up"></i>
+      </div> -->
+  <!-- .... -->
+        <form class="form__form form__form2">
+          <input class="form__input form__input2" value="1">
+            <select class="form__select form__select3">
+              <option>DOP</option>
+              <option>EUR</option>
+              <option>HTG</option>
+              <option>USD</option>
+            </select>
+          <i class="bi bi-chevron-down"></i>
+        </form>
+      </div>
     </div>
 
-    <!-- <div class="choice">
-      <i class="bi bi-arrow-down-up"></i>
-    </div> -->
-<!-- .... -->
-    <div class="hijoDos">
-
-      <form class="form">
-          <input value="1">
-
-          <select>
-            <option>DOP</option>
-            <option>EUR</option>
-            <option>HTG</option>
-            <option>USD</option>
-          </select>
-
-        <i class="bi bi-chevron-down"></i>
-      </form>
-    </div>
-  </div>
 </body>
 </html>

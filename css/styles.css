@@ -65,18 +65,39 @@ body{
     background: none;
     color: white;
     font-weight: lighter;
+    padding: 10px;
   }
   .select {
-    display: flex;
-    align-items: center;
-    justify-content:center;
+    box-shadow: 0 0 10px -1px black;
+    width: 160px;
+    margin: auto;
+    border-radius: 10px;
+    opacity: 0.8;
+  }
+
+  .select:hover {
+    opacity: 1;
+  }
+
+  .select select::ms-expand{
+    display: none;
   }
   
+  /* .select select:focus{
+    outline: none;
+    box-shadow: 0 0 10px -1px black;
+  } */
+
+  .select i{
+    cursor: pointer;
+    margin-top: 18px;
+    color: white;
+  }
   
   .form{
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content:space-between;
   }
   
   .hijoUno input {

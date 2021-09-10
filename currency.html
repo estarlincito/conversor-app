@@ -26,11 +26,11 @@
 
         <form class="form__form">
           <input class="form__input" value="1">
-            <select class="form__select">
-              <option>USD</option>
-              <option>DOP</option>
-              <option>EUR</option>
-              <option>HTG</option>
+            <select class="form__select" id="select1" onchange="convertirDop()">
+              <option value="1">USD</option>
+              <option value="2">DOP</option>
+              <option value="3">EUR</option>
+              <option value="4">HTG</option>
             </select>
           <i class="bi bi-chevron-down"></i>
         </form>
@@ -41,16 +41,17 @@
   <!-- .... -->
         <form class="form__form form__form2">
           <input class="form__input form__input2" value="1">
-            <select class="form__select form__select3">
-              <option>DOP</option>
-              <option>EUR</option>
-              <option>HTG</option>
-              <option>USD</option>
+            <select class="form__select form__select3" id="select2" onchange="convertirDop()">
+              <option value="1">DOP</option>
+              <option value="2">EUR</option>
+              <option value="3">HTG</option>
+              <option value="4">USD</option>
             </select>
           <i class="bi bi-chevron-down"></i>
         </form>
       </div>
     </div>
 
+    <script src="./js/code.js"></script>
 </body>
 </html>

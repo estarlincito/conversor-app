@@ -201,7 +201,7 @@ function convertidor(){
                     break;
                     case "ONZ": document.getElementById ("valor2").value=valor1*35274;
                     break;
-                    case "TONELADA": document.getElementById("valor2").value=valor1;
+                    case "TONE": document.getElementById("valor2").value=valor1;
                     break;
                     }
                 }

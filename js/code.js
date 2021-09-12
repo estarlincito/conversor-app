@@ -1,7 +1,5 @@
 // funcion de convertir 
 
-alert("Esta funcionando la conexion");
-
 function convertirDop(){
     // aqui llamo a los id de los dos selecc que tenemos en el currency 
     // los id se llaman selec1 y el select 2 

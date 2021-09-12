@@ -9,58 +9,59 @@
   <link rel="stylesheet" href="icons/bootstrap-icons.css">
 </head>
 <body>
-  <div class="contenedor">
-    <div class="form form__Lenght"> <!--bloque__form-->
-
-      <div class="form__menu">
-        <header class="form__title"><a href="https://estarlincito.github.io/conversor-app/">ConversorApp</a></header>
-        <i class="bi bi-list"></i>
-      </div>
-  
-      <div class="form__selectMenu">
-        <select class="form__select form__select2">
-          <option value="2">Length</option>
-          <option value="1">Currency</option>
-        </select>
-        <i class="bi bi-chevron-down"></i>
-      </div>
-  
-        <form class="form__form">
-          <input class="form__input" value="1">
-            <select class="form__select">
-              <option>HR</option>
-              <option>MIN</option>
-              <option>S</option>
-              <option>LB</option>
-              <option>OZ</option>
-              <option>T</option>
-              <option>KM</option>
-              <option>MI</option>
-              <option>CM</option>
-            </select>
-          <i class="bi bi-chevron-down"></i>
-        </form>
-  
-      <!-- <div class="form__choice">
-        <i class="bi bi-arrow-down-up"></i>
-      </div> -->
-  <!-- .... -->
-        <form class="form__form form__form2 form__form3">
-          <input class="form__input form__input2 form__input3" value="1">
-            <select class="form__select form__select4">
-              <option>MIN</option>
-              <option>HR</option>
-              <option>S</option>
-              <option>LB</option>
-              <option>OZ</option>
-              <option>T</option>
-              <option>KM</option>
-              <option>MI</option>
-              <option>CM</option>
-            </select>
-          <i class="bi bi-chevron-down"></i>
-        </form>
-      </div>
+  <div class="padreLenght">
+    
+    <div class="menu">
+      <header class="title"><a href="#">ConversorApp</a></header>
+      <i class="bi bi-list"></i>
     </div>
+    <form class="form">
+    <div class="select">
+      <select name="selConver" id="selConver" onchange="optConversion()"> 
+        <option value="opt1" style="color:black">Length</option>
+        <option value="opt2" style="color:black">Time</option>
+        <option value="opt3" style="color:black">Weight</option>
+        <option value="opt4" style="color:black">Currency</option>
+      </select>
+
+      <i class="bi bi-chevron-down"></i>
+    </form>
+    </div>
+    <div class="hijoUno">
+
+      <form class="form"></form>
+          <input id="valor1" style="border-bottom: 2px solid rgb(255, 255, 255)" onchange="convertidor()">
+
+          <select name="Rango" id="selRango" onchange="convertidor()">
+            <option value="KM" style="color:black">KM</option>
+            <option value="MILLA" style="color:black">MILLA</option>
+            <option value="METRO" style="color:black">METRO</option>
+          </select>
+
+        <i class="bi bi-chevron-down"></i>
+      </form>
+    </div>
+
+    <!-- <div class="choice">
+      <i class="bi bi-arrow-down-up"></i>
+    </div> -->
+<!-- .... -->
+    <div class="hijoDos">
+
+      <form class="form">
+          <input id="valor2" style="border-bottom:2px solid #000">
+
+          <select name="Rango2" id="selRango2" onchange="convertidor()">
+            <option value="KM">KM</option>
+            <option value="MILLA">MILLA</option>
+            <option value="METRO">METRO</option>
+          </select>
+
+        <i class="bi bi-chevron-down"></i>
+      </form>
+    </div>
+  </div>
+  <script src="js/code.js"></script>
+  <script type="text/javascript"></script>
 </body>
 </html>

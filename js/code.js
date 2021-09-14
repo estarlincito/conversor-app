@@ -49,8 +49,9 @@ var seleccion = document.getElementById("selConver").value; //variable para sabe
 
     
 if (seleccion=="opt1"){
-   
-    valor1.value="";
+
+   document.getElementById("USD").style.display="none";
+    /*valor1.value="";
     valor2.value="";
     selRango[0].value="KM";
     selRango[0].text="KM";
@@ -63,24 +64,26 @@ if (seleccion=="opt1"){
     selRango[2].value="METRO";
     selRango[2].text="METRO";
     selRango2[2].value="METRO";
-    selRango2[2].text="METRO";
+    selRango2[2].text="METRO";*/
 }
 else if (seleccion=="opt2"){
     
     valor1.value="";
     valor2.value="";
-    selRango[0].value="HR";
-    selRango[0].text="HORAS";
-    selRango2[0].value="HR";
-    selRango2[0].text="HORAS";
-    selRango[1].value="MIN";
-    selRango[1].text="MIN";
-    selRango2[1].value="MIN";
-    selRango2[1].text="MIN";
-    selRango[2].value="SEG";
-    selRango[2].text="SEG";
-    selRango2[2].value="SEG";
-    selRango2[2].text="SEG";
+    document.getElementById("USD").style.display="none";
+    document.getElementById("DOP").style.display="none";
+    document.getElementById("EUR").style.display="none";
+    document.getElementById("HTG").style.display="none";
+    
+    document.getElementById("HR").style.display="";
+    document.getElementById("MIN").style.display="";
+    document.getElementById("SEG").style.display="";
+    document.getElementById("LB").style.display="";
+    document.getElementById("OZ").style.display="";
+    document.getElementById("T").style.display="";
+    document.getElementById("KM").style.display="";
+    document.getElementById("MILLA").style.display="";
+    document.getElementById("MTS").style.display="";
 }
 else if (seleccion==="opt3"){
 

@@ -17,20 +17,30 @@
       </div>
 
       <div class="form__selectMenu">
-        <select class="form__select form__select2">
-          <option value="1">Currency</option>
-          <option value="2">Length</option>
+        <select class="form__select form__select2" name="selConver" id="selConver" onchange="optConversion()">
+          <option value="opt1">Currency</option>
+          <option value="opt2">Length</option>
         </select>
         <i class="bi bi-chevron-down"></i>
       </div>
 
         <form class="form__form">
-          <input class="form__input" value="1">
+          <input class="form__input" value="1" id="valor1">
             <select class="form__select" id="select1" onchange="convertirDop()">
-              <option value="1">USD</option>
-              <option value="2">DOP</option>
-              <option value="3">EUR</option>
-              <option value="4">HTG</option>
+              <option value="1" id="USD">USD</option>
+              <option value="2" id="DOP">DOP</option>
+              <option value="3" id="EUR">EUR</option>
+              <option value="4" id="HTG">HTG</option>
+              <option value="HR" id="HR" style="display: none;">HORAS</option>
+              <option value="MIN" id="MIN" style="display: none;">MIN</option>
+              <option value="SEG" id="SEG" style="display: none;">SEG</option>
+              <option value="LB" id="LB" style="display: none;">LB</option>
+              <option value="OZ" id="OZ" style="display: none;">OZ</option>
+              <option value="T" id="T" style="display: none;">T</option>
+              <option value="KM" id="KM" style="display: none;">KM</option>
+              <option value="MILLA" id="MILLA" style="display: none;">MILLA</option>
+              <option value="MTS" id="MTS" style="display: none;">MTS</option>
+
             </select>
           <i class="bi bi-chevron-down"></i>
         </form>
@@ -40,12 +50,21 @@
       </div> -->
   <!-- .... -->
         <form class="form__form form__form2">
-          <input class="form__input form__input2" value="1">
+          <input class="form__input form__input2" value="2" id="valor2">
             <select class="form__select form__select3" id="select2" onchange="convertirDop()">
-              <option value="1">DOP</option>
-              <option value="2">EUR</option>
-              <option value="3">HTG</option>
-              <option value="4">USD</option>
+              <option value="1" id="USD2" style="display: none;">USD</option>
+              <option value="2" id="DOP2" style="display: none;">DOP</option>
+              <option value="3" id="EUR2" style="display: none;">EUR</option>
+              <option value="4" id="HTG2" style="display: none;">HTG</option>
+              <option value="HR" id="HR2" style="display: none;">HORAS</option>
+              <option value="MIN" id="MIN2" style="display: none;">MIN</option>
+              <option value="SEG" id="SEG2" style="display: none;">SEG</option>
+              <option value="LB" id="LB2" style="display: none;">LB</option>
+              <option value="OZ" id="OZ2" style="display: none;">OZ</option>
+              <option value="T" id="T2" style="display: none;">T</option>
+              <option value="KM" id="KM2" style="display: none;">KM</option>
+              <option value="MILLA" id="MILLA2" style="display: none;">MILLA</option>
+              <option value="MTS" id="MTS2" style="display: none;">MTS</option>
             </select>
           <i class="bi bi-chevron-down"></i>
         </form>

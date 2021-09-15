@@ -49,25 +49,43 @@ var seleccion = document.getElementById("selConver").value; //variable para sabe
 
     
 if (seleccion=="opt1"){
-
-   document.getElementById("USD").style.display="none";
-    /*valor1.value="";
+    //opciones a mostrar en valor 1 y 2.
+    valor1.value="";
     valor2.value="";
-    selRango[0].value="KM";
-    selRango[0].text="KM";
-    selRango2[0].value="KM";
-    selRango2[0].text="KM";
-    selRango[1].value="MILLA";
-    selRango[1].text="MILLA";
-    selRango2[1].value="MILLA";
-    selRango2[1].text="MILLA";
-    selRango[2].value="METRO";
-    selRango[2].text="METRO";
-    selRango2[2].value="METRO";
-    selRango2[2].text="METRO";*/
+    document.getElementById("USD").style.display="";
+    document.getElementById("DOP").style.display="";
+    document.getElementById("EUR").style.display="";
+    document.getElementById("HTG").style.display="";
+    
+    document.getElementById("HR").style.display="none";
+    document.getElementById("MIN").style.display="none";
+    document.getElementById("SEG").style.display="none";
+    document.getElementById("LB").style.display="none";
+    document.getElementById("OZ").style.display="none";
+    document.getElementById("T").style.display="none";
+    document.getElementById("KM").style.display="none";
+    document.getElementById("MILLA").style.display="none";
+    document.getElementById("MTS").style.display="none";
+
+    //opciones a mostrar en valor 2.
+    document.getElementById("USD2").style.display="";
+    document.getElementById("DOP2").style.display="";
+    document.getElementById("EUR2").style.display="";
+    document.getElementById("HTG2").style.display="";
+    
+    document.getElementById("HR2").style.display="none";
+    document.getElementById("MIN2").style.display="none";
+    document.getElementById("SEG2").style.display="none";
+    document.getElementById("LB2").style.display="none";
+    document.getElementById("OZ2").style.display="none";
+    document.getElementById("T2").style.display="none";
+    document.getElementById("KM2").style.display="none";
+    document.getElementById("MILLA2").style.display="none";
+    document.getElementById("MTS2").style.display="none";
+
 }
 else if (seleccion=="opt2"){
-    
+    //opciones valor1 de lenght.
     valor1.value="";
     valor2.value="";
     document.getElementById("USD").style.display="none";
@@ -84,41 +102,85 @@ else if (seleccion=="opt2"){
     document.getElementById("KM").style.display="";
     document.getElementById("MILLA").style.display="";
     document.getElementById("MTS").style.display="";
-}
-else if (seleccion==="opt3"){
 
-    valor1.value="";
-    valor2.value="";
-    selRango[0].value="LIB";
-    selRango[0].text="LIBRA";
-    selRango2[0].value="LIB";
-    selRango2[0].text="LIBRA";
-    selRango[1].value="ONZ";
-    selRango[1].text="ONZA";
-    selRango2[1].value="ONZ";
-    selRango2[1].text="ONZA";
-    selRango[2].value="TONE";
-    selRango[2].text="TONE";
-    selRango2[2].value="TONE";
-    selRango2[2].text="TONE";
-}
+    //opciones valor2 de lenght
+    document.getElementById("USD2").style.display="none";
+    document.getElementById("DOP2").style.display="none";
+    document.getElementById("EUR2").style.display="none";
+    document.getElementById("HTG2").style.display="none";
+    
+    document.getElementById("HR2").style.display="";
+    document.getElementById("MIN2").style.display="";
+    document.getElementById("SEG2").style.display="";
+    document.getElementById("LB2").style.display="";
+    document.getElementById("OZ2").style.display="";
+    document.getElementById("T2").style.display="";
+    document.getElementById("KM2").style.display="";
+    document.getElementById("MILLA2").style.display="";
+    document.getElementById("MTS2").style.display="";
+    }
+
 }
 function convertidor(){
     
     const valor1=document.getElementById("valor1").value;
     const valor2=document.getElementById("valor2").value;
-    var selRango=document.getElementById("selRango").value;
-    var selRango2=document.getElementById("selRango2").value;
+    var selRango=document.getElementById("select1").value;
+    var selRango2=document.getElementById("select2").value;
     //alert(valor1+" "+valor2+" "+selRango+" "+selRango2);
 
-    //OPCIONES LONGUITUD:
-    if(selRango===("KM")){
+    //VALORES A MOSTRAR EN OPCIONES 2
+    if(selRango===("KM")||selRango===("MILLA")||selRango===("MTS")){
+        valor2.value="";
+        //document.getElementById(select2).text="NONE";
+        document.getElementById("HR2").style.display="none";
+        document.getElementById("MIN2").style.display="none";
+        document.getElementById("SEG2").style.display="none";
+        document.getElementById("LB2").style.display="none";
+        document.getElementById("OZ2").style.display="none";
+        document.getElementById("T2").style.display="none";
+        document.getElementById("KM2").style.display="";
+        document.getElementById("MILLA2").style.display="";
+        document.getElementById("MTS2").style.display="";
+        
+        }
+    else if(selRango===("HR")||selRango===("MIN")||selRango===("SEG")){
+        valor2.value="";
+        //document.getElementById(select2).text="NONE";
+        document.getElementById("HR2").style.display="";
+        document.getElementById("MIN2").style.display="";
+        document.getElementById("SEG2").style.display="";
+        document.getElementById("LB2").style.display="none";
+        document.getElementById("OZ2").style.display="none";
+        document.getElementById("T2").style.display="none";
+        document.getElementById("KM2").style.display="none";
+        document.getElementById("MILLA2").style.display="none";
+        document.getElementById("MTS2").style.display="none";
+        }
+    else if(selRango===("LB")||selRango===("OZ")||selRango===("T")){
+        valor2.value="";
+        //document.getElementById(select2).text="NONE";
+        document.getElementById("HR2").style.display="none";
+        document.getElementById("MIN2").style.display="none";
+        document.getElementById("SEG2").style.display="none";
+        document.getElementById("LB2").style.display="";
+        document.getElementById("OZ2").style.display="";
+        document.getElementById("T2").style.display="";
+        document.getElementById("KM2").style.display="none";
+        document.getElementById("MILLA2").style.display="none";
+        document.getElementById("MTS2").style.display="none";
+        }
+
+
+
+        //OPCIONES DISTANCIA:
+        if(selRango===("KM")){
         switch (selRango2){
             case "KM": document.getElementById ("valor2").value=valor1;
             break;
             case "MILLA": document.getElementById ("valor2").value=valor1*0.621;
             break;
-            case "METRO": document.getElementById("valor2").value=valor1*1000;
+            case "MTS": document.getElementById("valor2").value=valor1*1000;
             break;
             }
         }
@@ -128,17 +190,17 @@ function convertidor(){
             break;
             case "MILLA": document.getElementById ("valor2").value=valor1;
             break;
-            case "METRO": document.getElementById("valor2").value=valor1*1609.34;
+            case "MTS": document.getElementById("valor2").value=valor1*1609.34;
             break;
             }
         }
-        else  if(selRango===("METRO")){
+        else  if(selRango===("MTS")){
             switch (selRango2){
                 case "KM": document.getElementById ("valor2").value=valor1/1000;
                 break;
                 case "MILLA": document.getElementById ("valor2").value=valor1/1609.34;
                 break;
-                case "METRO": document.getElementById("valor2").value=valor1;
+                case "MTS": document.getElementById("valor2").value=valor1;
                 break;
                 }
             }
@@ -182,7 +244,7 @@ function convertidor(){
                 break;
                 case "ONZ": document.getElementById ("valor2").value=valor1*16;
                 break;
-                case "TONE": document.getElementById("valor2").value=valor1/2204.62;
+                case "T": document.getElementById("valor2").value=valor1/2204.62;
                 break;
                 }
             }
@@ -192,29 +254,29 @@ function convertidor(){
                 break;
                 case "ONZ": document.getElementById ("valor2").value=valor1;
                 break;
-                case "TONE": document.getElementById("valor2").value=valor1/35274;
+                case "T": document.getElementById("valor2").value=valor1/35274;
                 break;
                 }
             }
-            else  if(selRango===("TONE")){
+            else  if(selRango===("T")){
                 switch (selRango2){
                     case "LIB": document.getElementById ("valor2").value=valor1*2204.62;
                     break;
                     case "ONZ": document.getElementById ("valor2").value=valor1*35274;
                     break;
-                    case "TONE": document.getElementById("valor2").value=valor1;
+                    case "T": document.getElementById("valor2").value=valor1;
                     break;
                     }
                 }
   
 }
 //funcion invertir valores.
-function invertir1 (){
+function invertir1 (){ alert ("coral");
     //optener valores
    const valor1 =document.getElementById("valor2").value;
     const valor2 =document.getElementById("valor1").value;
-    var selRango=document.getElementById("selRango2").value;
-    var selRango2=document.getElementById("selRango").value;
+    var selRango=document.getElementById("select2").value;
+    var selRango2=document.getElementById("select1").value;
     //mostrar valores
     document.getElementById("selRango").value=selRango;
 document.getElementById("selRango2").value=selRango2;

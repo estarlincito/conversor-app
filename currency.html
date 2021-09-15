@@ -25,8 +25,9 @@
       </div>
 
         <form class="form__form">
-          <input class="form__input" value="1" id="valor1">
-            <select class="form__select" id="select1" onchange="convertirDop()">
+          <input class="form__input" value="1" id="valor1" onchange="convertidor()">
+            <select class="form__select" id="select1" onchange="convertidor()">
+              <option value="0">NONE</option>
               <option value="1" id="USD">USD</option>
               <option value="2" id="DOP">DOP</option>
               <option value="3" id="EUR">EUR</option>
@@ -49,13 +50,15 @@
         <i class="bi bi-arrow-down-up"></i>
       </div> -->
   <!-- .... -->
+      <input type="button" value="invertir" style="margin-left: 80%;" onclick="invertir1()">
         <form class="form__form form__form2">
-          <input class="form__input form__input2" value="2" id="valor2">
-            <select class="form__select form__select3" id="select2" onchange="convertirDop()">
-              <option value="1" id="USD2" style="display: none;">USD</option>
-              <option value="2" id="DOP2" style="display: none;">DOP</option>
-              <option value="3" id="EUR2" style="display: none;">EUR</option>
-              <option value="4" id="HTG2" style="display: none;">HTG</option>
+          <input class="form__input form__input2" value="2" id="valor2" onchange="convertidor()">
+            <select class="form__select form__select3" id="select2" onchange="convertidor()">
+              <option value="0">NONE</option>
+              <option value="1" id="USD2">USD</option>
+              <option value="2" id="DOP2">DOP</option>
+              <option value="3" id="EUR2">EUR</option>
+              <option value="4" id="HTG2">HTG</option>
               <option value="HR" id="HR2" style="display: none;">HORAS</option>
               <option value="MIN" id="MIN2" style="display: none;">MIN</option>
               <option value="SEG" id="SEG2" style="display: none;">SEG</option>

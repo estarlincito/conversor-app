@@ -271,15 +271,16 @@ function convertidor(){
   
 }
 //funcion invertir valores.
-function invertir1 (){ alert ("coral");
+function invertir1 (){
     //optener valores
    const valor1 =document.getElementById("valor2").value;
     const valor2 =document.getElementById("valor1").value;
     var selRango=document.getElementById("select2").value;
     var selRango2=document.getElementById("select1").value;
+    
     //mostrar valores
-    document.getElementById("selRango").value=selRango;
-document.getElementById("selRango2").value=selRango2;
+document.getElementById("select1").value=selRango;
+document.getElementById("select2").value=selRango2;
 document.getElementById("valor1").value=valor1;
 document.getElementById("valor2").value=valor2;
 

@@ -127,11 +127,12 @@ function convertidor(){
     const valor2=document.getElementById("valor2").value;
     var selRango=document.getElementById("select1").value;
     var selRango2=document.getElementById("select2").value;
+     //variable para poner none si selec2 no esta ene l rango de selec1
+    
     //alert(valor1+" "+valor2+" "+selRango+" "+selRango2);
 
     //VALORES A MOSTRAR EN OPCIONES 2
     if(selRango===("KM")||selRango===("MILLA")||selRango===("MTS")){
-        valor2.value="";
         //document.getElementById(select2).text="NONE";
         document.getElementById("HR2").style.display="none";
         document.getElementById("MIN2").style.display="none";
@@ -143,9 +144,10 @@ function convertidor(){
         document.getElementById("MILLA2").style.display="";
         document.getElementById("MTS2").style.display="";
         
+        
         }
     else if(selRango===("HR")||selRango===("MIN")||selRango===("SEG")){
-        valor2.value="";
+        //document.getElementById("select2").value=document.getElementById(select2[0].value);
         //document.getElementById(select2).text="NONE";
         document.getElementById("HR2").style.display="";
         document.getElementById("MIN2").style.display="";
@@ -156,9 +158,10 @@ function convertidor(){
         document.getElementById("KM2").style.display="none";
         document.getElementById("MILLA2").style.display="none";
         document.getElementById("MTS2").style.display="none";
+        
         }
     else if(selRango===("LB")||selRango===("ONZ")||selRango===("T")){
-        valor2.value="";
+        //document.getElementById("select2").value=document.getElementById(select2[0].value);
         //document.getElementById(select2).text="NONE";
         document.getElementById("HR2").style.display="none";
         document.getElementById("MIN2").style.display="none";
@@ -169,12 +172,13 @@ function convertidor(){
         document.getElementById("KM2").style.display="none";
         document.getElementById("MILLA2").style.display="none";
         document.getElementById("MTS2").style.display="none";
+        
         }
 
 
 
         //OPCIONES DISTANCIA:
-        if(selRango===("KM")){
+        if(selRango===("KM")){ 
         switch (selRango2){
             case "KM": document.getElementById ("valor2").value=valor1;
             break;
@@ -182,6 +186,11 @@ function convertidor(){
             break;
             case "MTS": document.getElementById("valor2").value=valor1*1000;
             break;
+            default: 
+                document.getElementById("valor2").value=valor1*0;
+                var hawel=document.getElementById("select2").value="0";
+                document.getElementById(select2).value=hawel;
+                
             }
         }
         else  if(selRango===("MILLA")){
@@ -192,6 +201,11 @@ function convertidor(){
             break;
             case "MTS": document.getElementById("valor2").value=valor1*1609.34;
             break;
+            default: 
+                document.getElementById("valor2").value=valor1*0;
+                var hawel=document.getElementById("select2").value="0";
+                document.getElementById(select2).value=hawel;
+                
             }
         }
         else  if(selRango===("MTS")){
@@ -202,6 +216,11 @@ function convertidor(){
                 break;
                 case "MTS": document.getElementById("valor2").value=valor1;
                 break;
+                default:
+                    document.getElementById("valor2").value=valor1*0; 
+                    var hawel=document.getElementById("select2").value="0"; 
+                    document.getElementById(select2).value=hawel;
+                    
                 }
             }
 
@@ -215,6 +234,11 @@ function convertidor(){
         break;
         case "SEG": document.getElementById("valor2").value=valor1*3600;
         break;
+        default: 
+        document.getElementById("valor2").value=valor1*0;
+                    var hawel=document.getElementById("select2").value="0"; 
+                    document.getElementById(select2).value=hawel;
+                    
         }
     }
     else  if(selRango===("MIN")){
@@ -225,6 +249,11 @@ function convertidor(){
         break;
         case "SEG": document.getElementById("valor2").value=valor1*60;
         break;
+        default: 
+        document.getElementById("valor2").value=valor1*0;
+                    var hawel=document.getElementById("select2").value="0"; 
+                    document.getElementById(select2).value=hawel;
+                    
         }
     }
     else  if(selRango===("SEG")){
@@ -235,37 +264,57 @@ function convertidor(){
             break;
             case "SEG": document.getElementById("valor2").value=valor1;
             break;
+            default: 
+            document.getElementById("valor2").value=valor1*0;
+                    var hawel=document.getElementById("select2").value="0"; 
+                    document.getElementById(select2).value=hawel;
+                    
             }
         }
         //OPCIONES PESO
-        if(selRango===("LIB")){
+        if(selRango===("LB")){
             switch (selRango2){
-                case "LIB": document.getElementById ("valor2").value=valor1;
+                case "LB": document.getElementById ("valor2").value=valor1;
                 break;
                 case "ONZ": document.getElementById ("valor2").value=valor1*16;
                 break;
                 case "T": document.getElementById("valor2").value=valor1/2204.62;
                 break;
+                default: 
+                document.getElementById("valor2").value=valor1*0;
+                    var hawel=document.getElementById("select2").value="0"; 
+                    document.getElementById(select2).value=hawel;
+                    
                 }
             }
             else  if(selRango===("ONZ")){
             switch (selRango2){
-                case "LIB": document.getElementById ("valor2").value=valor1/16;
+                case "LB": document.getElementById ("valor2").value=valor1/16;
                 break;
                 case "ONZ": document.getElementById ("valor2").value=valor1;
                 break;
                 case "T": document.getElementById("valor2").value=valor1/35274;
                 break;
+                default: 
+                document.getElementById("valor2").value=valor1*0;
+                    var hawel=document.getElementById("select2").value="0"; 
+                    document.getElementById(select2).value=hawel;
+                    
                 }
             }
             else  if(selRango===("T")){
                 switch (selRango2){
-                    case "LIB": document.getElementById ("valor2").value=valor1*2204.62;
+                    case "LB": document.getElementById ("valor2").value=valor1*2204.62;
                     break;
                     case "ONZ": document.getElementById ("valor2").value=valor1*35274;
                     break;
                     case "T": document.getElementById("valor2").value=valor1;
                     break;
+                    default:
+                        document.getElementById("valor2").value=valor1*0; 
+                    var hawel=document.getElementById("select2").value="0"; 
+                    document.getElementById(select2).value=hawel;
+                    
                     }
                 }
   

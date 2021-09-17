@@ -1,6 +1,6 @@
 :root{
-  --colorInput1: rgba(243, 22, 22, 0.541);
-  --colorInput2: rgb(0, 140, 255);
+  --colorInput1: rgb(226, 5, 5);
+  --colorInput2: rgb(4, 104, 185);
 }
 
 
@@ -28,7 +28,7 @@ a{
 
 /* currency */
 .form{
-  margin-top: 20px;
+  margin-top: 0.625rem;
   width: 25rem;
   height: 37.5rem;
   border-radius: 0.625rem;
@@ -59,11 +59,17 @@ a{
 
 }
 
+.bi-gem{
+  cursor: pointer;
+}
+
 .form__selectMenu{
   display: flex;
   align-items: center;
   justify-content:center;
   margin: 30px;
+  box-shadow: 0 0 300px rgb(2, 0, 0);
+  border-radius: 10px;
 }
 
 .form__selectMenu i{
@@ -84,6 +90,15 @@ a{
   background: none;
   color: white;
   font-weight:lighter;
+  font-weight:bold;
+}
+
+.form__select2{
+  font-weight:bold;
+}
+.form__select3{
+  color: var(--colorInput1);
+  font-weight:bold;
 }
 
 .form__form{
@@ -113,33 +128,38 @@ a{
   border-right: 0px;
   border-color: white;
   cursor:pointer;
-  font-size: 50px;
+  font-size: 45px;
   background: none;
   color: white;
   font-weight:lighter;
-  width: 50%;
-  margin-right: 100px;
+  width: 100%;
+}
+
+.form__invertir{
+  display: grid;
+  grid-template-columns: 75% 75%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, white 50%);
+  justify-content: space-around;
+  margin-top: 1.25rem;
+}
+.form__button{
+  border: none;
+  background: none;
+  font-size: 2.1875rem;
+  cursor: pointer;
+  color: black;
+  transform: scale(0.8);
+}
+.form__button_bi{
+  text-shadow: 0 0 30px rgb(253, 253, 253);
+}
+.form__button:hover{
+  transform: scale(1);
 }
 
 .form__input2{
   color: var(--colorInput1);
   border-color: var(--colorInput1);
-}
-
-.form__input3{
-  color: var(--colorInput2);
-  border-color: var(--colorInput2);
-}
-
-.form__select2{
-  font-weight:bold;
-}
-.form__select3{
-  color: var(--colorInput1);
-}
-
-.form__select4{
-  color: var(--colorInput2);
 }
 
 /* Length */
@@ -149,5 +169,14 @@ a{
 }
 
 .form__form3{
+  color: var(--colorInput2);
+}
+
+.form__input3{
+  color: var(--colorInput2);
+  border-color: var(--colorInput2);
+}
+
+.form__select4{
   color: var(--colorInput2);
 }

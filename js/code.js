@@ -266,6 +266,12 @@ var seleccion = document.getElementById("selConver").value; //variable para sabe
 
     
 if (seleccion=="opt1"){
+    //eliminando los stylos de length by Estarlin
+    document.getElementById('form').classList.remove('form__Lenght');
+    document.getElementById('form__form').classList.remove('form__form3');
+    document.getElementById('valor2').classList.remove('form__input3'); //form__input
+    document.getElementById('select2').classList.remove('form__select4'); //form__select
+
     //opciones a mostrar en valor 1 y 2.
     valor1.value="";
     valor2.value="";
@@ -303,8 +309,13 @@ if (seleccion=="opt1"){
 
 }
 else if (seleccion=="opt2"){
-    //aplicando los stylos de length
+    //aplicando los stylos de length by Estarlin
     document.getElementById('form').classList.add('form__Lenght');
+    document.getElementById('form__form').classList.add('form__form3');
+    document.getElementById('valor2').classList.add('form__input3'); //form__input
+    document.getElementById('select2').classList.add('form__select4'); //form__select 
+
+    
 
     //opciones valor1 de lenght.
     valor1.value="";

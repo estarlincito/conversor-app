@@ -61,7 +61,7 @@ if (seleccion=="opt1"){
     document.getElementById("MIN").style.display="none";
     document.getElementById("SEG").style.display="none";
     document.getElementById("LB").style.display="none";
-    document.getElementById("OZ").style.display="none";
+    document.getElementById("ONZ").style.display="none";
     document.getElementById("T").style.display="none";
     document.getElementById("KM").style.display="none";
     document.getElementById("MILLA").style.display="none";
@@ -77,7 +77,7 @@ if (seleccion=="opt1"){
     document.getElementById("MIN2").style.display="none";
     document.getElementById("SEG2").style.display="none";
     document.getElementById("LB2").style.display="none";
-    document.getElementById("OZ2").style.display="none";
+    document.getElementById("ONZ2").style.display="none";
     document.getElementById("T2").style.display="none";
     document.getElementById("KM2").style.display="none";
     document.getElementById("MILLA2").style.display="none";
@@ -97,7 +97,7 @@ else if (seleccion=="opt2"){
     document.getElementById("MIN").style.display="";
     document.getElementById("SEG").style.display="";
     document.getElementById("LB").style.display="";
-    document.getElementById("OZ").style.display="";
+    document.getElementById("ONZ").style.display="";
     document.getElementById("T").style.display="";
     document.getElementById("KM").style.display="";
     document.getElementById("MILLA").style.display="";
@@ -113,7 +113,7 @@ else if (seleccion=="opt2"){
     document.getElementById("MIN2").style.display="";
     document.getElementById("SEG2").style.display="";
     document.getElementById("LB2").style.display="";
-    document.getElementById("OZ2").style.display="";
+    document.getElementById("ONZ2").style.display="";
     document.getElementById("T2").style.display="";
     document.getElementById("KM2").style.display="";
     document.getElementById("MILLA2").style.display="";
@@ -137,7 +137,7 @@ function convertidor(){
         document.getElementById("MIN2").style.display="none";
         document.getElementById("SEG2").style.display="none";
         document.getElementById("LB2").style.display="none";
-        document.getElementById("OZ2").style.display="none";
+        document.getElementById("ONZ2").style.display="none";
         document.getElementById("T2").style.display="none";
         document.getElementById("KM2").style.display="";
         document.getElementById("MILLA2").style.display="";
@@ -151,20 +151,20 @@ function convertidor(){
         document.getElementById("MIN2").style.display="";
         document.getElementById("SEG2").style.display="";
         document.getElementById("LB2").style.display="none";
-        document.getElementById("OZ2").style.display="none";
+        document.getElementById("ONZ2").style.display="none";
         document.getElementById("T2").style.display="none";
         document.getElementById("KM2").style.display="none";
         document.getElementById("MILLA2").style.display="none";
         document.getElementById("MTS2").style.display="none";
         }
-    else if(selRango===("LB")||selRango===("OZ")||selRango===("T")){
+    else if(selRango===("LB")||selRango===("ONZ")||selRango===("T")){
         valor2.value="";
         //document.getElementById(select2).text="NONE";
         document.getElementById("HR2").style.display="none";
         document.getElementById("MIN2").style.display="none";
         document.getElementById("SEG2").style.display="none";
         document.getElementById("LB2").style.display="";
-        document.getElementById("OZ2").style.display="";
+        document.getElementById("ONZ2").style.display="";
         document.getElementById("T2").style.display="";
         document.getElementById("KM2").style.display="none";
         document.getElementById("MILLA2").style.display="none";

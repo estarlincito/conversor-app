@@ -303,6 +303,8 @@ if (seleccion=="opt1"){
 
 }
 else if (seleccion=="opt2"){
+    var form__select = document.getElementById('form');
+    form__select.classList.add('form__Lenght');
     //opciones valor1 de lenght.
     valor1.value="";
     valor2.value="";

@@ -1,6 +1,10 @@
 # conversor-app
-Hola Mundo como estan?
-Link: https://estarlincito.github.io/conversor-app
-Hawel Henriquez
+App desarrollada por:
 
-saludo desde mi casa
+- Hawel_H.
+- Manauri B.
+- Estarlin R.
+
+Link: https://estarlincito.github.io/conversor-app
+
+

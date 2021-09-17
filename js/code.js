@@ -1,46 +1,263 @@
-// funcion de convertir 
+// creacion de las funciones para que estas realicen sus funciones
 
-function convertirDop(){
-    // aqui llamo a los id de los dos selecc que tenemos en el currency 
-    // los id se llaman selec1 y el select 2 
-    // de igual forma los valores los convertir a float
+//tengo el id del primer input1 que se llama asi 
+// tambien  le cree un id al select de arriba select1
 
-    var valorSelec1 = parseFloat(document.getElementById("select1").value);
-    var valorSelec2 = parseFloat(document.getElementById("select2").value);
+function convertidorMonedas(){
 
-    // aqui estan los valores del dolar a peso dominicano DOP , A Euro y a HTG
-    var dolarPeso = 56.84;
-    var dolarEuro = 0.85;
-    var dolarHtg = 99.65;
-    resultado = 0;
+    // extrajendo los valores con el id y value
+    var valorInput1 = document.getElementById("valor1").value;
+    var valorInput2 = document.getElementById("valor2").value;
+    
 
-    // convesion de dolares a otras monedas
+    // llamando a los dos id de html 
 
-    // dolar a peso
-    if (valorSelec1 == 1 && valorSelec2 == 1){
-        resultado = valorSelec1 * dolarPeso;
-        console.log("El resultado es; " + resultado);
-    } 
+    var select1 = document.getElementById("select1").value;
+    var select2 = document.getElementById("select2").value;
 
-    // dolar a euro    
-    else if (valorSelec1 == 1 && valorSelec2 == 2){
-        resultado = valorSelec1 * dolarEuro;
-        console.log("El resultado es; " + resultado);
-        
-    }
-
-    //dolar a htg creole    
-    else if(valorSelec1 == 1 && valorSelec2 == 3){
-        resultado = valorSelec1 * dolarHtg; 
-        console.log("El resultado es; " + resultado);
-    }
-
-    else if (valorSelec1 == 1 && valorSelec2 == 4)
-    resultado = valorSelec1;
-    console.log("El resultado es; " + resultado);
 
     
-}
+
+    
+
+   
+
+    // primera conversion dolar a a las demas monedas 
+    if(select1 == "1" ){
+        
+        switch(select2)
+        {
+            case "1":
+                document.getElementById("valor2").value =  valorInput1;
+                break;
+
+            case "2":
+                document.getElementById("valor2").value =  valorInput1 * 56.61;
+                break;
+            case "3":
+                document.getElementById("valor2").value = valorInput1 * 0.85;
+                break;
+            case "4":
+                document.getElementById("valor2").value = valorInput1 * 97.00;
+                break;
+                 
+        }  
+        
+               
+
+    // conversion de pesos a las demas moneads 
+       
+    }else if(select1 == "2"){
+        switch(select2){
+            case "1":
+                document.getElementById("valor2").value = valorInput1 * 0.018;
+                break;
+            case "2":
+                document.getElementById("valor2").value = valorInput1;
+                break;
+            case "3":
+                document.getElementById("valor2").value = valorInput1 * 0.015;
+                break;
+            case "4":
+                document.getElementById("valor2").value = valorInput1 * 1.71;
+                break;                         
+
+                
+        }
+
+        // conversion de euro a las demas moneadas
+    }
+    else if(select1 == "3"){
+        switch(select2){
+            case "1":
+                document.getElementById("valor2").value = valorInput1 * 1.18;
+                break;
+            case "2":
+                document.getElementById("valor2").value = valorInput1 * 66.86;
+                break;
+            case "3":
+                document.getElementById("valor2").value = valorInput1 ;
+                break;
+            case "4":
+                document.getElementById("valor2").value = valorInput1 * 114.47;
+                break;  
+
+        }
+
+        
+
+    }
+
+    // conversion de htg a los demas monedas
+    
+    else if(select1 == "4"){
+        switch(select2){
+            case "1":
+                document.getElementById("valor2").value = valorInput1 * 0.010;
+                break;
+            case "2":
+                document.getElementById("valor2").value = valorInput1 * 0.57;
+                break;
+            case "3":
+                document.getElementById("valor2").value = valorInput1 *0.0086 ;
+                break;
+            case "4":
+                document.getElementById("valor2").value = valorInput1;
+                break; 
+                
+            }     
+
+        } 
+
+
+}    
+
+    
+
+
+
+//     // dolar a euro
+//     else if(select1 ==1 && select2 == 2){
+        
+//     }
+
+//     // dolar a htg 
+//     else if(select1 ==1 && select2 == 3){
+        
+//     }
+
+//     // dolar a dolar 
+//     else if(select1 ==1 && select2 == 4){
+//         resultado = valorInput1 ;
+//     }
+
+
+
+    
+//       // peso a peso
+//       else if(select1 == 2 && select2 == 1){
+//         resultado = valorInput1  ;
+//     }
+
+
+
+//      // peso a euro
+//      else if(select1 == 2 && select2 == 2){
+//         resultado = valorInput1 *  ;
+//     }
+
+//     // peso a htg
+//     else if(select1 == 2 && select2 == 3){
+//         resultado = valorInput1 *  ;
+//     }
+
+//     // peso a dolar
+//     else if(select1 == 2 && select2 == 3){
+//         resultado = valorInput1 * 0.018 ;
+//     }
+
+//     // conversion de Euro 
+
+    
+//     else if(select1 == 3 && select2 == 1){
+//         resultado = valorInput1 * 66.81 ;
+//     }
+
+//     // DE EURO A EURO
+   
+//     else if(select1 == 3 && select2 == 2){
+//         resultado = valorInput1  ;
+//     }
+
+//     // EURO A HTG 
+
+//     else if(select1 == 3 && select2 == 3){
+//         resultado = valorInput1 * 114.47 ;
+//     }
+
+//     //EURO A DOLAR 
+    
+
+//     else if(select1 == 3 && select2 == 3){
+//         resultado = valorInput1 *  ;
+//     }
+
+//     // DE HTG A PESO 
+
+//     else if(select1 == 4 && select2 == 1){
+//         resultado = valorInput1 * 0.57 ;
+//     }
+
+//     // htg a euro 
+//     else if(select1 == 4 && select2 == 2){
+//         resultado = valorInput1 * 0.0086 ;
+//     }
+
+//     // htg a htg
+
+//     else if(select1 == 4 && select2 == 2){
+//         resultado = valorInput1  ;
+//     }
+
+//     // htg a dolar
+
+    
+
+//     else if(select1 == 4 && select2 == 2){
+//         resultado = valorInput1 * 0.010 ;
+//     }
+
+    
+    
+// }
+
+
+
+
+
+// funcion de convertir 
+
+// function convertirDop(){
+//     // aqui llamo a los id de los dos selecc que tenemos en el currency 
+//     // los id se llaman selec1 y el select 2 
+//     // de igual forma los valores los convertir a float
+
+//     var valorSelec1 = parseFloat(document.getElementById("select1").value);
+//     var valorSelec2 = parseFloat(document.getElementById("select2").value);
+
+//     // aqui estan los valores del dolar a peso dominicano DOP , A Euro y a HTG
+//     var dolarPeso = 56.84;
+//     var dolarEuro = 0.85;
+//     var dolarHtg = 99.65;
+//     resultado = 0;
+
+//     // convesion de dolares a otras monedas
+
+//     // dolar a peso
+//     if (valorSelec1 == 1 && valorSelec2 == 1){
+//         resultado = valorSelec1 * dolarPeso;
+//         console.log("El resultado es; " + resultado);
+//     } 
+
+//     // dolar a euro    
+//     else if (valorSelec1 == 1 && valorSelec2 == 2){
+//         resultado = valorSelec1 * dolarEuro;
+//         console.log("El resultado es; " + resultado);
+        
+//     }
+
+//     //dolar a htg creole    
+//     else if(valorSelec1 == 1 && valorSelec2 == 3){
+//         resultado = valorSelec1 * dolarHtg; 
+//         console.log("El resultado es; " + resultado);
+//     }
+
+//     else if (valorSelec1 == 1 && valorSelec2 == 4)
+//     resultado = valorSelec1;
+//     console.log("El resultado es; " + resultado);
+
+    
+// }
 
 //funciones Hawel
 
@@ -52,6 +269,7 @@ if (seleccion=="opt1"){
     //opciones a mostrar en valor 1 y 2.
     valor1.value="";
     valor2.value="";
+
     document.getElementById("USD").style.display="";
     document.getElementById("DOP").style.display="";
     document.getElementById("EUR").style.display="";

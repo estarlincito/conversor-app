@@ -25,8 +25,8 @@
       </div>
 
         <form class="form__form">
-          <input class="form__input" value="1" id="valor1" onchange="convertidor()">
-            <select class="form__select" id="select1" onchange="convertidor()">
+          <input class="form__input" value="0" id="valor1" onchange="convertidor() , convertidorMonedas()">
+            <select class="form__select" id="select1" onchange="convertidor() , convertidorMonedas()">
               <option value="0">NONE</option>
               <option value="1" id="USD">USD</option>
               <option value="2" id="DOP">DOP</option>
@@ -52,8 +52,8 @@
   <!-- .... -->
       <input type="button" value="invertir" style="margin-left: 80%;" onclick="invertir1()">
         <form class="form__form form__form2">
-          <input class="form__input form__input2" value="2" id="valor2" onchange="convertidor()">
-            <select class="form__select form__select3" id="select2" onchange="convertidor()">
+          <input class="form__input form__input2" value=" " id="valor2" onchange="convertidor() , convertidorMonedas()">
+            <select class="form__select form__select3" id="select2" onchange="convertidor() , convertidorMonedas()">
               <option value="0">NONE</option>
               <option value="1" id="USD2">USD</option>
               <option value="2" id="DOP2">DOP</option>

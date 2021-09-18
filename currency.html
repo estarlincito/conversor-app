@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convertidor de Divisas</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="icons/bootstrap-icons.css">
+</head>
+<body>
+  <div class="contenedor">
+    <div class="form" id="form"> <!--bloque__form-->
+      <div class="form__menu">
+        <header class="form__title"><a href="https://estarlincito.github.io/conversor-app">ConversorApp</a></header>
+        <i class="bi bi-gem" title="ver favotitos"></i>
+      </div>
+
+      <div class="form__selectMenu">
+        <select class="form__select form__select2" name="selConver" id="selConver" onchange="optConversion()">
+          <option value="opt1">Currency</option>
+          <option value="opt2">Length</option>
+        </select>
+        <i class="bi bi-chevron-down"></i>
+      </div>
+
+        <form class="form__form">
+          <input class="form__input" value="0" id="valor1" onchange="convertidor() , convertidorMonedas()">
+            <select class="form__select" id="select1" onchange="convertidor() , convertidorMonedas()">
+              <option value="0">NONE</option>
+              <option value="1" id="USD">USD</option>
+              <option value="2" id="DOP">DOP</option>
+              <option value="3" id="EUR">EUR</option>
+              <option value="4" id="HTG">HTG</option>
+              <option value="HR" id="HR" style="display: none;">HORAS</option>
+              <option value="MIN" id="MIN" style="display: none;">MIN</option>
+              <option value="SEG" id="SEG" style="display: none;">SEG</option>
+              <option value="LB" id="LB" style="display: none;">LB</option>
+              <option value="ONZ" id="ONZ" style="display: none;">ONZ</option>
+              <option value="T" id="T" style="display: none;">T</option>
+              <option value="KM" id="KM" style="display: none;">KM</option>
+              <option value="MILLA" id="MILLA" style="display: none;">MILLA</option>
+              <option value="MTS" id="MTS" style="display: none;">MTS</option>
+
+            </select>
+          <i class="bi bi-chevron-down"></i>
+        </form>
+        
+        <div class="form__invertir">
+              <button type="button" class="form__button" title="invertir"> <!-- invertir -->
+                <i class="bi bi-arrow-down-up form__button_bi"  value="invertir" onclick="invertir1()"></i>
+            </button>
+
+            <button class="form__button form__button_2" title="agregar a favotitos">
+              <i class="bi bi-bookmark-plus form__button_bi"></i>
+            </button>
+        </div>
+        
+
+        <form class="form__form form__form2" id="form__form">
+          <input class="form__input form__input2" value=" " id="valor2" onchange="convertidor() , convertidorMonedas()">
+            <select class="form__select form__select3" id="select2" onchange="convertidor() , convertidorMonedas()">
+              <option value="0">NONE</option>
+              <option value="1" id="USD2">USD</option>
+              <option value="2" id="DOP2">DOP</option>
+              <option value="3" id="EUR2">EUR</option>
+              <option value="4" id="HTG2">HTG</option>
+              <option value="HR" id="HR2" style="display: none;">HORAS</option>
+              <option value="MIN" id="MIN2" style="display: none;">MIN</option>
+              <option value="SEG" id="SEG2" style="display: none;">SEG</option>
+              <option value="LB" id="LB2" style="display: none;">LB</option>
+              <option value="ONZ" id="ONZ2" style="display: none;">ONZ</option> <!--ojo con estos styles-->
+              <option value="T" id="T2" style="display: none;">T</option> <!--ojo tb se puede poner texto-->
+              <option value="KM" id="KM2" style="display: none;">KM</option>
+              <option value="MILLA" id="MILLA2" style="display: none;">MILLA</option>
+              <option value="MTS" id="MTS2" style="display: none;">MTS</option>
+            </select>
+          <i class="bi bi-chevron-down"></i>
+        </form>
+        
+      </div>
+    </div>
+
+    <script src="./js/code.js"></script> <!--//js-->
+</body>
+</html>

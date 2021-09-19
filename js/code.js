@@ -1,13 +1,13 @@
 //declarando var by Estarlin
-var form = document.getElementById('form');
-var form__form = document.getElementById('form__form');
-var valor2 = document.getElementById('valor2'); //form__input
-var select2 = document.getElementById('select2'); //form__select
-var form__button_bi = document.getElementById('form__button_bi');
-var form__button_bi2 = document.getElementById('form__button_bi2');
-var favorito = document.getElementById('favorito');
-var ver__favotitos = document.getElementById('ver__favotitos');
-var g__favotitos = document.getElementById('g__favotitos');
+    var form = document.getElementById('form');
+    var form__form = document.getElementById('form__form');
+    var valor2 = document.getElementById('valor2'); //form__input
+    var select2 = document.getElementById('select2'); //form__select
+    var form__button_bi = document.getElementById('form__button_bi');
+    var form__button_bi2 = document.getElementById('form__button_bi2');
+    var favorito = document.getElementById('favorito');
+    var ver__favotitos = document.getElementById('ver__favotitos');
+    var g__favotitos = document.getElementById('g__favotitos');
 
 
 // creacion de las funciones para que estas realicen sus funciones
@@ -278,8 +278,7 @@ var seleccion = document.getElementById("selConver").value; //variable para sabe
 
     
 if (seleccion=="opt1"){
-    //eliminando los stylos de length by Estarlin
-
+//eliminando los stylos de length by Estarlin
     form.classList.remove('form__Lenght');
     favorito.classList.remove('form__Lenght');
     form__form.classList.remove('form__form3');
@@ -325,7 +324,7 @@ if (seleccion=="opt1"){
 
 }
 else if (seleccion=="opt2"){
-    //aplicando los stylos de length by Estarlin
+//aplicando los stylos de length by Estarlin
     form.classList.add('form__Lenght');
     favorito.classList.add('form__Lenght');
     form__form.classList.add('form__form3');

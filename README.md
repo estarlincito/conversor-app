@@ -1,7 +1,7 @@
 # conversor-app
 App desarrollada por:
 
-- Hawel_H.
+- Hawel H.
 - Manauri B.
 - Estarlin R.
 

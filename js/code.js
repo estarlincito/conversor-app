@@ -35,21 +35,21 @@ function convertidorMonedas(){
    
 
     // primera conversion dolar a a las demas monedas 
-    if(select1 == "1" ){
+    if(select1 === "USD" ){
         
         switch(select2)
         {
-            case "1":
+            case "USD":
                 document.getElementById("valor2").value =  valorInput1;
                 break;
 
-            case "2":
+            case "DOP":
                 document.getElementById("valor2").value =  valorInput1 * 56.61;
                 break;
-            case "3":
+            case "EUR":
                 document.getElementById("valor2").value = valorInput1 * 0.85;
                 break;
-            case "4":
+            case "HTG":
                 document.getElementById("valor2").value = valorInput1 * 97.00;
                 break;
                  
@@ -59,18 +59,18 @@ function convertidorMonedas(){
 
     // conversion de pesos a las demas moneads 
        
-    }else if(select1 == "2"){
+    }else if(select1 === "DOP"){
         switch(select2){
-            case "1":
+            case "USD":
                 document.getElementById("valor2").value = valorInput1 * 0.018;
                 break;
-            case "2":
+            case "DOP":
                 document.getElementById("valor2").value = valorInput1;
                 break;
-            case "3":
+            case "EUR":
                 document.getElementById("valor2").value = valorInput1 * 0.015;
                 break;
-            case "4":
+            case "HTG":
                 document.getElementById("valor2").value = valorInput1 * 1.71;
                 break;                         
 
@@ -79,18 +79,18 @@ function convertidorMonedas(){
 
         // conversion de euro a las demas moneadas
     }
-    else if(select1 == "3"){
+    else if(select1 === "EUR"){
         switch(select2){
-            case "1":
+            case "USD":
                 document.getElementById("valor2").value = valorInput1 * 1.18;
                 break;
-            case "2":
+            case "DOP":
                 document.getElementById("valor2").value = valorInput1 * 66.86;
                 break;
-            case "3":
+            case "EUR":
                 document.getElementById("valor2").value = valorInput1 ;
                 break;
-            case "4":
+            case "HTG":
                 document.getElementById("valor2").value = valorInput1 * 114.47;
                 break;  
 
@@ -102,18 +102,18 @@ function convertidorMonedas(){
 
     // conversion de htg a los demas monedas
     
-    else if(select1 == "4"){
+    else if(select1 === "HTG"){
         switch(select2){
-            case "1":
+            case "USD":
                 document.getElementById("valor2").value = valorInput1 * 0.010;
                 break;
-            case "2":
+            case "DOP":
                 document.getElementById("valor2").value = valorInput1 * 0.57;
                 break;
-            case "3":
+            case "EUR":
                 document.getElementById("valor2").value = valorInput1 *0.0086 ;
                 break;
-            case "4":
+            case "HTG":
                 document.getElementById("valor2").value = valorInput1;
                 break; 
                 
@@ -122,154 +122,7 @@ function convertidorMonedas(){
         } 
 
 
-}    
-
-    
-
-
-
-//     // dolar a euro
-//     else if(select1 ==1 && select2 == 2){
-        
-//     }
-
-//     // dolar a htg 
-//     else if(select1 ==1 && select2 == 3){
-        
-//     }
-
-//     // dolar a dolar 
-//     else if(select1 ==1 && select2 == 4){
-//         resultado = valorInput1 ;
-//     }
-
-
-
-    
-//       // peso a peso
-//       else if(select1 == 2 && select2 == 1){
-//         resultado = valorInput1  ;
-//     }
-
-
-
-//      // peso a euro
-//      else if(select1 == 2 && select2 == 2){
-//         resultado = valorInput1 *  ;
-//     }
-
-//     // peso a htg
-//     else if(select1 == 2 && select2 == 3){
-//         resultado = valorInput1 *  ;
-//     }
-
-//     // peso a dolar
-//     else if(select1 == 2 && select2 == 3){
-//         resultado = valorInput1 * 0.018 ;
-//     }
-
-//     // conversion de Euro 
-
-    
-//     else if(select1 == 3 && select2 == 1){
-//         resultado = valorInput1 * 66.81 ;
-//     }
-
-//     // DE EURO A EURO
-   
-//     else if(select1 == 3 && select2 == 2){
-//         resultado = valorInput1  ;
-//     }
-
-//     // EURO A HTG 
-
-//     else if(select1 == 3 && select2 == 3){
-//         resultado = valorInput1 * 114.47 ;
-//     }
-
-//     //EURO A DOLAR 
-    
-
-//     else if(select1 == 3 && select2 == 3){
-//         resultado = valorInput1 *  ;
-//     }
-
-//     // DE HTG A PESO 
-
-//     else if(select1 == 4 && select2 == 1){
-//         resultado = valorInput1 * 0.57 ;
-//     }
-
-//     // htg a euro 
-//     else if(select1 == 4 && select2 == 2){
-//         resultado = valorInput1 * 0.0086 ;
-//     }
-
-//     // htg a htg
-
-//     else if(select1 == 4 && select2 == 2){
-//         resultado = valorInput1  ;
-//     }
-
-//     // htg a dolar
-
-    
-
-//     else if(select1 == 4 && select2 == 2){
-//         resultado = valorInput1 * 0.010 ;
-//     }
-
-    
-    
-// }
-
-
-
-
-
-// funcion de convertir 
-
-// function convertirDop(){
-//     // aqui llamo a los id de los dos selecc que tenemos en el currency 
-//     // los id se llaman selec1 y el select 2 
-//     // de igual forma los valores los convertir a float
-
-//     var valorSelec1 = parseFloat(document.getElementById("select1").value);
-//     var valorSelec2 = parseFloat(document.getElementById("select2").value);
-
-//     // aqui estan los valores del dolar a peso dominicano DOP , A Euro y a HTG
-//     var dolarPeso = 56.84;
-//     var dolarEuro = 0.85;
-//     var dolarHtg = 99.65;
-//     resultado = 0;
-
-//     // convesion de dolares a otras monedas
-
-//     // dolar a peso
-//     if (valorSelec1 == 1 && valorSelec2 == 1){
-//         resultado = valorSelec1 * dolarPeso;
-//         console.log("El resultado es; " + resultado);
-//     } 
-
-//     // dolar a euro    
-//     else if (valorSelec1 == 1 && valorSelec2 == 2){
-//         resultado = valorSelec1 * dolarEuro;
-//         console.log("El resultado es; " + resultado);
-        
-//     }
-
-//     //dolar a htg creole    
-//     else if(valorSelec1 == 1 && valorSelec2 == 3){
-//         resultado = valorSelec1 * dolarHtg; 
-//         console.log("El resultado es; " + resultado);
-//     }
-
-//     else if (valorSelec1 == 1 && valorSelec2 == 4)
-//     resultado = valorSelec1;
-//     console.log("El resultado es; " + resultado);
-
-    
-// }
+}
 
 //funciones Hawel
 
@@ -383,7 +236,7 @@ function convertidor(){
 
     //VALORES A MOSTRAR EN OPCIONES 2
     if(selRango===("KM")||selRango===("MILLA")||selRango===("MTS")){
-        //document.getElementById(select2).text="NONE";
+    //document.getElementById(select2).text="NONE";
         document.getElementById("HR2").style.display="none";
         document.getElementById("MIN2").style.display="none";
         document.getElementById("SEG2").style.display="none";
@@ -397,8 +250,8 @@ function convertidor(){
         
         }
     else if(selRango===("HR")||selRango===("MIN")||selRango===("SEG")){
-        //document.getElementById("select2").value=document.getElementById(select2[0].value);
-        //document.getElementById(select2).text="NONE";
+    //document.getElementById("select2").value=document.getElementById(select2[0].value);
+    //document.getElementById(select2).text="NONE";
         document.getElementById("HR2").style.display="";
         document.getElementById("MIN2").style.display="";
         document.getElementById("SEG2").style.display="";
@@ -411,8 +264,8 @@ function convertidor(){
         
         }
     else if(selRango===("LB")||selRango===("ONZ")||selRango===("T")){
-        //document.getElementById("select2").value=document.getElementById(select2[0].value);
-        //document.getElementById(select2).text="NONE";
+    //document.getElementById("select2").value=document.getElementById(select2[0].value);
+    //document.getElementById(select2).text="NONE";
         document.getElementById("HR2").style.display="none";
         document.getElementById("MIN2").style.display="none";
         document.getElementById("SEG2").style.display="none";
@@ -474,7 +327,6 @@ function convertidor(){
                 }
             }
 
-
     //Opciones TIEMPO
     if(selRango===("HR")){
     switch (selRango2){
@@ -521,6 +373,8 @@ function convertidor(){
                     
             }
         }
+
+        
         //OPCIONES PESO
         if(selRango===("LB")){
             switch (selRango2){
@@ -569,29 +423,31 @@ function convertidor(){
                 }
   
 }
+
+
+
 //funcion invertir valores.
-function invertir1 (){
-    //optener valores
-   const valor1 =document.getElementById("valor2").value;
+    function invertir1 (){
+//optener valores
+    const valor1 =document.getElementById("valor2").value;
     const valor2 =document.getElementById("valor1").value;
     var selRango=document.getElementById("select2").value;
     var selRango2=document.getElementById("select1").value;
     
-    //mostrar valores
-document.getElementById("select1").value=selRango;
-document.getElementById("select2").value=selRango2;
-document.getElementById("valor1").value=valor1;
-document.getElementById("valor2").value=valor2;
+//mostrar valores
+    document.getElementById("select1").value=selRango;
+    document.getElementById("select2").value=selRango2;
+    document.getElementById("valor1").value=valor1;
+    document.getElementById("valor2").value=valor2;
 
 }
 
 //favorite by Estarlin
-
 function favorite(){
     form.classList.toggle('hiden');
     favorito.classList.toggle('hiden');
 }
-
+//agregar__favotitos by Estarlin
 function agregar__favotitos(){
     ver__favotitos.classList.add("hiden");
     g__favotitos.classList.remove("hiden");
@@ -600,4 +456,13 @@ function agregar__favotitos(){
         ver__favotitos.classList.remove("hiden");
         g__favotitos.classList.add("hiden");
   }, 500);
+
+
+  //Datos del localStorege ||  by Estarlin
+  const seleccion1 = document.getElementById("select1").value;
+  const seleccion2 = document.getElementById("select2").value;
+  const resultado1 = document.getElementById("valor1").value;
+  const resultado2 = document.getElementById("valor2").value;
+
+console.log(seleccion1 + " " + resultado1 + " " + seleccion2 + " " + resultado2);
 }

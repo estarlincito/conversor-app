@@ -29,13 +29,13 @@
 
       <!-- form1 -->
       <form class="form__form">
-        <input class="form__input" value="0" id="valor1" onchange="convertidor() , convertidorMonedas()">
+        <input type="number" class="form__input" value="0" id="valor1" onchange="convertidor() , convertidorMonedas()">
           <select class="form__select" id="select1" onchange="convertidor() , convertidorMonedas()">
             <option value="0">NONE</option>
-            <option value="1" id="USD">USD</option>
-            <option value="2" id="DOP">DOP</option>
-            <option value="3" id="EUR">EUR</option>
-            <option value="4" id="HTG">HTG</option>
+            <option value="USD" id="USD">USD</option>
+            <option value="DOP" id="DOP">DOP</option>
+            <option value="EUR" id="EUR">EUR</option>
+            <option value="HTG" id="HTG">HTG</option>
             <option value="HR" id="HR" style="display: none;">HORAS</option>
             <option value="MIN" id="MIN" style="display: none;">MIN</option>
             <option value="SEG" id="SEG" style="display: none;">SEG</option>
@@ -63,19 +63,19 @@
         
       <!-- form2 -->
         <form class="form__form form__form2" id="form__form">
-          <input class="form__input form__input2" value=" " id="valor2" onchange="convertidor() , convertidorMonedas()">
+          <input type="number" class="form__input form__input2" value=" " id="valor2" onchange="convertidor() , convertidorMonedas()">
             <select class="form__select form__select3" id="select2" onchange="convertidor() , convertidorMonedas()">
               <option value="0">NONE</option>
-              <option value="1" id="USD2">USD</option>
-              <option value="2" id="DOP2">DOP</option>
-              <option value="3" id="EUR2">EUR</option>
-              <option value="4" id="HTG2">HTG</option>
+              <option value="USD" id="USD">USD</option>
+              <option value="DOP" id="DOP">DOP</option>
+              <option value="EUR" id="EUR">EUR</option>
+              <option value="HTG" id="HTG">HTG</option>
               <option value="HR" id="HR2" style="display: none;">HORAS</option>
               <option value="MIN" id="MIN2" style="display: none;">MIN</option>
               <option value="SEG" id="SEG2" style="display: none;">SEG</option>
               <option value="LB" id="LB2" style="display: none;">LB</option>
               <option value="ONZ" id="ONZ2" style="display: none;">ONZ</option> <!--ojo con estos styles-->
-              <option value="T" id="T2" style="display: none;">T</option> <!--ojo tb se puede poner texto-->
+              <option value="T" id="T2" style="display: none;">T</option>
               <option value="KM" id="KM2" style="display: none;">KM</option>
               <option value="MILLA" id="MILLA2" style="display: none;">MILLA</option>
               <option value="MTS" id="MTS2" style="display: none;">MTS</option>

@@ -1,3 +1,15 @@
+//declarando var by Estarlin
+var form = document.getElementById('form');
+var form__form = document.getElementById('form__form');
+var valor2 = document.getElementById('valor2'); //form__input
+var select2 = document.getElementById('select2'); //form__select
+var form__button_bi = document.getElementById('form__button_bi');
+var form__button_bi2 = document.getElementById('form__button_bi2');
+var favorito = document.getElementById('favorito');
+var ver__favotitos = document.getElementById('ver__favotitos');
+var g__favotitos = document.getElementById('g__favotitos');
+
+
 // creacion de las funciones para que estas realicen sus funciones
 
 //tengo el id del primer input1 que se llama asi 
@@ -267,10 +279,14 @@ var seleccion = document.getElementById("selConver").value; //variable para sabe
     
 if (seleccion=="opt1"){
     //eliminando los stylos de length by Estarlin
-    document.getElementById('form').classList.remove('form__Lenght');
-    document.getElementById('form__form').classList.remove('form__form3');
-    document.getElementById('valor2').classList.remove('form__input3'); //form__input
-    document.getElementById('select2').classList.remove('form__select4'); //form__select
+
+    form.classList.remove('form__Lenght');
+    favorito.classList.remove('form__Lenght');
+    form__form.classList.remove('form__form3');
+    valor2.classList.remove('form__input3'); //form__input
+    select2.classList.remove('form__select4'); //form__select
+    form__button_bi.classList.remove('form__button_bi2');
+    form__button_bi2.classList.remove('form__button_bi2');  
 
     //opciones a mostrar en valor 1 y 2.
     valor1.value="";
@@ -310,10 +326,13 @@ if (seleccion=="opt1"){
 }
 else if (seleccion=="opt2"){
     //aplicando los stylos de length by Estarlin
-    document.getElementById('form').classList.add('form__Lenght');
-    document.getElementById('form__form').classList.add('form__form3');
-    document.getElementById('valor2').classList.add('form__input3'); //form__input
-    document.getElementById('select2').classList.add('form__select4'); //form__select 
+    form.classList.add('form__Lenght');
+    favorito.classList.add('form__Lenght');
+    form__form.classList.add('form__form3');
+    valor2.classList.add('form__input3'); //form__input
+    select2.classList.add('form__select4'); //form__select
+    form__button_bi.classList.add('form__button_bi2');
+    form__button_bi2.classList.add('form__button_bi2');  
 
     
 
@@ -565,4 +584,21 @@ document.getElementById("select2").value=selRango2;
 document.getElementById("valor1").value=valor1;
 document.getElementById("valor2").value=valor2;
 
+}
+
+//favorite by Estarlin
+
+function favorite(){
+    form.classList.toggle('hiden');
+    favorito.classList.toggle('hiden');
+}
+
+function agregar__favotitos(){
+    ver__favotitos.classList.add("hiden");
+    g__favotitos.classList.remove("hiden");
+
+      setTimeout(() => {
+        ver__favotitos.classList.remove("hiden");
+        g__favotitos.classList.add("hiden");
+  }, 500);
 }

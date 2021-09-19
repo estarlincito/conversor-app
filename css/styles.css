@@ -67,8 +67,8 @@ a{
   display: flex;
   align-items: center;
   justify-content:center;
-  margin: 30px;
-  box-shadow: 0 0 300px rgb(2, 0, 0);
+  margin: 1.875rem;
+  /* box-shadow: 0 0 300px rgb(2, 0, 0); */
   border-radius: 10px;
 }
 
@@ -137,21 +137,23 @@ a{
 
 .form__invertir{
   display: grid;
-  grid-template-columns: 75% 75%;
+  grid-template-columns: 15% 15%;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, white 50%);
   justify-content: space-around;
   margin-top: 1.25rem;
 }
 .form__button{
   border: none;
-  background: none;
-  font-size: 2.1875rem;
+  padding: 0.3125rem;
+  background: white;
+  font-size: 30px;
   cursor: pointer;
-  color: black;
   transform: scale(0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(12, 1, 1, 0.623);
 }
 .form__button_bi{
-  text-shadow: 0 0 30px rgb(253, 253, 253);
+  color: rgb(238, 98, 17);
 }
 .form__button:hover{
   transform: scale(1);
@@ -179,4 +181,18 @@ a{
 
 .form__select4{
   color: var(--colorInput2);
+}
+
+.form__button_bi2{
+  color: rgb(62, 148, 223);
+}
+
+/* favorite */
+
+.form__favorite{
+  height: 662px;
+}
+
+.hiden{
+  display: none;
 }

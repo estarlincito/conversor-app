@@ -127,10 +127,10 @@ function convertidorMonedas(){
 //funciones Hawel
 
 function optConversion(){
-var seleccion = document.getElementById("selConver").value; //variable para saber cual medida de convercion esta selecionada.
+    var seleccion = document.getElementById("selConver").value; //variable para saber cual medida de convercion esta selecionada.
 
     
-if (seleccion=="opt1"){
+    if (seleccion=="opt1"){  alert("hawel");
 //eliminando los stylos de length by Estarlin
     form.classList.remove('form__Lenght');
     favorito.classList.remove('form__Lenght');
@@ -141,42 +141,42 @@ if (seleccion=="opt1"){
     form__button_bi2.classList.remove('form__button_bi2');  
 
     //opciones a mostrar en valor 1 y 2.
+    var valoresDivisa =['USD', 'DOP', 'EUR', 'HTG'];
     valor1.value="";
     valor2.value="";
-
-    document.getElementById("USD").style.display="";
-    document.getElementById("DOP").style.display="";
-    document.getElementById("EUR").style.display="";
-    document.getElementById("HTG").style.display="";
+   
+     //borrar opciones selecion 1
+     for (var i=select1.length-1; i>=0; i--)
+        {
+            select1.remove(select1[i]);
+        }
+     //borrar opciones selecion 2
+    for (var i=select2.length-1; i>=0; i--)
+        {
+            select2.remove(select2[i]);
+        }
     
-    document.getElementById("HR").style.display="none";
-    document.getElementById("MIN").style.display="none";
-    document.getElementById("SEG").style.display="none";
-    document.getElementById("LB").style.display="none";
-    document.getElementById("ONZ").style.display="none";
-    document.getElementById("T").style.display="none";
-    document.getElementById("KM").style.display="none";
-    document.getElementById("MILLA").style.display="none";
-    document.getElementById("MTS").style.display="none";
-
-    //opciones a mostrar en valor 2.
-    document.getElementById("USD2").style.display="";
-    document.getElementById("DOP2").style.display="";
-    document.getElementById("EUR2").style.display="";
-    document.getElementById("HTG2").style.display="";
-    
-    document.getElementById("HR2").style.display="none";
-    document.getElementById("MIN2").style.display="none";
-    document.getElementById("SEG2").style.display="none";
-    document.getElementById("LB2").style.display="none";
-    document.getElementById("ONZ2").style.display="none";
-    document.getElementById("T2").style.display="none";
-    document.getElementById("KM2").style.display="none";
-    document.getElementById("MILLA2").style.display="none";
-    document.getElementById("MTS2").style.display="none";
-
+    //crear opciones select1
+    for(var i=0; i<valoresDivisa.length; i++)
+        { 
+            const opcselect =document.createElement("option");
+            opcselect.value=valoresDivisa[i];
+            opcselect.textContent=valoresDivisa[i];
+            select1.appendChild(opcselect);
+        }
+    //crear opciones select2
+    for(var i=0; i<valoresDivisa.length; i++)
+        { 
+            const opcselect =document.createElement("option");
+            opcselect.value=valoresDivisa[i];
+            opcselect.textContent=valoresDivisa[i];
+            select2.appendChild(opcselect);
+        }
+ 
+        select1.value=valoresDivisa[0];
+        select2.value=valoresDivisa[1];
 }
-else if (seleccion=="opt2"){
+    else if (seleccion=="opt2") {
 //aplicando los stylos de length by Estarlin
     form.classList.add('form__Lenght');
     favorito.classList.add('form__Lenght');
@@ -187,43 +187,46 @@ else if (seleccion=="opt2"){
     form__button_bi2.classList.add('form__button_bi2');  
 
     
-
-    //opciones valor1 de lenght.
+    //opciones a mostrar en valor 1 y 2.
+    var valoresLongitud =['HR', 'MIN', 'SEG', 'KM','MILLA', 'MTS', 'LB', 'ONZ', 'T'];
     valor1.value="";
     valor2.value="";
-    document.getElementById("USD").style.display="none";
-    document.getElementById("DOP").style.display="none";
-    document.getElementById("EUR").style.display="none";
-    document.getElementById("HTG").style.display="none";
+   
+     //borrar opciones selecion 1
+     for (var i=select1.length-1; i>=0; i--)
+        {
+            select1.remove(select1[i]);
+        }
     
-    document.getElementById("HR").style.display="";
-    document.getElementById("MIN").style.display="";
-    document.getElementById("SEG").style.display="";
-    document.getElementById("LB").style.display="";
-    document.getElementById("ONZ").style.display="";
-    document.getElementById("T").style.display="";
-    document.getElementById("KM").style.display="";
-    document.getElementById("MILLA").style.display="";
-    document.getElementById("MTS").style.display="";
-
-    //opciones valor2 de lenght
-    document.getElementById("USD2").style.display="none";
-    document.getElementById("DOP2").style.display="none";
-    document.getElementById("EUR2").style.display="none";
-    document.getElementById("HTG2").style.display="none";
+     //borrar opciones selecion 2
+    for (var i=select2.length-1; i>=0; i--)
+        {
+            select2.remove(select2[i]);
+        }
     
-    document.getElementById("HR2").style.display="";
-    document.getElementById("MIN2").style.display="";
-    document.getElementById("SEG2").style.display="";
-    document.getElementById("LB2").style.display="";
-    document.getElementById("ONZ2").style.display="";
-    document.getElementById("T2").style.display="";
-    document.getElementById("KM2").style.display="";
-    document.getElementById("MILLA2").style.display="";
-    document.getElementById("MTS2").style.display="";
+    //crear opciones select1
+    for(var i=0; i<valoresLongitud.length; i++)
+        { 
+            const opcselect =document.createElement("option");
+            opcselect.value=valoresLongitud[i];
+            opcselect.textContent=valoresLongitud[i];
+            select1.appendChild(opcselect);
+        }
+    
+    //crear opciones select2
+    for(var i=0; i<3; i++)
+        { 
+            const opcselect =document.createElement("option");
+            opcselect.value=valoresLongitud[i];
+            opcselect.textContent=valoresLongitud[i];
+            select2.appendChild(opcselect);
+        }
     }
-
-}
+ 
+        //select1.value=valoresLongitud[0];
+        //select2.value=valoresLongitud[1];
+    
+    }  
 function convertidor(){
     
     const valor1=document.getElementById("valor1").value;
@@ -236,51 +239,39 @@ function convertidor(){
 
     //VALORES A MOSTRAR EN OPCIONES 2
     if(selRango===("KM")||selRango===("MILLA")||selRango===("MTS")){
-    //document.getElementById(select2).text="NONE";
-        document.getElementById("HR2").style.display="none";
-        document.getElementById("MIN2").style.display="none";
-        document.getElementById("SEG2").style.display="none";
-        document.getElementById("LB2").style.display="none";
-        document.getElementById("ONZ2").style.display="none";
-        document.getElementById("T2").style.display="none";
-        document.getElementById("KM2").style.display="";
-        document.getElementById("MILLA2").style.display="";
-        document.getElementById("MTS2").style.display="";
-        
-        
+    
+      select2[0].value="KM";
+      select2[0].textContent="KM";
+      select2[1].value="MILLA";
+      select2[1].textContent="MILLA";
+      select2[2].value="MTS";
+      select2[2].textContent="MTS";
+       
         }
     else if(selRango===("HR")||selRango===("MIN")||selRango===("SEG")){
-    //document.getElementById("select2").value=document.getElementById(select2[0].value);
-    //document.getElementById(select2).text="NONE";
-        document.getElementById("HR2").style.display="";
-        document.getElementById("MIN2").style.display="";
-        document.getElementById("SEG2").style.display="";
-        document.getElementById("LB2").style.display="none";
-        document.getElementById("ONZ2").style.display="none";
-        document.getElementById("T2").style.display="none";
-        document.getElementById("KM2").style.display="none";
-        document.getElementById("MILLA2").style.display="none";
-        document.getElementById("MTS2").style.display="none";
-        
-        }
+            
+       //crear opciones select1
+       select2[0].value="HR";
+      select2[0].textContent="HR";
+      select2[1].value="MIN";
+      select2[1].textContent="MIN";
+      select2[2].value="SEG";
+      select2[2].textContent="SEG";
+    }
+
     else if(selRango===("LB")||selRango===("ONZ")||selRango===("T")){
-    //document.getElementById("select2").value=document.getElementById(select2[0].value);
-    //document.getElementById(select2).text="NONE";
-        document.getElementById("HR2").style.display="none";
-        document.getElementById("MIN2").style.display="none";
-        document.getElementById("SEG2").style.display="none";
-        document.getElementById("LB2").style.display="";
-        document.getElementById("ONZ2").style.display="";
-        document.getElementById("T2").style.display="";
-        document.getElementById("KM2").style.display="none";
-        document.getElementById("MILLA2").style.display="none";
-        document.getElementById("MTS2").style.display="none";
+    
+   //crear opciones select1
+   select2[0].value="LB";
+   select2[0].textContent="LB";
+   select2[1].value="ONZ";
+   select2[1].textContent="ONZ";
+   select2[2].value="T";
+   select2[2].textContent="T";
         
         }
-
-
-
         //OPCIONES DISTANCIA:
+
         if(selRango===("KM")){ 
         switch (selRango2){
             case "KM": document.getElementById ("valor2").value=valor1;

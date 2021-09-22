@@ -12,6 +12,8 @@
     var ver__favotitos = document.getElementById('ver__favotitos');
     var g__favotitos = document.getElementById('g__favotitos');
     var valoresLongitud =['HR', 'MIN', 'SEG', 'KM','MILLA', 'MTS', 'LB', 'ONZ', 'T'] //aray de valores para trabajar by hawel
+    var marcaSelec2;
+    
 
 
 // creacion de las funciones para que estas realicen sus funciones
@@ -219,6 +221,8 @@ function optConversion(){
             switch(hawel){
                    
                     case "HR":  case "MIN": case "SEG":
+                        if (marcaSelec2 !=1){
+                        marcaSelec2=1;
                         for (var i=select2.length-1; i>=0; i--)
                             {
                                 select2.remove(select2[i]);
@@ -234,8 +238,11 @@ function optConversion(){
                                 select2.appendChild(opcselect);
                             
                             }
+                        }
                     break;
                     case "KM":  case "MILLA": case "MTS":
+                        if (marcaSelec2 !=2){
+                            marcaSelec2=2;
                         for (var i=select2.length-1; i>=0; i--)
                             {
                                 select2.remove(select2[i]);
@@ -251,8 +258,11 @@ function optConversion(){
                                 select2.appendChild(opcselect);
                             
                             }
+                        }
                     break;
                     case "LB":  case "ONZ": case "T":
+                        if (marcaSelec2 !=3){
+                            marcaSelec2=3;
                         for (var i=select2.length-1; i>=0; i--)
                             {
                                 select2.remove(select2[i]);
@@ -268,6 +278,7 @@ function optConversion(){
                                 select2.appendChild(opcselect);
                             
                             }
+                        }
                     break;
 
                         

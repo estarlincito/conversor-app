@@ -4,7 +4,10 @@
     var valor1 = document.getElementById('valor1'); //form__input1
     var select1 = document.getElementById('select1'); //form__select1
     var valor2 = document.getElementById('valor2'); //form__input2
-    var select2 = document.getElementById('select2'); //form__select2
+    var select2 = document.getElementById('select2'); //form__select2 
+    var addFavorite = document.getElementById('addFavorite'); //addFavorite 
+
+//hawel
     var seleccion = document.getElementById("selConver");//analicis de tipo de convercion escogido by hawel
     var form__button_bi = document.getElementById('form__button_bi');
     var form__button_bi2 = document.getElementById('form__button_bi2');
@@ -447,8 +450,19 @@ function favorite(){
     form.classList.toggle('hiden');
     favorito.classList.toggle('hiden');
 }
+
+a = 0;
+b = 0;
+//Delete__favotitos by Estarlin
+function delete__favotitos(){
+    localStorage.removeItem(a);
+    a--;
+}
+
 //agregar__favotitos by Estarlin
 function agregar__favotitos(){
+    a++;
+    b++;
     ver__favotitos.classList.add("hiden");
     g__favotitos.classList.remove("hiden");
 
@@ -459,10 +473,25 @@ function agregar__favotitos(){
 
 
   //Datos del localStorege ||  by Estarlin
-  const seleccion1 = document.getElementById("select1").value;
-  const seleccion2 = document.getElementById("select2").value;
-  const resultado1 = document.getElementById("valor1").value;
-  const resultado2 = document.getElementById("valor2").value;
+    const seleccion1 = document.getElementById("select1").value;
+    const seleccion2 = document.getElementById("select2").value;
+    const resultado1 = document.getElementById("valor1").value;
+    const resultado2 = document.getElementById("valor2").value;
+    
 
-console.log(seleccion1 + " " + resultado1 + " " + seleccion2 + " " + resultado2);
+    
+    var dataFavorite = `<b>-</b> ${resultado1} <b>${seleccion1}</b> = ${resultado2} <b>${seleccion2}</b> 
+    <button onclick="delete__favotitos()">
+        Delete
+    </button>`;
+
+    localStorage.setItem(a, dataFavorite);
+
+    var add = document.createElement("div");
+    add.innerHTML = localStorage.getItem(a);
+
+    addFavorite.appendChild(add);
+
 }
+
+a = localStorage.length;

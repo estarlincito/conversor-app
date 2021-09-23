@@ -30,7 +30,7 @@ a{
 .form{
   margin-top: 0.625rem;
   width: 25rem;
-  height: 37.5rem;
+  min-height: 37.5rem;
   border-radius: 0.625rem;
   background: rgb(131,58,180);
   background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
@@ -156,7 +156,7 @@ a{
 .form__button_bi{
   color: rgb(238, 98, 17);
 }
-.form__button:hover{
+.form__button:active{
   transform: scale(1);
 }
 
@@ -190,10 +190,38 @@ a{
 
 /* favorite */
 
-.form__favorite{
-  height: 662px;
-}
+/* .form__favorite{
+  
+} */
 
 .hiden{
   display: none;
+}
+
+.addFavorite div{
+  background-color: white;
+  margin: 1.25rem;
+  padding: 0.625rem;
+  font-size: 1.25rem;
+  border-radius: 0.625rem;
+  font-family:monospace;
+}
+
+.addFavorite div button{
+  border: none;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 0 8px rgba(12, 1, 1, 0.623);
+  float: right;
+  margin-top: 17px;
+  padding: 5px;
+  width: 70px;
+  font-size: 15px;
+  font-weight: bold;
+  transform: scale(0.8);
+}
+
+.addFavorite div button:active{
+  transform: scale(1);
+  color: black;
 }

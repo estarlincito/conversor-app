@@ -212,6 +212,11 @@ a{
   font-size: 1.25rem;
   border-radius: 0.625rem;
   font-family:monospace;
+  transform: scale(1);
+}
+
+.addFavorite div:hover{
+  transform: scale(1.02);
 }
 
 .addFavorite div button{
@@ -231,5 +236,5 @@ a{
 
 .addFavorite div button:active{
   transform: scale(1);
-  color: black;
+  /* color: rgb(255, 160, 106); */
 }

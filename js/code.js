@@ -537,3 +537,6 @@ for(var i =0; i < localStorage.length; i++){
         seleccion.value = "opt2"; //cambiando el valor #selConver select
     }
   }
+
+  //no cambiar el valor de los imputs cuando hago el cambio desde favorito de currency a length
+  //estoy peensando crear un array de usd,eth, dod... para hacer el filtro de currency a length al mostrar los elemndos(indexOf)

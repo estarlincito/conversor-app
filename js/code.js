@@ -450,14 +450,12 @@ function favorite(){
     form.classList.toggle('hiden');
     favorito.classList.toggle('hiden');
 }
-
 a = 0;
 b = 0;
 //Delete__favotitos by Estarlin
 function delete__favotitos(comp){
-    var id=comp.id;
+    var id = comp.id;
     localStorage.removeItem(id);
-    a--;
 }
 
 //agregar__favotitos by Estarlin
@@ -478,21 +476,33 @@ function agregar__favotitos(){
     const seleccion2 = document.getElementById("select2").value;
     const resultado1 = document.getElementById("valor1").value;
     const resultado2 = document.getElementById("valor2").value;
-    
 
     
     var dataFavorite = `<b>-</b> ${resultado1} <b>${seleccion1}</b> = ${resultado2} <b>${seleccion2}</b> 
-    <button id=${a} onclick="delete__favotitos(this)">
-        Delete
-    </button>`;
+        <button id=${a} onclick="delete__favotitos(this)">
+            Delete
+        </button>`;
+
+    var totalFav = `
+        <input class="hiden" id="estarlin" value="${b}"></input>
+    `;
 
     localStorage.setItem(a, dataFavorite);
-
+    localStorage.setItem("totalFav", totalFav);
+    
     var add = document.createElement("div");
     add.innerHTML = localStorage.getItem(a);
-
     addFavorite.appendChild(add);
-
 }
 
-a = localStorage.length;
+for(var i =0; i < localStorage.length; i++){
+    var element = localStorage.getItem(localStorage.key(i));
+    var add = document.createElement("div"); //esta parte de qui para mañana.
+    add.innerHTML = element;
+    addFavorite.appendChild(add);
+  } 
+  
+  var estarlin = document.getElementById("estarlin");
+  b = estarlin.value;
+  a = estarlin.value;
+//   alert(b)

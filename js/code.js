@@ -522,6 +522,7 @@ for(var i =0; i < localStorage.length; i++){
         form__button_bi.classList.remove('form__button_bi2');
         form__button_bi2.classList.remove('form__button_bi2');
         seleccion.value = "opt1"; //cambiando el valor #selConver select
+        optConversion();
 
 
 
@@ -535,8 +536,8 @@ for(var i =0; i < localStorage.length; i++){
         form__button_bi.classList.add('form__button_bi2');
         form__button_bi2.classList.add('form__button_bi2');
         seleccion.value = "opt2"; //cambiando el valor #selConver select
+        optConversion();
     }
   }
-
-  //no cambiar el valor de los imputs cuando hago el cambio desde favorito de currency a length
+  // cuando el contador/tatalFav no existe en el localStorage recivo este error TypeError: null is not an object (evaluating 'contador.value')
   //estoy peensando crear un array de usd,eth, dod... para hacer el filtro de currency a length al mostrar los elemndos(indexOf)

@@ -497,7 +497,7 @@ function agregar__favotitos(){
 
 for(var i =0; i < localStorage.length; i++){
     var element = localStorage.getItem(localStorage.key(i));
-    var add = document.createElement("div"); //esta parte de qui para mañana.
+    var add = document.createElement("div"); //esta parte de qui para mañana...
     add.innerHTML = element;
     addFavorite.appendChild(add);
   } 

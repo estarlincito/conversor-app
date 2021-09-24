@@ -6,6 +6,7 @@
     var valor2 = document.getElementById('valor2'); //form__input2
     var select2 = document.getElementById('select2'); //form__select2 
     var addFavorite = document.getElementById('addFavorite'); //addFavorite 
+    var selectFavorite = document.getElementById("selectFavorite"); //selectFavorite
 
 //hawel
     var seleccion = document.getElementById("selConver");//analicis de tipo de convercion escogido by hawel
@@ -140,7 +141,8 @@ function optConversion(){
     valor2.classList.remove('form__input3'); //form__input
     select2.classList.remove('form__select4'); //form__select
     form__button_bi.classList.remove('form__button_bi2');
-    form__button_bi2.classList.remove('form__button_bi2');  
+    form__button_bi2.classList.remove('form__button_bi2');
+    selectFavorite.value = "opt1"  //cambiando el valor #selectFavorite select
 
     //opciones a mostrar en valor 1 y 2.
     var valoresDivisa =['USD', 'DOP', 'EUR', 'HTG'];
@@ -186,7 +188,8 @@ function optConversion(){
     valor2.classList.add('form__input3'); //form__input
     select2.classList.add('form__select4'); //form__select
     form__button_bi.classList.add('form__button_bi2');
-    form__button_bi2.classList.add('form__button_bi2');  
+    form__button_bi2.classList.add('form__button_bi2');
+    selectFavorite.value = "opt2" //cambiando el valor #selectFavorite select
     
     
     //opciones a mostrar en valor 1 y 2.
@@ -446,63 +449,91 @@ function convertidor(){
 }
 
 //favorite by Estarlin
-function favorite(){
-    form.classList.toggle('hiden');
-    favorito.classList.toggle('hiden');
-}
-a = 0;
-b = 0;
+    function favorite(){
+        form.classList.toggle('hiden');
+        favorito.classList.toggle('hiden');
+    }
+
+    a = 0;
+    b = 0;
+
 //Delete__favotitos by Estarlin
-function delete__favotitos(comp){
-    var id = comp.id;
-    localStorage.removeItem(id);
+    function delete__favotitos(comp){
+        var id = comp.id;
+        localStorage.removeItem(id);
+        document.getElementById("l"+id).classList.add('hiden');
 }
 
 //agregar__favotitos by Estarlin
-function agregar__favotitos(){
-    a++;
-    b++;
-    ver__favotitos.classList.add("hiden");
-    g__favotitos.classList.remove("hiden");
+    function agregar__favotitos(){
+        a++;
+        b++;
+        ver__favotitos.classList.add("hiden");
+        g__favotitos.classList.remove("hiden");
 
-      setTimeout(() => {
-        ver__favotitos.classList.remove("hiden");
-        g__favotitos.classList.add("hiden");
-  }, 500);
+        setTimeout(() => {
+            ver__favotitos.classList.remove("hiden");
+            g__favotitos.classList.add("hiden");
+    }, 500);
 
-
-  //Datos del localStorege ||  by Estarlin
     const seleccion1 = document.getElementById("select1").value;
     const seleccion2 = document.getElementById("select2").value;
     const resultado1 = document.getElementById("valor1").value;
     const resultado2 = document.getElementById("valor2").value;
 
     
-    var dataFavorite = `<b>-</b> ${resultado1} <b>${seleccion1}</b> = ${resultado2} <b>${seleccion2}</b> 
-        <button id=${a} onclick="delete__favotitos(this)">
-            Delete
-        </button>`;
+    var dataFavorite = `
+        <div id=l${a}>
+            <b>-</b> ${resultado1} <b>${seleccion1}</b> = ${resultado2} <b>${seleccion2}</b> 
+            <button id=${a} onclick="delete__favotitos(this)">
+                Delete
+            </button>
+        </div>    
+            `;
 
     var totalFav = `
-        <input class="hiden" id="estarlin" value="${b}"></input>
+        <input class="hiden" id="contador" value="${b}"></input>
     `;
 
     localStorage.setItem(a, dataFavorite);
     localStorage.setItem("totalFav", totalFav);
-    
-    var add = document.createElement("div");
-    add.innerHTML = localStorage.getItem(a);
-    addFavorite.appendChild(add);
+    addFavorite.innerHTML += localStorage.getItem(a);
 }
 
+//devolviendo el resultado del localStorege by Estarlin
 for(var i =0; i < localStorage.length; i++){
     var element = localStorage.getItem(localStorage.key(i));
-    var add = document.createElement("div"); //esta parte de qui para mañana...
-    add.innerHTML = element;
-    addFavorite.appendChild(add);
+    addFavorite.innerHTML += element;
   } 
   
-  var estarlin = document.getElementById("estarlin");
-  b = estarlin.value;
-  a = estarlin.value;
-//   alert(b)
+  var contador = document.getElementById("contador");
+  b = contador.value;
+  a = contador.value;
+
+
+  function optFavorite(){
+    if(selectFavorite.value === "opt1"){
+//eliminando los stylos de length by Estarlin
+        form.classList.remove('form__Lenght');
+        favorito.classList.remove('form__Lenght');
+        form__form.classList.remove('form__form3');
+        valor2.classList.remove('form__input3'); //form__input
+        select2.classList.remove('form__select4'); //form__select
+        form__button_bi.classList.remove('form__button_bi2');
+        form__button_bi2.classList.remove('form__button_bi2');
+        seleccion.value = "opt1"; //cambiando el valor #selConver select
+
+
+
+    }else if(selectFavorite.value === "opt2"){
+//aplicando los stylos de length by Estarlin
+        form.classList.add('form__Lenght');
+        favorito.classList.add('form__Lenght');
+        form__form.classList.add('form__form3');
+        valor2.classList.add('form__input3'); //form__input
+        select2.classList.add('form__select4'); //form__select
+        form__button_bi.classList.add('form__button_bi2');
+        form__button_bi2.classList.add('form__button_bi2');
+        seleccion.value = "opt2"; //cambiando el valor #selConver select
+    }
+  }

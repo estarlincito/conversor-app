@@ -454,8 +454,9 @@ function favorite(){
 a = 0;
 b = 0;
 //Delete__favotitos by Estarlin
-function delete__favotitos(){
-    localStorage.removeItem(a);
+function delete__favotitos(comp){
+    var id=comp.id;
+    localStorage.removeItem(id);
     a--;
 }
 
@@ -481,7 +482,7 @@ function agregar__favotitos(){
 
     
     var dataFavorite = `<b>-</b> ${resultado1} <b>${seleccion1}</b> = ${resultado2} <b>${seleccion2}</b> 
-    <button onclick="delete__favotitos()">
+    <button id=${a} onclick="delete__favotitos(this)">
         Delete
     </button>`;
 

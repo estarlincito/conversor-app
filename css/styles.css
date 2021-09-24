@@ -93,8 +93,15 @@ a{
   font-weight:bold;
 }
 
+.form__select option{
+  color: black;
+}
+
 .form__select2{
   font-weight:bold;
+}
+.form__select2 option{
+  color: black;
 }
 .form__select3{
   color: var(--colorInput1);

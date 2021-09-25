@@ -145,6 +145,7 @@ function optConversion(){
     selectFavorite.value = "opt1"  //cambiando el valor #selectFavorite select
 
     //opciones a mostrar en valor 1 y 2.
+    marcaSelec2=0;
     var valoresDivisa =['USD', 'DOP', 'EUR', 'HTG'];
     valor1.value="";
     valor2.value="";
@@ -299,6 +300,9 @@ function convertidor(){
     const valor2=document.getElementById("valor2").value;
     var selRango=document.getElementById("select1").value;
     var selRango2=document.getElementById("select2").value;
+
+    //limpiar entrada de valores
+    if (valor1===""){valor2="";}
 
 
     //OPCIONES DISTANCIA:

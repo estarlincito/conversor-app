@@ -56,9 +56,6 @@ a{
   transform: scale(1);
 }
 
-
-
-
 .form__title{
   font-size: 1.25rem;
 }
@@ -82,7 +79,6 @@ a{
   align-items: center;
   justify-content:center;
   margin: 1.875rem;
-  /* box-shadow: 0 0 300px rgb(2, 0, 0); */
   border-radius: 10px;
 }
 
@@ -133,7 +129,7 @@ a{
 }
 
 .form__form2{
-  height: 12.5rem;
+  height: 8.75rem;
   background-color: white;
   color: var(--colorInput1);
 }
@@ -209,14 +205,9 @@ a{
 }
 
 /* favorite */
-
 .hiden{
   display: none;
 }
-
-/* .form__favorite{
-  padding: 20px;
-} */
 
 .addFavorite{
   display: grid;
@@ -224,12 +215,9 @@ a{
 }
 .addFavorite div{
   margin: 20px;
-  height: 80px;
-  background-color: white;
-  margin-bottom: 10px;
+  background: linear-gradient(180deg, white 85%, rgba(0, 0, 0, 0) 50%);
   padding: 20px 0px 0px 20px;
   font-size: 1.25rem;
-  border-radius: 0.625rem;
   transform: scale(1);
   font-family:monospace;
   word-wrap: break-word;
@@ -241,23 +229,23 @@ a{
 
 .addFavorite div button{
   border: none;
-  border-radius: 10px;
+  border-radius: 3px;
   color: white;
   background: rgba(0, 0, 0, 0.911);
   box-shadow: 0 0 8px rgba(247, 245, 245, 0.897);
+  margin-left: 79%;
   padding: 7px;
   width: 80px;
   font-size: 15px;
-  font-weight: bold;
-  transform: scale(0.8);
 }
-
+.addFavorite div button:hover{
+  font-weight: bold;
+}
 .addFavorite div button:active{
   transform: scale(1);
 }
 
 /* settings */
-
 .form__settings{
   background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
 }
@@ -326,7 +314,8 @@ a{
   border-radius: 0px 0px 10px 10px;
   display: grid;
   justify-content:end;
-  padding: 10px;
+  height: 36px;
+  padding: 0.625rem;
   
 }
 

@@ -510,7 +510,9 @@ function atrasF(){
     
     var dataFavorite = `
         <div id=l${a}>
+        <p>
             <b>-</b> ${resultado1} <b>${seleccion1}</b> = ${resultado2} <b>${seleccion2}</b> 
+        </p>    
             <button id=${a} onclick="delete__favotitos(this)">
                 Delete
             </button>
@@ -565,5 +567,4 @@ for(var i =0; i < localStorage.length; i++){
         optConversion();
     }
   }
-  // cuando el contador/tatalFav no existe en el localStorage recivo este error TypeError: null is not an object (evaluating 'contador.value')
   //estoy peensando crear un array de usd,eth, dod... para hacer el filtro de currency a length al mostrar los elemndos(indexOf)

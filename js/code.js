@@ -17,8 +17,17 @@
     var g__favotitos = document.getElementById('g__favotitos');
     var valoresLongitud =['HR', 'MIN', 'SEG', 'KM','MILLA', 'MTS', 'LB', 'ONZ', 'T'] //aray de valores para trabajar by hawel
     var marcaSelec2;
+    //variable para modificar los valores de convercion:
+    //var USD={DOP:56.61, EUR:0.85, HTG:97 };
+    //var DOP={USD:0.018, EUR:0.015, HTG:1.71 };
+    //var EUR={USD:1.18, DOP:66.86, HTG:114.47 };
+    //var HTG={USD:0.010, DOP:0.57, EUR:0.0086 };
+    localStorage.setItem("U", JSON.stringify(USD={DOP:0, EUR:0.85, HTG:97 }));
+    localStorage.setItem("D", JSON.stringify(DOP={USD:0.018, EUR:0.015, HTG:1.71 }));
+    localStorage.setItem("E", JSON.stringify(EUR={USD:1.18, DOP:66.86, HTG:114.47 }));
+    localStorage.setItem("H", JSON.stringify(HTG={USD:0.010, DOP:0.57, EUR:0.0086 }));
     
-
+console.log();
 
 // creacion de las funciones para que estas realicen sus funciones
 
@@ -47,13 +56,13 @@ function convertidorMonedas(){
                 break;
 
             case "DOP":
-                document.getElementById("valor2").value =  valorInput1 * 56.61;
+                document.getElementById("valor2").value =  valorInput1 * USD.DOP;
                 break;
             case "EUR":
-                document.getElementById("valor2").value = valorInput1 * 0.85;
+                document.getElementById("valor2").value = valorInput1 * USD.EUR;
                 break;
             case "HTG":
-                document.getElementById("valor2").value = valorInput1 * 97.00;
+                document.getElementById("valor2").value = valorInput1 * USD.HTG;
                 break;
                  
         }  
@@ -65,16 +74,16 @@ function convertidorMonedas(){
     }else if(select1 === "DOP"){
         switch(select2){
             case "USD":
-                document.getElementById("valor2").value = valorInput1 * 0.018;
+                document.getElementById("valor2").value = valorInput1 * DOP.USD;
                 break;
             case "DOP":
                 document.getElementById("valor2").value = valorInput1;
                 break;
             case "EUR":
-                document.getElementById("valor2").value = valorInput1 * 0.015;
+                document.getElementById("valor2").value = valorInput1 * DOP.EUR;
                 break;
             case "HTG":
-                document.getElementById("valor2").value = valorInput1 * 1.71;
+                document.getElementById("valor2").value = valorInput1 * DOP.HTG;
                 break;                         
 
                 
@@ -85,16 +94,16 @@ function convertidorMonedas(){
     else if(select1 === "EUR"){
         switch(select2){
             case "USD":
-                document.getElementById("valor2").value = valorInput1 * 1.18;
+                document.getElementById("valor2").value = valorInput1 * EUR.USD;
                 break;
             case "DOP":
-                document.getElementById("valor2").value = valorInput1 * 66.86;
+                document.getElementById("valor2").value = valorInput1 * EUR.DOP;
                 break;
             case "EUR":
                 document.getElementById("valor2").value = valorInput1 ;
                 break;
             case "HTG":
-                document.getElementById("valor2").value = valorInput1 * 114.47;
+                document.getElementById("valor2").value = valorInput1 * EUR.HTG;
                 break;  
 
         }
@@ -108,13 +117,13 @@ function convertidorMonedas(){
     else if(select1 === "HTG"){
         switch(select2){
             case "USD":
-                document.getElementById("valor2").value = valorInput1 * 0.010;
+                document.getElementById("valor2").value = valorInput1 * HTG.USD;
                 break;
             case "DOP":
-                document.getElementById("valor2").value = valorInput1 * 0.57;
+                document.getElementById("valor2").value = valorInput1 * HTG.DOP;
                 break;
             case "EUR":
-                document.getElementById("valor2").value = valorInput1 *0.0086 ;
+                document.getElementById("valor2").value = valorInput1 * HTG.EUR ;
                 break;
             case "HTG":
                 document.getElementById("valor2").value = valorInput1;
@@ -134,6 +143,7 @@ function optConversion(){
 
     
     if (seleccion=="opt1") {
+        localStorage.setItem ( USD.DOP=56.61);
 //eliminando los stylos de length by Estarlin
     form.classList.remove('form__Lenght');
     favorito.classList.remove('form__Lenght');
@@ -180,6 +190,8 @@ function optConversion(){
  
         select1.value=valoresDivisa[0];
         select2.value=valoresDivisa[1];
+        
+        //localStorage.setItem ( USD.DOP=56.61);
     }
     else if (seleccion=="opt2") {
 //aplicando los stylos de length by Estarlin
@@ -490,7 +502,7 @@ function convertidor(){
         <div id=l${a}>
             <b>-</b> ${resultado1} <b>${seleccion1}</b> = ${resultado2} <b>${seleccion2}</b> 
             <button id=${a} onclick="delete__favotitos(this)">
-                Delete
+            Delete
             </button>
         </div>    
             `;

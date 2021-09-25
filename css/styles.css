@@ -30,7 +30,7 @@ a{
 .form{
   margin-top: 0.625rem;
   width: 25rem;
-  min-height: 669px;
+  min-height: 41.25rem;
   border-radius: 0.625rem;
   background: rgb(131,58,180);
   background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
@@ -44,6 +44,20 @@ a{
   justify-content:space-between;
   color: white;
 }
+
+.form__menu a{
+  color: white;
+  transform: scale(0.9);
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.form__menu a:hover{
+  transform: scale(1);
+}
+
+
+
 
 .form__title{
   font-size: 1.25rem;
@@ -121,7 +135,6 @@ a{
 .form__form2{
   height: 12.5rem;
   background-color: white;
-  border-radius: 0px 0px 10px 10px;
   color: var(--colorInput1);
 }
 
@@ -201,15 +214,25 @@ a{
   display: none;
 }
 
+/* .form__favorite{
+  padding: 20px;
+} */
+
+.addFavorite{
+  display: grid;
+  grid-template-columns: 100%;
+}
 .addFavorite div{
-  height: 1.875rem;
+  margin: 20px;
+  height: 80px;
   background-color: white;
-  margin: 1.25rem;
-  padding: 1.875rem 0.625rem 1.875rem 1.875rem;
+  margin-bottom: 10px;
+  padding: 20px 0px 0px 20px;
   font-size: 1.25rem;
   border-radius: 0.625rem;
-  font-family:monospace;
   transform: scale(1);
+  font-family:monospace;
+  word-wrap: break-word;
 }
 
 .addFavorite div:hover{
@@ -222,8 +245,6 @@ a{
   color: white;
   background: rgba(0, 0, 0, 0.911);
   box-shadow: 0 0 8px rgba(247, 245, 245, 0.897);
-  float: right;
-  margin: 45px 0px 0px 0px;
   padding: 7px;
   width: 80px;
   font-size: 15px;
@@ -233,5 +254,82 @@ a{
 
 .addFavorite div button:active{
   transform: scale(1);
-  /* color: rgb(255, 160, 106); */
+}
+
+/* settings */
+
+.form__settings{
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+.form__titileSettings{
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+.form__dataSettings{
+  background-color: rgba(255, 255, 255, 0.281);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  margin-top: 80px;
+}
+
+.form__dataSettings .divisas{
+  display: grid;
+  grid-template-columns: 20% 26% 26% 26%;
+  justify-content: center;
+}
+
+.form__dataSettings .divisas div{
+  margin: 2px;
+}
+
+.titileDivisas{
+  font-weight: bold;
+}
+.form__dataSettings label{
+  font-size: 16px;
+}
+
+.form__dataSettings input{
+  width: 30px;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.form__submitSettings{
+  color: red;
+  display: grid;
+  margin-top: 40px;
+}
+
+.form__submitSettings button{
+  margin: auto;
+  width: 40%;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(20, 20, 20, 0.541);
+  color: white;
+  font-size: 15px;
+  border: none;
+}
+
+.form__submitSettings button:active{
+  color: rgb(245, 161, 122);
+}
+
+.form__botonSetting{
+  background-color: white;
+  border-radius: 0px 0px 10px 10px;
+  display: grid;
+  justify-content:end;
+  padding: 10px;
+  
+}
+
+.bi-gear{
+  cursor: pointer;
 }

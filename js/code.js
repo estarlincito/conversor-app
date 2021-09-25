@@ -7,6 +7,8 @@
     var select2 = document.getElementById('select2'); //form__select2 
     var addFavorite = document.getElementById('addFavorite'); //addFavorite 
     var selectFavorite = document.getElementById("selectFavorite"); //selectFavorite
+    var form__atras = document.getElementById("form__atras"); //boton atras
+    var botonSettingIcon = document.getElementById("botonSettingIcon"); //boton entrar a settings
 
 //hawel
     var seleccion = document.getElementById("selConver");//analicis de tipo de convercion escogido by hawel
@@ -153,6 +155,7 @@ function optConversion(){
     form__button_bi.classList.remove('form__button_bi2');
     form__button_bi2.classList.remove('form__button_bi2');
     selectFavorite.value = "opt1"  //cambiando el valor #selectFavorite select
+    botonSettingIcon.classList.remove('hiden');
 
     //opciones a mostrar en valor 1 y 2.
     marcaSelec2=0;
@@ -203,6 +206,7 @@ function optConversion(){
     form__button_bi.classList.add('form__button_bi2');
     form__button_bi2.classList.add('form__button_bi2');
     selectFavorite.value = "opt2" //cambiando el valor #selectFavorite select
+    botonSettingIcon.classList.add('hiden');
     
     
     //opciones a mostrar en valor 1 y 2.
@@ -463,8 +467,26 @@ function convertidor(){
     document.getElementById("valor2").value=valor2;
 
 }
+//Setting
+//Boton entrar a settings
+function botonSetting(){
+    form.classList.toggle('hiden');
+    settings.classList.toggle('hiden');
+}
+
+//Boton atras
+function atrasS(){
+    form.classList.toggle('hiden');
+    settings.classList.toggle('hiden');
+}
 
 //favorite by Estarlin
+
+//Boton atras favorite
+function atrasF(){
+    form.classList.toggle('hiden');
+    favorito.classList.toggle('hiden');
+}
     function favorite(){
         form.classList.toggle('hiden');
         favorito.classList.toggle('hiden');

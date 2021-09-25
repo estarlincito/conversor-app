@@ -47,13 +47,7 @@ a{
 
 .form__menu a{
   color: white;
-  transform: scale(0.9);
   font-size: 23px;
-  cursor: pointer;
-}
-
-.form__menu a:hover{
-  transform: scale(1);
 }
 
 .form__title{
@@ -72,6 +66,12 @@ a{
 
 .bi-gem{
   cursor: pointer;
+  transform: scale(1);
+}
+
+.bi-gem:active{
+  cursor: pointer;
+  transform: scale(1.3);
 }
 
 .form__selectMenu{
@@ -212,11 +212,12 @@ a{
 .addFavorite{
   display: grid;
   grid-template-columns: 100%;
+  padding: 1.25rem;
 }
 .addFavorite div{
-  margin: 20px;
+  margin: 0.625rem;
   background: linear-gradient(180deg, white 85%, rgba(0, 0, 0, 0) 50%);
-  padding: 20px 0px 0px 20px;
+  padding: 1.25rem 0px 0px 1.25rem;
   font-size: 1.25rem;
   transform: scale(1);
   font-family:monospace;
@@ -318,7 +319,22 @@ a{
   padding: 0.625rem;
   
 }
+.form__atras{
+  cursor: pointer;
+  transform: scale(1);
+}
+
+.form__atras:active{
+  cursor: pointer;
+  transform: scale(1.3);
+}
 
 .bi-gear{
   cursor: pointer;
+  transform: scale(1);
+}
+
+.bi-gear:active{
+  cursor: pointer;
+  transform: scale(1.3);
 }

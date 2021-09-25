@@ -64,14 +64,19 @@
             </select>
           <i class="bi bi-chevron-down"></i>
         </form>
+        <div class="form__botonSetting">
+                <i class="bi bi-gear" onclick="botonSetting()" id="botonSettingIcon" title="Actualizar el precios de las divisas."></i>
+        </div>
+
       </div>
 
 
       <!-- favorite -->
       <div class="form hiden form__favorite" id="favorito">
         <div class="form__menu">
+          <a class="form__atras" id="form__atras" onclick="atrasF()">Atras</a>
           <header class="form__title"><a href="https://estarlincito.github.io/conversor-app">ConversorApp</a></header>
-          <i class="bi bi-gem" title="ver favotitos" onclick="favorite()"></i>
+          <!-- <i class="bi bi-gem" title="ver favotitos" onclick="favorite()"></i> -->
         </div>
 
         <div class="form__selectMenu">
@@ -84,6 +89,106 @@
 
         <div class="addFavorite" id="addFavorite"></div>
       </div>
+
+      <!-- settings -->
+      <div class="form  hiden form__settings" id="settings">
+        <div class="form__menu form__settingsmenu">
+          <a class="form__atras" id="form__atras" onclick="atrasS()">Atras</a>
+          <header class="form__title"><a href="https://estarlincito.github.io/conversor-app">ConversorApp</a></header>
+          <!-- <i class="bi bi-gem" title="ver favotitos" onclick="favoriteS()"></i> -->
+        </div>
+        
+          <form action="" class="form__dataSettings">
+            <!-- USD -->
+
+            <p class="form__titileSettings">Actualiza el precios de las divisas.</p>
+            <div class="divisas">
+              <div class="titileDivisas"><label>1 USD =</label></div>
+              
+              <div>
+                <label>DOP:</label>
+                <input placeholder="">
+              </div>
+  
+              <div>
+                <label>EUR:</label>
+                <input placeholder="">
+              </div>
+  
+              <div>
+                <label>HTG:</label>
+                <input placeholder="">
+              </div>
+            </div>
+
+            <!-- DOP -->
+            <div class="divisas">
+            <div class="titileDivisas"><label>1 DOP =</label></div>
+
+              <div>
+                <label>USD:</label>
+                <input placeholder="">
+              </div>
+  
+              <div>
+                <label>EUR:</label>
+                <input placeholder="">
+              </div>
+  
+              <div>
+                <label>HTG:</label>
+                <input placeholder="">
+              </div>
+            </div>
+
+            
+            <!-- EUR -->
+            <div class="divisas">
+            <div class="titileDivisas"><label>1 EUR =</label></div>
+
+              <div>
+                <label>USD:</label>
+                <input placeholder="">
+              </div>
+  
+              <div>
+                <label>DOP:</label>
+                <input placeholder="">
+              </div>
+
+              <div>
+              <label>HTG:</label>
+              <input placeholder="">
+              </div>
+            </div>
+
+
+            <!-- HTG -->
+            <div class="divisas">
+
+            <div class="titileDivisas"><label>1 HTG =</label></div>
+
+              <div>
+                <label>USD:</label>
+                <input placeholder="">
+              </div>
+  
+              <div>
+                <label>DOP:</label>
+                <input placeholder="">
+              </div>
+  
+              <div>
+                <label>EUR:</label>
+                <input placeholder="">
+              </div>
+            </div>
+            
+
+          <div class="form__submitSettings">
+              <button>Actualizar</button>
+          </div>
+
     </div>
 
     <script src="./js/code.js"></script> <!--//js-->

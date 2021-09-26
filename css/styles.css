@@ -24,6 +24,10 @@ a{
 
 .contenedor a{
   color: black;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* currency */
@@ -43,6 +47,10 @@ a{
   align-items: center;
   justify-content:space-between;
   color: white;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .form__menu a{
@@ -79,11 +87,17 @@ a{
   align-items: center;
   justify-content:center;
   margin: 1.875rem;
+  color: white;
+  box-shadow: 0 0 8px rgba(247, 245, 245, 0.199);
   border-radius: 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .form__selectMenu i{
-  cursor: pointer;
+  /* cursor: pointer; */
   margin-top: 1.125rem;
   color: white;
 }
@@ -247,14 +261,15 @@ a{
 }
 
 .form__parra{
-  color: white;
-  padding: 10px;
-  box-shadow: 0 0 8px rgba(247, 245, 245, 0.363);
-  border-radius: 10px;
+cursor:default;
 }
 /* settings */
 .form__settings{
   background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .form__titileSettings{
@@ -263,13 +278,14 @@ a{
   text-align: center;
   font-weight: bold;
   font-family: 'Times New Roman', Times, serif;
+  cursor: default;
 }
 .form__dataSettings{
-  background-color: rgba(255, 255, 255, 0.281);
+  background-color: rgba(255, 255, 255, 0.164);
   border-radius: 5px;
-  padding: 10px;
+  padding: 50px 10px 10px 10px;
   margin: 10px;
-  margin-top: 80px;
+  margin-top: 5rem;
 }
 
 .form__dataSettings .divisas{
@@ -306,7 +322,7 @@ a{
   width: 40%;
   padding: 10px;
   border-radius: 10px;
-  background: rgba(20, 20, 20, 0.541);
+  background: rgba(20, 20, 20, 0);
   color: white;
   font-size: 15px;
   border: none;

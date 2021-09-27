@@ -192,7 +192,7 @@ function convertidor(){
     var selRango2=document.getElementById("select2").value;
 
     //mostrando y ocultando boton favorito by Estarlin
-    if(valor1 >= 1){
+    if(valor1 >= 0.1){
         form__button_2__hiden.classList.remove("hiden");
         
     }else if(valor1 === ""){

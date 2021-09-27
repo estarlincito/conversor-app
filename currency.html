@@ -35,8 +35,6 @@
             <option value="DOP" id="DOP">DOP</option>
             <option value="EUR" id="EUR">EUR</option>
             <option value="HTG" id="HTG">HTG</option>
-          
-
           </select>
         <i class="bi bi-chevron-down"></i>
       </form>
@@ -67,7 +65,6 @@
         <div class="form__botonSetting">
                 <i class="bi bi-gear" onclick="botonSetting()" id="botonSettingIcon" title="Actualizar el precios de las divisas."></i>
         </div>
-
       </div>
 
 
@@ -76,18 +73,10 @@
         <div class="form__menu">
           <a class="form__atras" id="form__atras" onclick="atrasF()">Atras</a>
           <header class="form__title"><a href="https://estarlincito.github.io/conversor-app">ConversorApp</a></header>
-          <!-- <i class="bi bi-gem" title="ver favotitos" onclick="favorite()"></i> -->
         </div>
 
         <div class="form__selectMenu">
           <p class="form__parra">Favoritos</p>
-
-          <!-- <select class="form__select form__select2" id="selectFavorite" onchange="optFavorite()">
-            <option value="opt1">Currency</option>
-            <option value="opt2">Length</option>
-          </select>
-          <i class="bi bi-chevron-down"></i> -->
-
         </div>
 
         <div class="addFavorite" id="addFavorite"></div>
@@ -98,7 +87,6 @@
         <div class="form__menu form__settingsmenu">
           <a class="form__atras" id="form__atras" onclick="atrasS()">Atras</a>
           <header class="form__title"><a href="https://estarlincito.github.io/conversor-app">ConversorApp</a></header>
-          <!-- <i class="bi bi-gem" title="ver favotitos" onclick="favoriteS()"></i> -->
         </div>
 
         <div class="form__selectMenu">
@@ -106,9 +94,7 @@
         </div>
         
           <form action="" class="form__dataSettings">
-            <!-- USD -->
-            
-            <div class="divisas">
+            <div class="divisas"> <!-- USD -->
               <div class="titileDivisas"><label>1 USD =</label></div>
               
               <div>
@@ -127,74 +113,70 @@
               </div>
             </div>
 
-            <!-- DOP -->
-            <div class="divisas">
-            <div class="titileDivisas"><label>1 DOP =</label></div>
+            <div class="divisas"> <!-- DOP -->
+              <div class="titileDivisas"><label>1 DOP =</label></div>
 
-              <div>
-                <label>USD:</label>
-                <input id="dopUsd" placeholder="" value="0.018">
-              </div>
-  
-              <div>
-                <label>EUR:</label>
-                <input id="dopEur" placeholder="" value="0.015">
-              </div>
-  
-              <div>
+                <div>
+                  <label>USD:</label>
+                  <input id="dopUsd" placeholder="" value="0.018">
+                </div>
+    
+                <div>
+                  <label>EUR:</label>
+                  <input id="dopEur" placeholder="" value="0.015">
+                </div>
+    
+                <div>
+                  <label>HTG:</label>
+                  <input id="dopHtg" placeholder="" value="1.77">
+                </div>
+            </div>
+
+            
+           
+            <div class="divisas"> <!-- EUR -->
+              <div class="titileDivisas"><label>1 EUR =</label></div>
+
+                <div>
+                  <label>USD:</label>
+                  <input id="eurUsd" placeholder="" value="1.17">
+                </div>
+    
+                <div>
+                  <label>DOP:</label>
+                  <input id="eurDop" placeholder="" value="66.02">
+                </div>
+
+                <div>
                 <label>HTG:</label>
-                <input id="dopHtg" placeholder="" value="1.77">
-              </div>
-            </div>
-
-            
-            <!-- EUR -->
-            <div class="divisas">
-            <div class="titileDivisas"><label>1 EUR =</label></div>
-
-              <div>
-                <label>USD:</label>
-                <input id="eurUsd" placeholder="" value="1.17">
-              </div>
-  
-              <div>
-                <label>DOP:</label>
-                <input id="eurDop" placeholder="" value="66.02">
-              </div>
-
-              <div>
-              <label>HTG:</label>
-              <input id="eurHtg" placeholder="" value="117.07">
-              </div>
+                <input id="eurHtg" placeholder="" value="117.07">
+                </div>
             </div>
 
 
-            <!-- HTG -->
-            <div class="divisas">
+           
+            <div class="divisas"> <!-- HTG -->
+              <div class="titileDivisas"><label>1 HTG =</label></div>
 
-            <div class="titileDivisas"><label>1 HTG =</label></div>
-
-              <div>
-                <label>USD:</label>
-                <input id="htgUsd" placeholder="" value="0.0100">
-              </div>
-  
-              <div>
-                <label>DOP:</label>
-                <input id="htgDop" placeholder="" value="0.56">
-              </div>
-  
-              <div>
-                <label>EUR:</label>
-                <input id="htgEur" placeholder="" value="0.0085">
-              </div>
+                <div>
+                  <label>USD:</label>
+                  <input id="htgUsd" placeholder="" value="0.0100">
+                </div>
+    
+                <div>
+                  <label>DOP:</label>
+                  <input id="htgDop" placeholder="" value="0.56">
+                </div>
+    
+                <div>
+                  <label>EUR:</label>
+                  <input id="htgEur" placeholder="" value="0.0085">
+                </div>
             </div>
             
-
           <div class="form__submitSettings">
               <button onclick="guardarValorDivisa()">Actualizar</button>
           </div>
-
     </div>
 
     <script src="./js/code.js"></script> <!--//js-->

@@ -1,8 +1,9 @@
 //variable para valores divisa 
 var dataTasaLocalStorage=localStorage.getItem("Data Divisa");
+
 if(dataTasaLocalStorage==null){
-guardarValorDivisa();
-dataTasaLocalStorage=localStorage.getItem("Data Divisa");
+    guardarValorDivisa();
+    dataTasaLocalStorage=localStorage.getItem("Data Divisa");
 }
 
 document.getElementById("usdDop").value=JSON.parse(dataTasaLocalStorage).usdDop;
@@ -17,7 +18,8 @@ document.getElementById("eurHtg").value=JSON.parse(dataTasaLocalStorage).eurHtg;
 document.getElementById("htgDop").value=JSON.parse(dataTasaLocalStorage).htgDop;
 document.getElementById("htgEur").value=JSON.parse(dataTasaLocalStorage).htgEur;
 document.getElementById("htgUsd").value=JSON.parse(dataTasaLocalStorage).htgUsd;
-//declarando var by Estarlin
+
+//declarando var by Estarlin...
 var form = document.getElementById('form');
 var form__form = document.getElementById('form__form');
 var valor1 = document.getElementById('valor1'); //form__input1
@@ -28,112 +30,98 @@ var addFavorite = document.getElementById('addFavorite'); //addFavorite
 var form__atras = document.getElementById("form__atras"); //boton atras
 var botonSettingIcon = document.getElementById("botonSettingIcon"); //boton entrar a settings
 
-//hawel
-    var seleccion = document.getElementById("selConver");//analicis de tipo de convercion escogido by hawel
-    var form__button_bi = document.getElementById('form__button_bi');
-    var form__button_bi2 = document.getElementById('form__button_bi2');
-    var favorito = document.getElementById('favorito');
-    var ver__favotitos = document.getElementById('ver__favotitos');
-    var g__favotitos = document.getElementById('g__favotitos');
-    var valoresLongitud =['HR', 'MIN', 'SEG', 'KM','MILLA', 'MTS', 'LB', 'ONZ', 'T'] //aray de valores para trabajar by hawel
-    var marcaSelec2;
+//hawel...
+var seleccion = document.getElementById("selConver");//analicis de tipo de convercion escogido by hawel
+var form__button_bi = document.getElementById('form__button_bi');
+var form__button_bi2 = document.getElementById('form__button_bi2');
+var favorito = document.getElementById('favorito');
+var ver__favotitos = document.getElementById('ver__favotitos');
+var g__favotitos = document.getElementById('g__favotitos');
+var valoresLongitud =['HR', 'MIN', 'SEG', 'KM','MILLA', 'MTS', 'LB', 'ONZ', 'T'] //aray de valores para trabajar by hawel
+var marcaSelec2;
 
-//funciones Hawel
-
+//funciones Hawel...
 function optConversion(){
     var seleccion = document.getElementById("selConver").value; //variable para saber cual medida de convercion esta selecionada.
 
-    
-    if (seleccion=="opt1") {
+    if (seleccion == "opt1"){
+        //eliminando los stylos de length by Estarlin
+        form.classList.remove('form__Lenght');
+        favorito.classList.remove('form__Lenght');
+        form__form.classList.remove('form__form3');
+        valor2.classList.remove('form__input3'); //form__input
+        select2.classList.remove('form__select4'); //form__select
+        form__button_bi.classList.remove('form__button_bi2');
+        form__button_bi2.classList.remove('form__button_bi2');
+        botonSettingIcon.classList.remove('hiden');
 
-//eliminando los stylos de length by Estarlin
-    form.classList.remove('form__Lenght');
-    favorito.classList.remove('form__Lenght');
-    form__form.classList.remove('form__form3');
-    valor2.classList.remove('form__input3'); //form__input
-    select2.classList.remove('form__select4'); //form__select
-    form__button_bi.classList.remove('form__button_bi2');
-    form__button_bi2.classList.remove('form__button_bi2');
-    botonSettingIcon.classList.remove('hiden');
-
-    //opciones a mostrar en valor 1 y 2.
-    marcaSelec2=0;
-    var valoresDivisa =['USD', 'DOP', 'EUR', 'HTG'];
-    valor1.value="";
-    valor2.value="";
+        //opciones a mostrar en valor 1 y 2.
+        marcaSelec2 = 0;
+        var valoresDivisa = ['USD', 'DOP', 'EUR', 'HTG'];
+        valor1.value = "";
+        valor2.value = "";
    
-     //borrar opciones selecion 1
-     for (var i=select1.length-1; i>=0; i--)
-        {
-            select1.remove(select1[i]);
+        //borrar opciones selecion 1
+        for (var i=select1.length-1; i>=0; i--){
+                select1.remove(select1[i]);
         }
-     //borrar opciones selecion 2
-    for (var i=select2.length-1; i>=0; i--)
-        {
-            select2.remove(select2[i]);
+
+        //borrar opciones selecion 2
+        for (var i=select2.length-1; i>=0; i--){
+                select2.remove(select2[i]);
         }
     
-    //crear opciones select1
-    for(var i=0; i<valoresDivisa.length; i++)
-        { 
-            const opcselect =document.createElement("option");
-            opcselect.value=valoresDivisa[i];
-            opcselect.textContent=valoresDivisa[i];
-            select1.appendChild(opcselect);
+        //crear opciones select1
+        for(var i=0; i<valoresDivisa.length; i++){ 
+                const opcselect =document.createElement("option");
+                opcselect.value=valoresDivisa[i];
+                opcselect.textContent=valoresDivisa[i];
+                select1.appendChild(opcselect);
         }
-    //crear opciones select2
-    for(var i=0; i<valoresDivisa.length; i++)
-        { 
-            const opcselect =document.createElement("option");
-            opcselect.value=valoresDivisa[i];
-            opcselect.textContent=valoresDivisa[i];
-            select2.appendChild(opcselect);
+
+        //crear opciones select2
+        for(var i=0; i<valoresDivisa.length; i++){ 
+                const opcselect =document.createElement("option");
+                opcselect.value=valoresDivisa[i];
+                opcselect.textContent=valoresDivisa[i];
+                select2.appendChild(opcselect);
         }
  
         select1.value=valoresDivisa[0];
         select2.value=valoresDivisa[1];
-        
-        //localStorage.setItem ( USD.DOP=56.61);
-    }
-    else if (seleccion=="opt2") {
-//aplicando los stylos de length by Estarlin
-    form.classList.add('form__Lenght');
-    favorito.classList.add('form__Lenght');
-    form__form.classList.add('form__form3');
-    valor2.classList.add('form__input3'); //form__input
-    select2.classList.add('form__select4'); //form__select
-    form__button_bi.classList.add('form__button_bi2');
-    form__button_bi2.classList.add('form__button_bi2');
-    botonSettingIcon.classList.add('hiden');
+
+    }else if(seleccion=="opt2"){
+        //aplicando los stylos de length by Estarlin
+        form.classList.add('form__Lenght');
+        favorito.classList.add('form__Lenght');
+        form__form.classList.add('form__form3');
+        valor2.classList.add('form__input3'); //form__input
+        select2.classList.add('form__select4'); //form__select
+        form__button_bi.classList.add('form__button_bi2');
+        form__button_bi2.classList.add('form__button_bi2');
+        botonSettingIcon.classList.add('hiden');
     
-    
-    //opciones a mostrar en valor 1 y 2.
-    //var valoresLongitud =['HR', 'MIN', 'SEG', 'KM','MILLA', 'MTS', 'LB', 'ONZ', 'T'];
-    valor1.value="";
-    valor2.value="";
+        //opciones a mostrar en valor 1 y 2.
+        //var valoresLongitud =['HR', 'MIN', 'SEG', 'KM','MILLA', 'MTS', 'LB', 'ONZ', 'T'];
+        valor1.value="";
+        valor2.value="";
    
-     //borrar opciones selecion 1
-     for (var i=select1.length-1; i>=0; i--)
-        {
+        //borrar opciones selecion 1
+        for (var i=select1.length-1; i>=0; i--){
             select1.remove(select1[i]);
         }
     
-    //crear opciones select1
-    for(var i=0; i<valoresLongitud.length; i++)
-        { 
+        //crear opciones select1
+        for(var i=0; i<valoresLongitud.length; i++){
             const opcselect =document.createElement("option");
             opcselect.value=valoresLongitud[i];
             opcselect.textContent=valoresLongitud[i];
-            select1.appendChild(opcselect);
-            
+            select1.appendChild(opcselect);   
         }
-   
-    //llamar funcion borrar y crear opciones select2
-   
+        //llamar funcion borrar y crear opciones select2
         cambioselec1();
-        }    
-    
     }
+}
    
 function cambioselec1(){
     var hawel=select1.value;
@@ -394,7 +382,6 @@ function convertidor(){
         }
     }
 }
-
 
 //funcion invertir valores.
 function invertir1 (){

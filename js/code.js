@@ -670,9 +670,12 @@ for(var i =0; i < localStorage.length; i++){
   
 
   var contador = document.getElementById("contador");
+ 
+  if (contador!=null)
+  {
   b = contador.value;
   a = contador.value;
-  
+  }
 
   function optFavorite(){
     if(selectFavorite.value === "opt1"){
@@ -729,9 +732,6 @@ for(var i =0; i < localStorage.length; i++){
       
   }
 
-var contador = document.getElementById("contador");
-b = contador.value;
-a = contador.value;
 
 //redondea
 // const resultado11 = document.getElementById("valor1").value;

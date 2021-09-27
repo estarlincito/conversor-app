@@ -25,7 +25,6 @@ var select1 = document.getElementById('select1'); //form__select1
 var valor2 = document.getElementById('valor2'); //form__input2
 var select2 = document.getElementById('select2'); //form__select2 
 var addFavorite = document.getElementById('addFavorite'); //addFavorite 
-// var selectFavorite = document.getElementById("selectFavorite"); //selectFavorite
 var form__atras = document.getElementById("form__atras"); //boton atras
 var botonSettingIcon = document.getElementById("botonSettingIcon"); //boton entrar a settings
 
@@ -55,7 +54,6 @@ function optConversion(){
     select2.classList.remove('form__select4'); //form__select
     form__button_bi.classList.remove('form__button_bi2');
     form__button_bi2.classList.remove('form__button_bi2');
-    // selectFavorite.value = "opt1"  //cambiando el valor #selectFavorite select
     botonSettingIcon.classList.remove('hiden');
 
     //opciones a mostrar en valor 1 y 2.
@@ -106,7 +104,6 @@ function optConversion(){
     select2.classList.add('form__select4'); //form__select
     form__button_bi.classList.add('form__button_bi2');
     form__button_bi2.classList.add('form__button_bi2');
-    // selectFavorite.value = "opt2" //cambiando el valor #selectFavorite select
     botonSettingIcon.classList.add('hiden');
     
     
@@ -611,12 +608,8 @@ for(var i =0; i < localStorage.length; i++){
         "htgDop":htgDop1, "htgEur":htgEur1, "htgUsd":htgUsd1,
     }
     
-    localStorage.setItem("Data Divisa", JSON.stringify(tasasDivisa));
-    
-      //(usdDop.value+usdEur.value+usdHtg.value+dopEur.value+dopHtg.value+dopUsd.value+eurDop.value+eurHtg.value+eurUsd.value+htgDop.value+htgEur.value+htgUsd.value);
-    
-      
-  }
+    localStorage.setItem("Data Divisa", JSON.stringify(tasasDivisa));      
+}
 
 
 //redondea

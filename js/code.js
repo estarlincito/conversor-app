@@ -51,7 +51,7 @@ console.log();
 //tengo el id del primer input1 que se llama asi 
 // tambien  le cree un id al select de arriba select1
 
-function convertidorMonedas(){
+/*function convertidorMonedas(){
 
     // extrajendo los valores con el id y value
     var valorInput1 = document.getElementById("valor1").value;
@@ -152,7 +152,7 @@ function convertidorMonedas(){
         } 
 
 
-}
+}*/
 
 //funciones Hawel
 
@@ -333,8 +333,106 @@ function convertidor(){
     var selRango=document.getElementById("select1").value;
     var selRango2=document.getElementById("select2").value;
 
+    // extrajendo los valores con el id y value
+    var valorInput1 = document.getElementById("valor1").value;
+    var valorInput2 = document.getElementById("valor2").value;
+    
+
+    // llamando a los dos id de html 
+
+    var select1 = document.getElementById("select1").value;
+    var select2 = document.getElementById("select2").value;
+
+    // primera conversion dolar a a las demas monedas 
+    if(select1 === "USD" ){ 
+        
+        switch(select2)
+        {
+            case "USD":
+                document.getElementById("valor2").value =  valorInput1;
+                break;
+
+            case "DOP":
+                console.log(usdDop);
+                document.getElementById("valor2").value =  valorInput1 * JSON.parse(dataTasaLocalStorage).usdDop;
+                break;
+            case "EUR":
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).usdEur;
+                break;
+            case "HTG":
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).usdHtg;
+                break;
+                 
+        }  
+        
+               
+
+    // conversion de pesos a las demas moneads 
+       
+    }else if(select1 === "DOP"){
+        switch(select2){
+            case "USD":
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).dopUsd;
+                break;
+            case "DOP":
+                document.getElementById("valor2").value = valorInput1;
+                break;
+            case "EUR":
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).dopEur;
+                break;
+            case "HTG":
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).dopHtg;
+                break;                         
+
+                
+        }
+
+        // conversion de euro a las demas moneadas
+    }
+    else if(select1 === "EUR"){
+        switch(select2){
+            case "USD":
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).eurUsd;
+                break;
+            case "DOP":
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).eurDop;
+                break;
+            case "EUR":
+                document.getElementById("valor2").value = valorInput1 ;
+                break;
+            case "HTG":
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).eurHtg;
+                break;  
+
+        }
+
+        
+
+    }
+
+    // conversion de htg a los demas monedas
+    
+    else if(select1 === "HTG"){
+        switch(select2){
+            case "USD":
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).htgUsd;
+                break;
+            case "DOP":
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).htgDop;
+                break;
+            case "EUR":
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).htgEur;
+                break;
+            case "HTG":
+                document.getElementById("valor2").value = valorInput1;
+                break; 
+                
+            }     
+
+        } 
+
     //limpiar entrada de valores
-    if (valor1===""){valor2="";}
+    if (valor1===""){document.getElementById("valor2").value="";}
 
 
     //OPCIONES DISTANCIA:

@@ -18,16 +18,16 @@ document.getElementById("htgEur").value=JSON.parse(dataTasaLocalStorage).htgEur;
 document.getElementById("htgUsd").value=JSON.parse(dataTasaLocalStorage).htgUsd;
 
 //declarando var by Estarlin
-    var form = document.getElementById('form');
-    var form__form = document.getElementById('form__form');
-    var valor1 = document.getElementById('valor1'); //form__input1
-    var select1 = document.getElementById('select1'); //form__select1
-    var valor2 = document.getElementById('valor2'); //form__input2
-    var select2 = document.getElementById('select2'); //form__select2 
-    var addFavorite = document.getElementById('addFavorite'); //addFavorite 
-    var selectFavorite = document.getElementById("selectFavorite"); //selectFavorite
-    var form__atras = document.getElementById("form__atras"); //boton atras
-    var botonSettingIcon = document.getElementById("botonSettingIcon"); //boton entrar a settings
+var form = document.getElementById('form');
+var form__form = document.getElementById('form__form');
+var valor1 = document.getElementById('valor1'); //form__input1
+var select1 = document.getElementById('select1'); //form__select1
+var valor2 = document.getElementById('valor2'); //form__input2
+var select2 = document.getElementById('select2'); //form__select2 
+var addFavorite = document.getElementById('addFavorite'); //addFavorite 
+// var selectFavorite = document.getElementById("selectFavorite"); //selectFavorite
+var form__atras = document.getElementById("form__atras"); //boton atras
+var botonSettingIcon = document.getElementById("botonSettingIcon"); //boton entrar a settings
 
 //hawel
     var seleccion = document.getElementById("selConver");//analicis de tipo de convercion escogido by hawel
@@ -170,7 +170,7 @@ function optConversion(){
     select2.classList.remove('form__select4'); //form__select
     form__button_bi.classList.remove('form__button_bi2');
     form__button_bi2.classList.remove('form__button_bi2');
-    selectFavorite.value = "opt1"  //cambiando el valor #selectFavorite select
+    // selectFavorite.value = "opt1"  //cambiando el valor #selectFavorite select
     botonSettingIcon.classList.remove('hiden');
 
     //opciones a mostrar en valor 1 y 2.
@@ -221,7 +221,7 @@ function optConversion(){
     select2.classList.add('form__select4'); //form__select
     form__button_bi.classList.add('form__button_bi2');
     form__button_bi2.classList.add('form__button_bi2');
-    selectFavorite.value = "opt2" //cambiando el valor #selectFavorite select
+    // selectFavorite.value = "opt2" //cambiando el valor #selectFavorite select
     botonSettingIcon.classList.add('hiden');
     
     
@@ -490,7 +490,7 @@ function botonSetting(){
     settings.classList.toggle('hiden');
 }
 
-//Boton atras
+//Boton atras settings
 function atrasS(){
     form.classList.toggle('hiden');
     settings.classList.toggle('hiden');
@@ -503,39 +503,43 @@ function atrasF(){
     form.classList.toggle('hiden');
     favorito.classList.toggle('hiden');
 }
-    function favorite(){
-        form.classList.toggle('hiden');
-        favorito.classList.toggle('hiden');
-    }
 
-    a = 0;
-    b = 0;
+//Boton favorite
+function favorite(){
+    form.classList.toggle('hiden');
+    favorito.classList.toggle('hiden');
+}
+
+//++;
+a = 0;
+b = 0;
 
 //Delete__favotitos by Estarlin
-    function delete__favotitos(comp){
-        var id = comp.id;
-        localStorage.removeItem(id);
-        document.getElementById("l"+id).classList.add('hiden');
+function delete__favotitos(comp){
+    var id = comp.id;
+    localStorage.removeItem(id);
+    document.getElementById("l"+id).classList.add('hiden');
 }
 
 //agregar__favotitos by Estarlin
-    function agregar__favotitos(){
-        a++;
-        b++;
-        ver__favotitos.classList.add("hiden");
-        g__favotitos.classList.remove("hiden");
+function agregar__favotitos(){
+    a++;
+    b++;
+    ver__favotitos.classList.add("hiden");
+    g__favotitos.classList.remove("hiden");
 
-        setTimeout(() => {
-            ver__favotitos.classList.remove("hiden");
-            g__favotitos.classList.add("hiden");
-    }, 500);
+    setTimeout(() => {
+        ver__favotitos.classList.remove("hiden");
+        g__favotitos.classList.add("hiden");
+}, 500);
 
-    const seleccion1 = document.getElementById("select1").value;
-    const seleccion2 = document.getElementById("select2").value;
-    const resultado1 = document.getElementById("valor1").value;
-    const resultado2 = document.getElementById("valor2").value;
+const seleccion1 = document.getElementById("select1").value;
+const seleccion2 = document.getElementById("select2").value;
+const resultado1 = document.getElementById("valor1").value;
+const resultado2 = document.getElementById("valor2").value;
 
     
+
     var dataFavorite = `
         <div id=l${a}>
             <b>-</b> ${resultado1} <b>${seleccion1}</b> = ${resultado2} <b>${seleccion2}</b> 
@@ -549,6 +553,22 @@ function atrasF(){
         <input class="hiden" id="contador" value="${b}"></input>
     `;
 
+var dataFavorite = `
+    <div id=l${a}>
+    <p>
+        <b>-</b> ${resultado1} <b>${seleccion1}</b> = ${resultado2} <b>${seleccion2}</b> 
+    </p>    
+        <button id=${a} onclick="delete__favotitos(this)">
+            Delete
+        </button>
+    </div>    
+        `;
+
+var totalFav = `
+    <input class="hiden" id="contador" value="${b}"></input>
+`;
+
+
     localStorage.setItem(a, dataFavorite);
     localStorage.setItem("totalFav", totalFav);
     addFavorite.innerHTML += localStorage.getItem(a);
@@ -558,8 +578,9 @@ function atrasF(){
 for(var i =0; i < localStorage.length; i++){
     var element = localStorage.getItem(localStorage.key(i));
     addFavorite.innerHTML += element;
-  } 
+} 
   
+
   var contador = document.getElementById("contador");
   b = contador.value;
   a = contador.value;
@@ -622,3 +643,39 @@ for(var i =0; i < localStorage.length; i++){
   }
   // cuando el contador/tatalFav no existe en el localStorage recivo este error TypeError: null is not an object (evaluating 'contador.value')
   //estoy peensando crear un array de usd,eth, dod... para hacer el filtro de currency a length al mostrar los elemndos(indexOf);
+
+var contador = document.getElementById("contador");
+
+b = contador.value;
+a = contador.value;
+
+//crear fltro en favorite
+//   function optFavorite(){
+//     if(selectFavorite.value === "opt1"){
+// //eliminando los stylos de length by Estarlin
+//         form.classList.remove('form__Lenght');
+//         favorito.classList.remove('form__Lenght');
+//         form__form.classList.remove('form__form3');
+//         valor2.classList.remove('form__input3'); //form__input
+//         select2.classList.remove('form__select4'); //form__select
+//         form__button_bi.classList.remove('form__button_bi2');
+//         form__button_bi2.classList.remove('form__button_bi2');
+//         seleccion.value = "opt1"; //cambiando el valor #selConver select
+//         optConversion();
+
+
+
+//     }else if(selectFavorite.value === "opt2"){
+// //aplicando los stylos de length by Estarlin
+//         form.classList.add('form__Lenght');
+//         favorito.classList.add('form__Lenght');
+//         form__form.classList.add('form__form3');
+//         valor2.classList.add('form__input3'); //form__input
+//         select2.classList.add('form__select4'); //form__select
+//         form__button_bi.classList.add('form__button_bi2');
+//         form__button_bi2.classList.add('form__button_bi2');
+//         seleccion.value = "opt2"; //cambiando el valor #selConver select
+//         optConversion();
+//     }
+//   }
+

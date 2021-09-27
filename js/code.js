@@ -3,7 +3,7 @@ var dataTasaLocalStorage=localStorage.getItem("Data Divisa");
 if(dataTasaLocalStorage==null){
 guardarValorDivisa();
 }
-
+else {
 document.getElementById("usdDop").value=JSON.parse(dataTasaLocalStorage).usdDop;
 document.getElementById("usdEur").value=JSON.parse(dataTasaLocalStorage).usdEur;
 document.getElementById("usdHtg").value=JSON.parse(dataTasaLocalStorage).usdHtg;
@@ -16,7 +16,7 @@ document.getElementById("eurHtg").value=JSON.parse(dataTasaLocalStorage).eurHtg;
 document.getElementById("htgDop").value=JSON.parse(dataTasaLocalStorage).htgDop;
 document.getElementById("htgEur").value=JSON.parse(dataTasaLocalStorage).htgEur;
 document.getElementById("htgUsd").value=JSON.parse(dataTasaLocalStorage).htgUsd;
-
+}
 //declarando var by Estarlin
 var form = document.getElementById('form');
 var form__form = document.getElementById('form__form');
@@ -672,7 +672,7 @@ for(var i =0; i < localStorage.length; i++){
   var contador = document.getElementById("contador");
   b = contador.value;
   a = contador.value;
-
+  
 
   function optFavorite(){
     if(selectFavorite.value === "opt1"){
@@ -721,7 +721,7 @@ for(var i =0; i < localStorage.length; i++){
         "dopUsd":dopUsd1, "dopEur":dopEur1, "dopHtg":dopHtg1, 
         "eurDop":eurDop1, "eurUsd":eurUsd1, "eurHtg":eurHtg1, 
         "htgDop":htgDop1, "htgEur":htgEur1, "htgUsd":htgUsd1,
-};
+    }
     
     localStorage.setItem("Data Divisa", JSON.stringify(tasasDivisa));
       //(usdDop.value+usdEur.value+usdHtg.value+dopEur.value+dopHtg.value+dopUsd.value+eurDop.value+eurHtg.value+eurUsd.value+htgDop.value+htgEur.value+htgUsd.value);

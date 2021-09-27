@@ -1,3 +1,22 @@
+//variable para valores divisa 
+var dataTasaLocalStorage=localStorage.getItem("Data Divisa");
+if(dataTasaLocalStorage==null){
+guardarValorDivisa();
+}
+
+document.getElementById("usdDop").value=JSON.parse(dataTasaLocalStorage).usdDop;
+document.getElementById("usdEur").value=JSON.parse(dataTasaLocalStorage).usdEur;
+document.getElementById("usdHtg").value=JSON.parse(dataTasaLocalStorage).usdHtg;
+document.getElementById("dopUsd").value=JSON.parse(dataTasaLocalStorage).dopUsd;
+document.getElementById("dopEur").value=JSON.parse(dataTasaLocalStorage).dopEur;
+document.getElementById("dopHtg").value=JSON.parse(dataTasaLocalStorage).dopHtg;
+document.getElementById("eurDop").value=JSON.parse(dataTasaLocalStorage).eurDop;
+document.getElementById("eurUsd").value=JSON.parse(dataTasaLocalStorage).eurUsd;
+document.getElementById("eurHtg").value=JSON.parse(dataTasaLocalStorage).eurHtg;
+document.getElementById("htgDop").value=JSON.parse(dataTasaLocalStorage).htgDop;
+document.getElementById("htgEur").value=JSON.parse(dataTasaLocalStorage).htgEur;
+document.getElementById("htgUsd").value=JSON.parse(dataTasaLocalStorage).htgUsd;
+
 //declarando var by Estarlin
     var form = document.getElementById('form');
     var form__form = document.getElementById('form__form');
@@ -24,10 +43,6 @@
     //var DOP={USD:0.018, EUR:0.015, HTG:1.71 };
     //var EUR={USD:1.18, DOP:66.86, HTG:114.47 };
     //var HTG={USD:0.010, DOP:0.57, EUR:0.0086 };
-    localStorage.setItem("U", JSON.stringify(USD={DOP:0, EUR:0.85, HTG:97 }));
-    localStorage.setItem("D", JSON.stringify(DOP={USD:0.018, EUR:0.015, HTG:1.71 }));
-    localStorage.setItem("E", JSON.stringify(EUR={USD:1.18, DOP:66.86, HTG:114.47 }));
-    localStorage.setItem("H", JSON.stringify(HTG={USD:0.010, DOP:0.57, EUR:0.0086 }));
     
 console.log();
 
@@ -49,7 +64,7 @@ function convertidorMonedas(){
     var select2 = document.getElementById("select2").value;
 
     // primera conversion dolar a a las demas monedas 
-    if(select1 === "USD" ){
+    if(select1 === "USD" ){ 
         
         switch(select2)
         {
@@ -58,13 +73,14 @@ function convertidorMonedas(){
                 break;
 
             case "DOP":
-                document.getElementById("valor2").value =  valorInput1 * USD.DOP;
+                console.log(usdDop);
+                document.getElementById("valor2").value =  valorInput1 * JSON.parse(dataTasaLocalStorage).usdDop;
                 break;
             case "EUR":
-                document.getElementById("valor2").value = valorInput1 * USD.EUR;
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).usdEur;
                 break;
             case "HTG":
-                document.getElementById("valor2").value = valorInput1 * USD.HTG;
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).usdHtg;
                 break;
                  
         }  
@@ -76,16 +92,16 @@ function convertidorMonedas(){
     }else if(select1 === "DOP"){
         switch(select2){
             case "USD":
-                document.getElementById("valor2").value = valorInput1 * DOP.USD;
+                document.getElementById("valor2").value = valorInput1 * dopUsd;
                 break;
             case "DOP":
                 document.getElementById("valor2").value = valorInput1;
                 break;
             case "EUR":
-                document.getElementById("valor2").value = valorInput1 * DOP.EUR;
+                document.getElementById("valor2").value = valorInput1 * dopEur;
                 break;
             case "HTG":
-                document.getElementById("valor2").value = valorInput1 * DOP.HTG;
+                document.getElementById("valor2").value = valorInput1 * dopHtg;
                 break;                         
 
                 
@@ -96,16 +112,16 @@ function convertidorMonedas(){
     else if(select1 === "EUR"){
         switch(select2){
             case "USD":
-                document.getElementById("valor2").value = valorInput1 * EUR.USD;
+                document.getElementById("valor2").value = valorInput1 * eurUsd.value;
                 break;
             case "DOP":
-                document.getElementById("valor2").value = valorInput1 * EUR.DOP;
+                document.getElementById("valor2").value = valorInput1 * eurDop.value;
                 break;
             case "EUR":
                 document.getElementById("valor2").value = valorInput1 ;
                 break;
             case "HTG":
-                document.getElementById("valor2").value = valorInput1 * EUR.HTG;
+                document.getElementById("valor2").value = valorInput1 * eurHtg.value;
                 break;  
 
         }
@@ -119,13 +135,13 @@ function convertidorMonedas(){
     else if(select1 === "HTG"){
         switch(select2){
             case "USD":
-                document.getElementById("valor2").value = valorInput1 * HTG.USD;
+                document.getElementById("valor2").value = valorInput1 * htgUsd.value;
                 break;
             case "DOP":
-                document.getElementById("valor2").value = valorInput1 * HTG.DOP;
+                document.getElementById("valor2").value = valorInput1 * htgDop.value;
                 break;
             case "EUR":
-                document.getElementById("valor2").value = valorInput1 * HTG.EUR ;
+                document.getElementById("valor2").value = valorInput1 * htgEur.value;
                 break;
             case "HTG":
                 document.getElementById("valor2").value = valorInput1;
@@ -145,7 +161,7 @@ function optConversion(){
 
     
     if (seleccion=="opt1") {
-        localStorage.setItem ( USD.DOP=56.61);
+
 //eliminando los stylos de length by Estarlin
     form.classList.remove('form__Lenght');
     favorito.classList.remove('form__Lenght');
@@ -577,5 +593,32 @@ for(var i =0; i < localStorage.length; i++){
         optConversion();
     }
   }
+
+  function guardarValorDivisa(){ 
+    var usdDop1=document.getElementById("usdDop").value;
+    var usdEur1=document.getElementById("usdEur").value;
+    var usdHtg1=document.getElementById("usdHtg").value;
+    var dopUsd1=document.getElementById("dopUsd").value;
+    var dopEur1=document.getElementById("dopEur").value;
+    var dopHtg1=document.getElementById("dopHtg").value;
+    var eurUsd1=document.getElementById("eurUsd").value;
+    var eurDop1=document.getElementById("eurDop").value;
+    var eurHtg1=document.getElementById("eurHtg").value;
+    var htgUsd1=document.getElementById("htgUsd").value;
+    var htgDop1=document.getElementById("htgDop").value;
+    var htgEur1=document.getElementById("htgEur").value;
+    var tasasDivisa={
+        "usdDop":usdDop1, "usdEur":usdEur1, "usdHtg":usdHtg1, 
+        "dopUsd":dopUsd1, "dopEur":dopEur1, "dopHtg":dopHtg1, 
+        "eurDop":eurDop1, "eurUsd":eurUsd1, "eurHtg":eurHtg1, 
+        "htgDop":htgDop1, "htgEur":htgEur1, "htgUsd":htgUsd1,
+};
+    
+    localStorage.setItem("Data Divisa", JSON.stringify(tasasDivisa));
+    
+      //(usdDop.value+usdEur.value+usdHtg.value+dopEur.value+dopHtg.value+dopUsd.value+eurDop.value+eurHtg.value+eurUsd.value+htgDop.value+htgEur.value+htgUsd.value);
+    
+      
+  }
   // cuando el contador/tatalFav no existe en el localStorage recivo este error TypeError: null is not an object (evaluating 'contador.value')
-  //estoy peensando crear un array de usd,eth, dod... para hacer el filtro de currency a length al mostrar los elemndos(indexOf)
+  //estoy peensando crear un array de usd,eth, dod... para hacer el filtro de currency a length al mostrar los elemndos(indexOf);

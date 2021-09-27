@@ -476,8 +476,7 @@ function atrasS(){
     settings.classList.toggle('hiden');
 }
 
-//favorite by Estarlin
-
+//favorite by Estarlin...
 //Boton atras favorite
 function atrasF(){
     form.classList.toggle('hiden');
@@ -490,7 +489,6 @@ function favorite(){
     favorito.classList.toggle('hiden');
 }
 
-//++;
 a = 0;
 b = 0;
 
@@ -511,28 +509,27 @@ function agregar__favotitos(){
     setTimeout(() => {
         ver__favotitos.classList.remove("hiden");
         g__favotitos.classList.add("hiden");
-}, 500);
+    }, 500);
 
-const seleccion1 = document.getElementById("select1").value;
-const seleccion2 = document.getElementById("select2").value;
-const resultado1 = document.getElementById("valor1").value;
-const resultado2 = document.getElementById("valor2").value;
+    const seleccion1 = document.getElementById("select1").value;
+    const seleccion2 = document.getElementById("select2").value;
+    const resultado1 = document.getElementById("valor1").value;
+    const resultado2 = document.getElementById("valor2").value;
    
-var dataFavorite = `
-    <div id=l${a}>
-    <p>
-        <b>-</b> ${resultado1} <b>${seleccion1}</b> = ${resultado2} <b>${seleccion2}</b> 
-    </p>    
-        <button id=${a} onclick="delete__favotitos(this)">
-            Delete
-        </button>
-    </div>    
-        `;
+    var dataFavorite = `
+        <div id=l${a}>
+        <p>
+            <b>-</b> ${resultado1} <b>${seleccion1}</b> = ${resultado2} <b>${seleccion2}</b> 
+        </p>    
+            <button id=${a} onclick="delete__favotitos(this)">
+                Delete
+            </button>
+        </div>    
+            `;
 
-var totalFav = `
-    <input class="hiden" id="contador" value="${b}"></input>
-`;
-
+    var totalFav = `
+        <input class="hiden" id="contador" value="${b}"></input>
+    `;
 
     localStorage.setItem(a, dataFavorite);
     localStorage.setItem("totalFav", totalFav);
@@ -541,27 +538,28 @@ var totalFav = `
 
 //devolviendo el resultado del localStorege by Estarlin
 for(var i =0; i < localStorage.length; i++){
-   if(localStorage.key(i)=="Data Divisa"){
-    i=i+1;}
-    if (localStorage.key(i)==null){
-        break;
-    }
+    
+    if(localStorage.key(i)=="Data Divisa"){
+        i=i+1;
+
+    }if (localStorage.key(i)==null){
+            break;
+        }
+
     var element = localStorage.getItem(localStorage.key(i));
     addFavorite.innerHTML += element;
-} 
+}
   
+//Total de favoritos creados
+var contador = document.getElementById("contador");
+if (contador!=null){
+    b = contador.value;
+    a = contador.value;
+}
 
-  var contador = document.getElementById("contador");
- 
-  if (contador!=null)
-  {
-  b = contador.value;
-  a = contador.value;
-  }
-
-  function optFavorite(){
+function optFavorite(){ 
     if(selectFavorite.value === "opt1"){
-//eliminando los stylos de length by Estarlin
+        //eliminando los stylos de length by Estarlin
         form.classList.remove('form__Lenght');
         favorito.classList.remove('form__Lenght');
         form__form.classList.remove('form__form3');
@@ -572,10 +570,8 @@ for(var i =0; i < localStorage.length; i++){
         seleccion.value = "opt1"; //cambiando el valor #selConver select
         optConversion();
 
-
-
-    }else if(selectFavorite.value === "opt2"){
-//aplicando los stylos de length by Estarlin
+}else if(selectFavorite.value === "opt2"){
+        //aplicando los stylos de length by Estarlin
         form.classList.add('form__Lenght');
         favorito.classList.add('form__Lenght');
         form__form.classList.add('form__form3');
@@ -586,9 +582,9 @@ for(var i =0; i < localStorage.length; i++){
         seleccion.value = "opt2"; //cambiando el valor #selConver select
         optConversion();
     }
-  }
+}
 
-  function guardarValorDivisa(){ 
+function guardarValorDivisa(){
     var usdDop1=document.getElementById("usdDop").value;
     var usdEur1=document.getElementById("usdEur").value;
     var usdHtg1=document.getElementById("usdHtg").value;
@@ -601,6 +597,7 @@ for(var i =0; i < localStorage.length; i++){
     var htgUsd1=document.getElementById("htgUsd").value;
     var htgDop1=document.getElementById("htgDop").value;
     var htgEur1=document.getElementById("htgEur").value;
+
     var tasasDivisa={
         "usdDop":usdDop1, "usdEur":usdEur1, "usdHtg":usdHtg1, 
         "dopUsd":dopUsd1, "dopEur":dopEur1, "dopHtg":dopHtg1, 

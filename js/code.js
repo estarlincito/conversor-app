@@ -54,7 +54,7 @@ console.log();
 function convertidorMonedas(){
 
     // extrajendo los valores con el id y value
-    var valorInput1 = document.getElementById("valor1").value;
+    var valorInput1 = document.getElementById("valor1").value
     var valorInput2 = document.getElementById("valor2").value;
     
 
@@ -635,3 +635,6 @@ var contador = document.getElementById("contador");
 b = contador.value;
 a = contador.value;
 
+//redondea
+// const resultado11 = document.getElementById("valor1").value;
+// console.log(JSON.parse(document.getElementById("valor1").value).toFixed(4));

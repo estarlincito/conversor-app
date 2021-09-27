@@ -361,57 +361,51 @@ function convertidor(){
                 document.getElementById("valor2").value=valor1*0;
                 var hawel=document.getElementById("select2").value="0"; 
                 document.getElementById(select2).value=hawel;   
-            }
-        }     
-    //OPCIONES PESO
-        if(selRango===("LB")){
-            switch (selRango2){
-                case "LB": document.getElementById ("valor2").value=valor1;
-                break;
-                case "ONZ": document.getElementById ("valor2").value=valor1*16;
-                break;
-                case "T": document.getElementById("valor2").value=valor1/2204.62;
-                break;
-                default: 
-                document.getElementById("valor2").value=valor1*0;
-                    var hawel=document.getElementById("select2").value="0"; 
-                    document.getElementById(select2).value=hawel;
-                    
-                }
         }
-        else  if(selRango===("ONZ")){
-            switch (selRango2){
-                case "LB": document.getElementById ("valor2").value=valor1/16;
-                break;
-                case "ONZ": document.getElementById ("valor2").value=valor1;
-                break;
-                case "T": document.getElementById("valor2").value=valor1/35274;
-                break;
-                default: 
-                document.getElementById("valor2").value=valor1*0;
-                    var hawel=document.getElementById("select2").value="0"; 
-                    document.getElementById(select2).value=hawel;
-                    
-                }
-        }
-        else  if(selRango===("T")){
-                switch (selRango2){
-                    case "LB": document.getElementById ("valor2").value=valor1*2204.62;
-                    break;
-                    case "ONZ": document.getElementById ("valor2").value=valor1*35274;
-                    break;
-                    case "T": document.getElementById("valor2").value=valor1;
-                    break;
-                    default:
-                        document.getElementById("valor2").value=valor1*0; 
-                    var hawel=document.getElementById("select2").value="0"; 
-                    document.getElementById(select2).value=hawel;
-                    
-                    }
-            }
-  
-}
+    }
 
+    //OPCIONES PESO
+    if(selRango===("LB")){
+        switch (selRango2){
+            case "LB": document.getElementById ("valor2").value=valor1;
+                break;
+            case "ONZ": document.getElementById ("valor2").value=valor1*16;
+                break;
+            case "T": document.getElementById("valor2").value=valor1/2204.62;
+                break;
+            default: 
+                document.getElementById("valor2").value=valor1*0;
+                var hawel=document.getElementById("select2").value="0"; 
+                document.getElementById(select2).value=hawel;
+        }
+    }else  if(selRango===("ONZ")){
+        switch (selRango2){
+            case "LB": document.getElementById ("valor2").value=valor1/16;
+                break;
+            case "ONZ": document.getElementById ("valor2").value=valor1;
+                break;
+            case "T": document.getElementById("valor2").value=valor1/35274;
+                break;
+            default: 
+                document.getElementById("valor2").value=valor1*0;
+                var hawel=document.getElementById("select2").value="0"; 
+                document.getElementById(select2).value=hawel;      
+        }
+    }else  if(selRango===("T")){
+        switch (selRango2){
+            case "LB": document.getElementById ("valor2").value=valor1*2204.62;
+                break;
+            case "ONZ": document.getElementById ("valor2").value=valor1*35274;
+                break;
+            case "T": document.getElementById("valor2").value=valor1;
+                break;
+            default:
+                document.getElementById("valor2").value=valor1*0; 
+                var hawel=document.getElementById("select2").value="0"; 
+                document.getElementById(select2).value=hawel;
+        }
+    }
+}
 
 
 //funcion invertir valores.

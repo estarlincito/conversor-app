@@ -29,6 +29,7 @@ var select2 = document.getElementById('select2'); //form__select2
 var addFavorite = document.getElementById('addFavorite'); //addFavorite 
 var form__atras = document.getElementById("form__atras"); //boton atras
 var botonSettingIcon = document.getElementById("botonSettingIcon"); //boton entrar a settings
+var form__button_2__hiden = document.getElementById("form__button_2__hiden"); //boton add favorito
 
 //hawel...
 var seleccion = document.getElementById("selConver");//analicis de tipo de convercion escogido by hawel
@@ -189,6 +190,14 @@ function convertidor(){
     const valor2=document.getElementById("valor2").value;
     var selRango=document.getElementById("select1").value;
     var selRango2=document.getElementById("select2").value;
+
+    //mostrando y ocultando boton favorito by Estarlin
+    if(valor1 >= 1){
+        form__button_2__hiden.classList.remove("hiden");
+        
+    }else if(valor1 === ""){
+        form__button_2__hiden.classList.add("hiden");
+    }
 
     // extrajendo los valores con el id y value
     var valorInput1 = document.getElementById("valor1").value;
@@ -436,21 +445,22 @@ function delete__favotitos(comp){
 
 //agregar__favotitos by Estarlin
 function agregar__favotitos(){
-    a++;
-    b++;
-    ver__favotitos.classList.add("hiden");
-    g__favotitos.classList.remove("hiden");
-
-    setTimeout(() => {
-        ver__favotitos.classList.remove("hiden");
-        g__favotitos.classList.add("hiden");
-    }, 500);
-
     const seleccion1 = document.getElementById("select1").value;
     const seleccion2 = document.getElementById("select2").value;
     const resultado1 = document.getElementById("valor1").value;
     const resultado2 = document.getElementById("valor2").value;
-   
+
+    a++;
+    b++;
+
+    ver__favotitos.classList.add("hiden"); //icono de favirito
+    g__favotitos.classList.remove("hiden"); //icono de favirito++
+
+    setTimeout(() => {
+        ver__favotitos.classList.remove("hiden"); //icono de favirito
+        g__favotitos.classList.add("hiden"); //icono de favirito++
+    }, 500);
+
     var dataFavorite = `
         <div id=l${a}>
         <p>
@@ -460,11 +470,11 @@ function agregar__favotitos(){
                 Delete
             </button>
         </div>    
-            `;
+        `;
 
     var totalFav = `
         <input class="hiden" id="contador" value="${b}"></input>
-    `;
+        `;
 
     localStorage.setItem(a, dataFavorite);
     localStorage.setItem("totalFav", totalFav);

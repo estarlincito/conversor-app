@@ -492,33 +492,6 @@ if (contador!=null){
     a = contador.value;
 }
 
-function optFavorite(){ 
-    if(selectFavorite.value === "opt1"){
-        //eliminando los stylos de length by Estarlin
-        form.classList.remove('form__Lenght');
-        favorito.classList.remove('form__Lenght');
-        form__form.classList.remove('form__form3');
-        valor2.classList.remove('form__input3'); //form__input
-        select2.classList.remove('form__select4'); //form__select
-        form__button_bi.classList.remove('form__button_bi2');
-        form__button_bi2.classList.remove('form__button_bi2');
-        seleccion.value = "opt1"; //cambiando el valor #selConver select
-        optConversion();
-
-}else if(selectFavorite.value === "opt2"){
-        //aplicando los stylos de length by Estarlin
-        form.classList.add('form__Lenght');
-        favorito.classList.add('form__Lenght');
-        form__form.classList.add('form__form3');
-        valor2.classList.add('form__input3'); //form__input
-        select2.classList.add('form__select4'); //form__select
-        form__button_bi.classList.add('form__button_bi2');
-        form__button_bi2.classList.add('form__button_bi2');
-        seleccion.value = "opt2"; //cambiando el valor #selConver select
-        optConversion();
-    }
-}
-
 function guardarValorDivisa(){
     var usdDop1=document.getElementById("usdDop").value;
     var usdEur1=document.getElementById("usdEur").value;

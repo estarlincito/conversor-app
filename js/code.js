@@ -195,7 +195,7 @@ function convertidor(){
     if(valor1 >= 0.1){
         form__button_2__hiden.classList.remove("hiden");
         
-    }else if(valor1 === ""){
+    }else if(valor1 === "" || valor1 < 0.1){
         form__button_2__hiden.classList.add("hiden");
     }
 

@@ -92,16 +92,16 @@ function convertidorMonedas(){
     }else if(select1 === "DOP"){
         switch(select2){
             case "USD":
-                document.getElementById("valor2").value = valorInput1 * dopUsd;
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).dopUsd;
                 break;
             case "DOP":
                 document.getElementById("valor2").value = valorInput1;
                 break;
             case "EUR":
-                document.getElementById("valor2").value = valorInput1 * dopEur;
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).dopEur;
                 break;
             case "HTG":
-                document.getElementById("valor2").value = valorInput1 * dopHtg;
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).dopHtg;
                 break;                         
 
                 
@@ -112,16 +112,16 @@ function convertidorMonedas(){
     else if(select1 === "EUR"){
         switch(select2){
             case "USD":
-                document.getElementById("valor2").value = valorInput1 * eurUsd.value;
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).eurUsd;
                 break;
             case "DOP":
-                document.getElementById("valor2").value = valorInput1 * eurDop.value;
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).eurDop;
                 break;
             case "EUR":
                 document.getElementById("valor2").value = valorInput1 ;
                 break;
             case "HTG":
-                document.getElementById("valor2").value = valorInput1 * eurHtg.value;
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).eurHtg;
                 break;  
 
         }
@@ -135,13 +135,13 @@ function convertidorMonedas(){
     else if(select1 === "HTG"){
         switch(select2){
             case "USD":
-                document.getElementById("valor2").value = valorInput1 * htgUsd.value;
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).htgUsd;
                 break;
             case "DOP":
-                document.getElementById("valor2").value = valorInput1 * htgDop.value;
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).htgDop;
                 break;
             case "EUR":
-                document.getElementById("valor2").value = valorInput1 * htgEur.value;
+                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).htgEur;
                 break;
             case "HTG":
                 document.getElementById("valor2").value = valorInput1;
@@ -561,7 +561,7 @@ var totalFav = `
 
 //devolviendo el resultado del localStorege by Estarlin
 for(var i =0; i < localStorage.length; i++){
-    if(localStorage.key(i)=="Data Divisa"){
+   if(localStorage.key(i)=="Data Divisa"){
     i=i+1;}
     if (localStorage.key(i)==null){
         break;

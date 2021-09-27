@@ -221,15 +221,13 @@ function convertidor(){
     
 
     // llamando a los dos id de html 
-
     var select1 = document.getElementById("select1").value;
     var select2 = document.getElementById("select2").value;
 
     // primera conversion dolar a a las demas monedas 
-    if(select1 === "USD" ){ 
+    if(select1 === "USD" ){
         
-        switch(select2)
-        {
+        switch(select2){
             case "USD":
                 document.getElementById("valor2").value =  valorInput1;
                 break;
@@ -243,15 +241,9 @@ function convertidor(){
                 break;
             case "HTG":
                 document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).usdHtg;
-                break;
-                 
-        }  
-        
-               
-
-    // conversion de pesos a las demas moneads 
-       
-    }else if(select1 === "DOP"){
+                break;      
+        }
+    }else if(select1 === "DOP"){ // conversion de pesos a las demas moneads
         switch(select2){
             case "USD":
                 document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).dopUsd;
@@ -264,14 +256,9 @@ function convertidor(){
                 break;
             case "HTG":
                 document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).dopHtg;
-                break;                         
-
-                
-        }
-
-        // conversion de euro a las demas moneadas
-    }
-    else if(select1 === "EUR"){
+                break;
+        }  
+    }else if(select1 === "EUR"){ // conversion de euro a las demas moneadas
         switch(select2){
             case "USD":
                 document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).eurUsd;
@@ -284,17 +271,9 @@ function convertidor(){
                 break;
             case "HTG":
                 document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).eurHtg;
-                break;  
-
+                break;
         }
-
-        
-
-    }
-
-    // conversion de htg a los demas monedas
-    
-    else if(select1 === "HTG"){
+    }else if(select1 === "HTG"){  // conversion de htg a los demas monedas
         switch(select2){
             case "USD":
                 document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).htgUsd;
@@ -308,49 +287,41 @@ function convertidor(){
             case "HTG":
                 document.getElementById("valor2").value = valorInput1;
                 break; 
-                
             }     
-
         } 
 
     //limpiar entrada de valores
     if (valor1===""){document.getElementById("valor2").value="";}
 
-
     //OPCIONES DISTANCIA:
-        if(selRango===("KM")){ 
-        switch (selRango2){
-            case "KM": document.getElementById ("valor2").value=valor1;
+    if(selRango===("KM")){ 
+    switch (selRango2){
+        case "KM": document.getElementById ("valor2").value=valor1;
             break;
-            case "MILLA": document.getElementById ("valor2").value=valor1*0.621;
+        case "MILLA": document.getElementById ("valor2").value=valor1*0.621;
             break;
-            case "MTS": document.getElementById("valor2").value=valor1*1000;
+        case "MTS": document.getElementById("valor2").value=valor1*1000;
             break;
-                
-            }
         }
-        else  if(selRango===("MILLA")){
+    }else  if(selRango===("MILLA")){
         switch (selRango2){
-            case "KM": document.getElementById ("valor2").value=valor1/0.621;
+        case "KM": document.getElementById ("valor2").value=valor1/0.621;
             break;
-            case "MILLA": document.getElementById ("valor2").value=valor1;
+        case "MILLA": document.getElementById ("valor2").value=valor1;
             break;
-            case "MTS": document.getElementById("valor2").value=valor1*1609.34;
+        case "MTS": document.getElementById("valor2").value=valor1*1609.34;
             break;
-                
-            }
         }
-        else  if(selRango===("MTS")){
-            switch (selRango2){
-                case "KM": document.getElementById ("valor2").value=valor1/1000;
-                break;
-                case "MILLA": document.getElementById ("valor2").value=valor1/1609.34;
-                break;
-                case "MTS": document.getElementById("valor2").value=valor1;
-                break;
-    
-                }
-            }
+    }else  if(selRango===("MTS")){
+        switch (selRango2){
+        case "KM": document.getElementById ("valor2").value=valor1/1000;
+            break;
+        case "MILLA": document.getElementById ("valor2").value=valor1/1609.34;
+            break;
+        case "MTS": document.getElementById("valor2").value=valor1;
+            break;
+        }
+    }
     //Opciones TIEMPO
         if(selRango===("HR")){
         switch (selRango2){
@@ -449,21 +420,21 @@ function convertidor(){
 
 
 //funcion invertir valores.
-    function invertir1 (){
-//optener valores
+function invertir1 (){
+    //optener valores
     const valor1 =document.getElementById("valor2").value;
     const valor2 =document.getElementById("valor1").value;
     var selRango=document.getElementById("select2").value;
     var selRango2=document.getElementById("select1").value;
     
-//mostrar valores
+    //mostrar valores
     document.getElementById("select1").value=selRango;
     document.getElementById("select2").value=selRango2;
     document.getElementById("valor1").value=valor1;
     document.getElementById("valor2").value=valor2;
-
 }
-//Setting
+
+//Setting...
 //Boton entrar a settings
 function botonSetting(){
     form.classList.toggle('hiden');

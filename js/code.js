@@ -576,6 +576,11 @@ var totalFav = `
 
 //devolviendo el resultado del localStorege by Estarlin
 for(var i =0; i < localStorage.length; i++){
+    if(localStorage.key(i)=="Data Divisa"){
+    i=i+1;}
+    if (localStorage.key(i)==null){
+        break;
+    }
     var element = localStorage.getItem(localStorage.key(i));
     addFavorite.innerHTML += element;
 } 

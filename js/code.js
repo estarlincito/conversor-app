@@ -54,7 +54,7 @@ console.log();
 /*function convertidorMonedas(){
 
     // extrajendo los valores con el id y value
-    var valorInput1 = document.getElementById("valor1").value;
+    var valorInput1 = document.getElementById("valor1").value
     var valorInput2 = document.getElementById("valor2").value;
     
 
@@ -635,22 +635,7 @@ const seleccion1 = document.getElementById("select1").value;
 const seleccion2 = document.getElementById("select2").value;
 const resultado1 = document.getElementById("valor1").value;
 const resultado2 = document.getElementById("valor2").value;
-
-    
-
-    var dataFavorite = `
-        <div id=l${a}>
-            <b>-</b> ${resultado1} <b>${seleccion1}</b> = ${resultado2} <b>${seleccion2}</b> 
-            <button id=${a} onclick="delete__favotitos(this)">
-            Delete
-            </button>
-        </div>    
-            `;
-
-    var totalFav = `
-        <input class="hiden" id="contador" value="${b}"></input>
-    `;
-
+   
 var dataFavorite = `
     <div id=l${a}>
     <p>
@@ -739,46 +724,15 @@ for(var i =0; i < localStorage.length; i++){
 };
     
     localStorage.setItem("Data Divisa", JSON.stringify(tasasDivisa));
-    
       //(usdDop.value+usdEur.value+usdHtg.value+dopEur.value+dopHtg.value+dopUsd.value+eurDop.value+eurHtg.value+eurUsd.value+htgDop.value+htgEur.value+htgUsd.value);
     
       
   }
-  // cuando el contador/tatalFav no existe en el localStorage recivo este error TypeError: null is not an object (evaluating 'contador.value')
-  //estoy peensando crear un array de usd,eth, dod... para hacer el filtro de currency a length al mostrar los elemndos(indexOf);
 
 var contador = document.getElementById("contador");
-
 b = contador.value;
 a = contador.value;
 
-//crear fltro en favorite
-//   function optFavorite(){
-//     if(selectFavorite.value === "opt1"){
-// //eliminando los stylos de length by Estarlin
-//         form.classList.remove('form__Lenght');
-//         favorito.classList.remove('form__Lenght');
-//         form__form.classList.remove('form__form3');
-//         valor2.classList.remove('form__input3'); //form__input
-//         select2.classList.remove('form__select4'); //form__select
-//         form__button_bi.classList.remove('form__button_bi2');
-//         form__button_bi2.classList.remove('form__button_bi2');
-//         seleccion.value = "opt1"; //cambiando el valor #selConver select
-//         optConversion();
-
-
-
-//     }else if(selectFavorite.value === "opt2"){
-// //aplicando los stylos de length by Estarlin
-//         form.classList.add('form__Lenght');
-//         favorito.classList.add('form__Lenght');
-//         form__form.classList.add('form__form3');
-//         valor2.classList.add('form__input3'); //form__input
-//         select2.classList.add('form__select4'); //form__select
-//         form__button_bi.classList.add('form__button_bi2');
-//         form__button_bi2.classList.add('form__button_bi2');
-//         seleccion.value = "opt2"; //cambiando el valor #selConver select
-//         optConversion();
-//     }
-//   }
-
+//redondea
+// const resultado11 = document.getElementById("valor1").value;
+// console.log(JSON.parse(document.getElementById("valor1").value).toFixed(4));

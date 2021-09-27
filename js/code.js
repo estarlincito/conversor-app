@@ -2,6 +2,7 @@
 var dataTasaLocalStorage=localStorage.getItem("Data Divisa");
 
 if(dataTasaLocalStorage==null){
+<<<<<<< HEAD
     guardarValorDivisa();
 }
 else {
@@ -19,6 +20,24 @@ else {
     document.getElementById("htgUsd").value=JSON.parse(dataTasaLocalStorage).htgUsd;
 }
 
+=======
+guardarValorDivisa();
+dataTasaLocalStorage=localStorage.getItem("Data Divisa");
+}
+
+document.getElementById("usdDop").value=JSON.parse(dataTasaLocalStorage).usdDop;
+document.getElementById("usdEur").value=JSON.parse(dataTasaLocalStorage).usdEur;
+document.getElementById("usdHtg").value=JSON.parse(dataTasaLocalStorage).usdHtg;
+document.getElementById("dopUsd").value=JSON.parse(dataTasaLocalStorage).dopUsd;
+document.getElementById("dopEur").value=JSON.parse(dataTasaLocalStorage).dopEur;
+document.getElementById("dopHtg").value=JSON.parse(dataTasaLocalStorage).dopHtg;
+document.getElementById("eurDop").value=JSON.parse(dataTasaLocalStorage).eurDop;
+document.getElementById("eurUsd").value=JSON.parse(dataTasaLocalStorage).eurUsd;
+document.getElementById("eurHtg").value=JSON.parse(dataTasaLocalStorage).eurHtg;
+document.getElementById("htgDop").value=JSON.parse(dataTasaLocalStorage).htgDop;
+document.getElementById("htgEur").value=JSON.parse(dataTasaLocalStorage).htgEur;
+document.getElementById("htgUsd").value=JSON.parse(dataTasaLocalStorage).htgUsd;
+>>>>>>> 2d07400dd9a0d8a405cac7dcc881680c41cb1af4
 //declarando var by Estarlin
 var form = document.getElementById('form');
 var form__form = document.getElementById('form__form');
@@ -573,8 +592,17 @@ function guardarValorDivisa(){
         "htgDop":htgDop1, "htgEur":htgEur1, "htgUsd":htgUsd1,
     }
     
+<<<<<<< HEAD
     localStorage.setItem("Data Divisa", JSON.stringify(tasasDivisa)); 
 }
+=======
+    localStorage.setItem("Data Divisa", JSON.stringify(tasasDivisa));
+    
+      //(usdDop.value+usdEur.value+usdHtg.value+dopEur.value+dopHtg.value+dopUsd.value+eurDop.value+eurHtg.value+eurUsd.value+htgDop.value+htgEur.value+htgUsd.value);
+    
+      
+  }
+>>>>>>> 2d07400dd9a0d8a405cac7dcc881680c41cb1af4
 
 
 //redondea

@@ -135,77 +135,65 @@ function optConversion(){
     
     }
    
-    function cambioselec1()
-        {   
-           
-            var hawel=select1.value;
-            switch(hawel){
-                   
-                    case "HR":  case "MIN": case "SEG":
-                        if (marcaSelec2 !=1){
-                        marcaSelec2=1;
-                        for (var i=select2.length-1; i>=0; i--)
-                            {
-                                select2.remove(select2[i]);
-                                
-                            }
-                    
-                    //crear opciones select2
-                        for(var i=0; i<=2; i++)
-                            { 
-                                const opcselect =document.createElement("option");
-                                opcselect.value=valoresLongitud[i];
-                                opcselect.textContent=valoresLongitud[i];
-                                select2.appendChild(opcselect);
-                            
-                            }
-                        }
-                    break;
-                    case "KM":  case "MILLA": case "MTS":
-                        if (marcaSelec2 !=2){
-                            marcaSelec2=2;
-                        for (var i=select2.length-1; i>=0; i--)
-                            {
-                                select2.remove(select2[i]);
-                                
-                            }
-                    
-                    //crear opciones select2
-                        for(var i=3; i<=5; i++)
-                            { 
-                                const opcselect =document.createElement("option");
-                                opcselect.value=valoresLongitud[i];
-                                opcselect.textContent=valoresLongitud[i];
-                                select2.appendChild(opcselect);
-                            
-                            }
-                        }
-                    break;
-                    case "LB":  case "ONZ": case "T":
-                        if (marcaSelec2 !=3){
-                            marcaSelec2=3;
-                        for (var i=select2.length-1; i>=0; i--)
-                            {
-                                select2.remove(select2[i]);
-                                
-                            }
-                    
-                    //crear opciones select2
-                        for(var i=6; i<=8; i++)
-                            { 
-                                const opcselect =document.createElement("option");
-                                opcselect.value=valoresLongitud[i];
-                                opcselect.textContent=valoresLongitud[i];
-                                select2.appendChild(opcselect);
-                            
-                            }
-                        }
-                    break;
+function cambioselec1(){
+    var hawel=select1.value;
+    switch(hawel){
+        case "HR":  case "MIN": case "SEG":
+            if (marcaSelec2 !=1){
+                marcaSelec2=1;
 
+                for (var i=select2.length-1; i>=0; i--){
+                    select2.remove(select2[i]);
+                    
+                }
+            
+                //crear opciones select2
+                for(var i=0; i<=2; i++){
+                    const opcselect =document.createElement("option");
+                    opcselect.value=valoresLongitud[i];
+                    opcselect.textContent=valoresLongitud[i];
+                    select2.appendChild(opcselect);
+                }
+            }
+            break;
+        case "KM":  case "MILLA": case "MTS":
+            if (marcaSelec2 !=2){
+                marcaSelec2=2;
+                for (var i=select2.length-1; i>=0; i--){
+                        select2.remove(select2[i]);
                         
                 }
-                convertidor()  
-        }
+        
+                //crear opciones select2
+                for(var i=3; i<=5; i++){ 
+                    const opcselect =document.createElement("option");
+                    opcselect.value=valoresLongitud[i];
+                    opcselect.textContent=valoresLongitud[i];
+                    select2.appendChild(opcselect);
+                }
+            }
+            break;
+        case "LB":  case "ONZ": case "T":
+            if (marcaSelec2 !=3){
+
+                marcaSelec2=3;
+                for (var i=select2.length-1; i>=0; i--){
+                        select2.remove(select2[i]);
+                        
+                }
+        
+                //crear opciones select2
+                for(var i=6; i<=8; i++){ 
+                        const opcselect =document.createElement("option");
+                        opcselect.value=valoresLongitud[i];
+                        opcselect.textContent=valoresLongitud[i];
+                        select2.appendChild(opcselect);
+                }
+            }
+            break;        
+    }
+    convertidor()  
+}
 
 function convertidor(){
     var valoresLongitud =['HR', 'MIN', 'SEG', 'KM','MILLA', 'MTS', 'LB', 'ONZ', 'T'];

@@ -295,76 +295,73 @@ function convertidor(){
 
     //OPCIONES DISTANCIA:
     if(selRango===("KM")){ 
-    switch (selRango2){
-        case "KM": document.getElementById ("valor2").value=valor1;
-            break;
-        case "MILLA": document.getElementById ("valor2").value=valor1*0.621;
-            break;
-        case "MTS": document.getElementById("valor2").value=valor1*1000;
-            break;
-        }
-    }else  if(selRango===("MILLA")){
         switch (selRango2){
-        case "KM": document.getElementById ("valor2").value=valor1/0.621;
-            break;
-        case "MILLA": document.getElementById ("valor2").value=valor1;
-            break;
-        case "MTS": document.getElementById("valor2").value=valor1*1609.34;
-            break;
-        }
-    }else  if(selRango===("MTS")){
-        switch (selRango2){
-        case "KM": document.getElementById ("valor2").value=valor1/1000;
-            break;
-        case "MILLA": document.getElementById ("valor2").value=valor1/1609.34;
-            break;
-        case "MTS": document.getElementById("valor2").value=valor1;
-            break;
-        }
-    }
+            case "KM": document.getElementById ("valor2").value=valor1;
+                break;
+            case "MILLA": document.getElementById ("valor2").value=valor1*0.621;
+                break;
+            case "MTS": document.getElementById("valor2").value=valor1*1000;
+                break;
+            }
+        }else  if(selRango===("MILLA")){
+            switch (selRango2){
+                case "KM": document.getElementById ("valor2").value=valor1/0.621;
+                    break;
+                case "MILLA": document.getElementById ("valor2").value=valor1;
+                    break;
+                case "MTS": document.getElementById("valor2").value=valor1*1609.34;
+                    break;
+            }
+        }else  if(selRango===("MTS")){
+            switch (selRango2){
+                case "KM": document.getElementById ("valor2").value=valor1/1000;
+                    break;
+                case "MILLA": document.getElementById ("valor2").value=valor1/1609.34;
+                    break;
+                case "MTS": document.getElementById("valor2").value=valor1;
+                    break;
+                }
+            }
+            
     //Opciones TIEMPO
-        if(selRango===("HR")){
+    if(selRango===("HR")){
         switch (selRango2){
             case "HR": document.getElementById ("valor2").value=valor1;
-            break;
+                break;
             case "MIN": document.getElementById ("valor2").value=valor1*60;
-            break;
+                break;
             case "SEG": document.getElementById("valor2").value=valor1*3600;
-            break;
-            default: 
-            document.getElementById("valor2").value=valor1*0;
-                        var hawel=document.getElementById("select2").value="0"; 
-                        document.getElementById(select2).value=hawel;
-                        
+                break;
+            default:
+                document.getElementById("valor2").value=valor1*0;
+                var hawel=document.getElementById("select2").value="0"; 
+                document.getElementById(select2).value=hawel;      
             }
-        }
-        else  if(selRango===("MIN")){
+    }else  if(selRango===("MIN")){
         switch (selRango2){
             case "HR": document.getElementById ("valor2").value=valor1/60;
-            break;
+                break;
             case "MIN": document.getElementById ("valor2").value=valor1;
-            break;
+                break;
             case "SEG": document.getElementById("valor2").value=valor1*60;
-            break;
+                break;
             default: 
-            document.getElementById("valor2").value=valor1*0;
-                        var hawel=document.getElementById("select2").value="0"; 
-                        document.getElementById(select2).value=hawel;
-                        
+                document.getElementById("valor2").value=valor1*0;
+                var hawel=document.getElementById("select2").value="0"; 
+                document.getElementById(select2).value=hawel;       
             }
-        }
-        else  if(selRango===("SEG")){
+    }else  if(selRango===("SEG")){
             switch (selRango2){
                 case "HR": document.getElementById ("valor2").value=valor1/3600;
-                break;
+                    break;
                 case "MIN": document.getElementById ("valor2").value=valor1/60;
-                break;
+                    break;
                 case "SEG": document.getElementById("valor2").value=valor1;
-                break;
+                    break;
                 default: 
                 document.getElementById("valor2").value=valor1*0;
-                        var hawel=document.getElementById("select2").value="0"; 
-                        document.getElementById(select2).value=hawel;
+                var hawel=document.getElementById("select2").value="0"; 
+                document.getElementById(select2).value=hawel;
                         
                 }
             }       

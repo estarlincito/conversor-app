@@ -2,8 +2,9 @@
 var dataTasaLocalStorage=localStorage.getItem("Data Divisa");
 if(dataTasaLocalStorage==null){
 guardarValorDivisa();
+dataTasaLocalStorage=localStorage.getItem("Data Divisa");
 }
-else {
+
 document.getElementById("usdDop").value=JSON.parse(dataTasaLocalStorage).usdDop;
 document.getElementById("usdEur").value=JSON.parse(dataTasaLocalStorage).usdEur;
 document.getElementById("usdHtg").value=JSON.parse(dataTasaLocalStorage).usdHtg;
@@ -16,7 +17,6 @@ document.getElementById("eurHtg").value=JSON.parse(dataTasaLocalStorage).eurHtg;
 document.getElementById("htgDop").value=JSON.parse(dataTasaLocalStorage).htgDop;
 document.getElementById("htgEur").value=JSON.parse(dataTasaLocalStorage).htgEur;
 document.getElementById("htgUsd").value=JSON.parse(dataTasaLocalStorage).htgUsd;
-}
 //declarando var by Estarlin
 var form = document.getElementById('form');
 var form__form = document.getElementById('form__form');
@@ -727,6 +727,7 @@ for(var i =0; i < localStorage.length; i++){
     }
     
     localStorage.setItem("Data Divisa", JSON.stringify(tasasDivisa));
+    
       //(usdDop.value+usdEur.value+usdHtg.value+dopEur.value+dopHtg.value+dopUsd.value+eurDop.value+eurHtg.value+eurUsd.value+htgDop.value+htgEur.value+htgUsd.value);
     
       

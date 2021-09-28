@@ -30,8 +30,8 @@
 
       <!-- form1 -->
       <form class="form__form" onsubmit="return false">
-        <input class="form__input" value="" id="valor1" onchange="convertidor()">
-          <select class="form__select" id="select1" onchange="cambioselec1()">
+        <input class="form__input" value="" id="valor1" onchange="convertidor()" onkeypress="return valideKey(event);">
+          <select class="form__select" id="select1" onchange="convertidor()">
             <option value="USD" id="USD">USD</option>
             <option value="DOP" id="DOP">DOP</option>
             <option value="EUR" id="EUR">EUR</option>
@@ -53,7 +53,7 @@
         
       <!-- form2 -->
         <form class="form__form form__form2" id="form__form">
-          <input class="form__input form__input2" value="" id="valor2" onchange="convertidor()">
+          <input class="form__input form__input2" value="" id="valor2" onchange="convertidor()" onkeypress="return valideKey(event);">
             <select class="form__select form__select3" id="select2" onchange="convertidor()">
               <option value="DOP" id="DOP">DOP</option>
               <option value="USD" id="USD">USD</option>
@@ -100,17 +100,17 @@
               
               <div>
                 <label>DOP:</label>
-                <input id="usdDop" value="56.40">
+                <input id="usdDop" value="56.40" onkeypress="return valideKey(event);">
               </div>
   
               <div>
                 <label>EUR:</label>
-                <input id="usdEur" value="0.85">
+                <input id="usdEur" value="0.85" onkeypress="return valideKey(event);">
               </div>
   
               <div>
                 <label>HTG:</label>
-                <input id="usdHtg" value="100.01">
+                <input id="usdHtg" value="100.01" onkeypress="return valideKey(event);">
               </div>
             </div>
 
@@ -119,17 +119,17 @@
 
                 <div>
                   <label>USD:</label>
-                  <input id="dopUsd" value="0.018">
+                  <input id="dopUsd" value="0.018" onkeypress="return valideKey(event);">
                 </div>
     
                 <div>
                   <label>EUR:</label>
-                  <input id="dopEur" value="0.015">
+                  <input id="dopEur" value="0.015" onkeypress="return valideKey(event);">
                 </div>
     
                 <div>
                   <label>HTG:</label>
-                  <input id="dopHtg" value="1.77">
+                  <input id="dopHtg" value="1.77" onkeypress="return valideKey(event);">
                 </div>
             </div>
 
@@ -138,17 +138,17 @@
 
                 <div>
                   <label>USD:</label>
-                  <input id="eurUsd" value="1.17">
+                  <input id="eurUsd" value="1.17" onkeypress="return valideKey(event);">
                 </div>
     
                 <div>
                   <label>DOP:</label>
-                  <input id="eurDop" value="66.02">
+                  <input id="eurDop" value="66.02" onkeypress="return valideKey(event);">
                 </div>
 
                 <div>
                 <label>HTG:</label>
-                <input id="eurHtg" value="117.07">
+                <input id="eurHtg" value="117.07" onkeypress="return valideKey(event);">
                 </div>
             </div>
            
@@ -157,17 +157,17 @@
 
                 <div>
                   <label>USD:</label>
-                  <input id="htgUsd" value="0.0100">
+                  <input id="htgUsd" value="0.0100" onkeypress="return valideKey(event);">
                 </div>
     
                 <div>
                   <label>DOP:</label>
-                  <input id="htgDop" value="0.56">
+                  <input id="htgDop" value="0.56" onkeypress="return valideKey(event);">
                 </div>
     
                 <div>
                   <label>EUR:</label>
-                  <input id="htgEur" value="0.0085">
+                  <input id="htgEur" value="0.0085" onkeypress="return valideKey(event);">
                 </div>
             </div>
             

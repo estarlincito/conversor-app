@@ -186,10 +186,10 @@ function cambioselec1(){
 
 function convertidor(){
     var valoresLongitud =['HR', 'MIN', 'SEG', 'KM','MILLA', 'MTS', 'LB', 'ONZ', 'T'];
-    const valor1=document.getElementById("valor1").value;
-    const valor2=document.getElementById("valor2").value;
-    var selRango=document.getElementById("select1").value;
-    var selRango2=document.getElementById("select2").value;
+    const valor1 = document.getElementById("valor1").value;
+    const valor2 = document.getElementById("valor2").value;
+    var selRango = document.getElementById("select1").value;
+    var selRango2 = document.getElementById("select2").value;
 
     //mostrando y ocultando boton favorito by Estarlin
     if(valor1 >= 0.1){
@@ -197,6 +197,8 @@ function convertidor(){
         
     }else if(valor1 === "" || valor1 < 0.1){
         form__button_2__hiden.classList.add("hiden");
+    }else{
+        // alert("es un texto")
     }
 
     // extrajendo los valores con el id y value
@@ -579,6 +581,20 @@ function guardarValorDivisa(){
     localStorage.setItem("Data Divisa", JSON.stringify(tasasDivisa));      
 }
 
+//by Estarlin
+function valideKey(evt){
+    
+    // code is the decimal ASCII representation of the pressed key.
+    var code = (evt.which) ? evt.which : evt.keyCode;
+    
+    if(code==8) { // backspace.
+      return true;
+    } else if(code>=48 && code<=57) { // is a number.
+      return true;
+    } else{ // other keys.
+      return false;
+    }
+}
 
 //redondea
 // const resultado11 = document.getElementById("valor1").value;

@@ -197,8 +197,6 @@ function convertidor(){
         
     }else if(valor1 === "" || valor1 < 0.1){
         form__button_2__hiden.classList.add("hiden");
-    }else{
-        // alert("es un texto")
     }
 
     // extrajendo los valores con el id y value

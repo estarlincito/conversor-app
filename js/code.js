@@ -193,12 +193,13 @@ function convertidor(){
 
     //mostrando y ocultando boton favorito by Estarlin
     if(valor1 >= 0.1){
-        form__button_2__hiden.classList.remove("hiden");
-        
+        form__button_2__hiden.classList.remove("hiden"); 
     }else if(valor1 === "" || valor1 < 0.1){
         form__button_2__hiden.classList.add("hiden");
+    }else if(valor1 === "."){
+        swal('introduzca solo numeros!!','','error');
+        valor2 = "";
     }
-
     // extrajendo los valores con el id y value
     var valorInput1 = document.getElementById("valor1").value;
     var valorInput2 = document.getElementById("valor2").value;
@@ -579,6 +580,23 @@ function guardarValorDivisa(){
     localStorage.setItem("Data Divisa", JSON.stringify(tasasDivisa));      
 }
 
+//llamando a guardarValorDivisa() by Estarlin
+// function llamandoguardarValorDivisa(){
+//     swal({
+//         title: 'Seguro que quieres actaualizar?',
+//         text: "Las divisas seran acualizadas",
+//         showCancelButton: true,
+//         confirmButtonText: 'SI'
+//       })
+//       .then(function() {
+//         swal(
+//           'Acualizados!',
+//           'Datos acualizados.',
+//           'success'
+//         );
+//       })
+// }
+
 //by Estarlin
 function valideKey(evt){
     
@@ -587,10 +605,14 @@ function valideKey(evt){
     
     if(code==8) { // backspace.
       return true;
-    } else if(code>=46 && code<=57) { // is a number.
+    }else if(code >= 48 && code <= 57) { // is a number.
       return true;
-    } else{ // other keys.
-        alert('introduzca solo numeros!!')
+    }else if(code === 46) { // is a number.
+        return true;
+    }else if(code === 13) { // is a number.
+        return true;
+    }else{ // other keys.
+        swal('introduzca solo numeros!!','','error')
       return false;
     }
 }

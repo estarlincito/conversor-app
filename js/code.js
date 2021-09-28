@@ -207,7 +207,6 @@ function convertidor(){
                 break;
 
             case "DOP":
-                console.log(usdDop);
                 document.getElementById("valor2").value =  valorInput1 * JSON.parse(dataTasaLocalStorage).usdDop;
                 break;
             case "EUR":
@@ -489,15 +488,16 @@ function favorite(){
     favorito.classList.toggle('hiden');
 }
 
-a = 0;
-b = 0;
-
 //Delete__favotitos by Estarlin
 function delete__favotitos(comp){
     var id = comp.id;
     localStorage.removeItem(id);
-    document.getElementById("l"+id).classList.add('hiden');
+    document.getElementById(`L ${comp.id}`).classList.add('hiden');
 }
+
+var ConversorApp__Nota = [];
+a = 0;
+b = 0;
 
 //agregar__favotitos by Estarlin
 function agregar__favotitos(){
@@ -518,45 +518,42 @@ function agregar__favotitos(){
     }, 500);
 
     var dataFavorite = `
-        <div id=l${a}>
+        <div id="L ConversorApp__Nota: ${a}">
         <p>
             <b>-</b> ${resultado1} <b>${seleccion1}</b> = ${resultado2} <b>${seleccion2}</b> 
         </p>    
-            <button id=${a} onclick="delete__favotitos(this)">
+            <button id="ConversorApp__Nota: ${a}" onclick="delete__favotitos(this)">
                 Delete
             </button>
         </div>    
         `;
 
-    var totalFav = `
-        <input class="hiden" id="contador" value="${b}"></input>
-        `;
-
-    localStorage.setItem(a, dataFavorite);
-    localStorage.setItem("totalFav", totalFav);
-    addFavorite.innerHTML += localStorage.getItem(a);
+    localStorage.setItem(`ConversorApp__Nota: ${a}`, dataFavorite);
+    localStorage.setItem("totalFav", a);
+    addFavorite.innerHTML += dataFavorite;
 }
 
-//devolviendo el resultado del localStorege by Estarlin
-for(var i =0; i < localStorage.length; i++){
-    
-    if(localStorage.key(i)=="Data Divisa"){
-        i=i+1;
+//guardando los key en array ConversorApp__Nota
+for(var i = 0; i < localStorage.length; i++){
+    ConversorApp__Nota.push(localStorage.key(i))
+    }
+//obteniendo los key para mostarrlo en pantalla
+for (let valorArrayN = 0; valorArrayN < ConversorApp__Nota.length; valorArrayN++) {
+    var element = ConversorApp__Nota[valorArrayN];
 
-    }if (localStorage.key(i)==null){
-            break;
-        }
-
-    var element = localStorage.getItem(localStorage.key(i));
-    addFavorite.innerHTML += element;
+    var GetconversorApp__Nota = localStorage.getItem(`ConversorApp__Nota: ${valorArrayN}`);
+    if(GetconversorApp__Nota === null){
+    }else{
+        addFavorite.innerHTML += GetconversorApp__Nota;
+    }
 }
   
 //Total de favoritos creados
-var contador = document.getElementById("contador");
-if (contador!=null){
-    b = contador.value;
-    a = contador.value;
-}
+var contador = localStorage.getItem("totalFav");
+b = contador
+a = contador
+
+
 
 function guardarValorDivisa(){
     var usdDop1=document.getElementById("usdDop").value;

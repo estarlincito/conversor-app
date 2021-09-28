@@ -191,15 +191,6 @@ function convertidor(){
     var selRango = document.getElementById("select1").value;
     var selRango2 = document.getElementById("select2").value;
 
-    //mostrando y ocultando boton favorito by Estarlin
-    if(valor1 >= 0.1){
-        form__button_2__hiden.classList.remove("hiden"); 
-    }else if(valor1 === "" || valor1 < 0.1){
-        form__button_2__hiden.classList.add("hiden");
-    }else if(valor1 === "."){
-        swal('introduzca solo numeros!!','','error');
-        valor2 = "";
-    }
     // extrajendo los valores con el id y value
     var valorInput1 = document.getElementById("valor1").value;
     var valorInput2 = document.getElementById("valor2").value;
@@ -444,6 +435,17 @@ function convertidor(){
                 document.getElementById(select2).value=hawel;
         }
     }
+
+    //mostrando y ocultando boton favorito by Estarlin
+    if(valor1 >= 0.1){
+        form__button_2__hiden.classList.remove("hiden"); 
+    }else if(valor1 === "" || valor1 < 0.1){
+        form__button_2__hiden.classList.add("hiden");
+    }else if(valor1 === "."){
+        form__button_2__hiden.classList.add("hiden");
+        swal('introduzca solo numeros!!','','error');
+        document.getElementById("valor2").value = "";
+    }
 }
 
 //funcion invertir valores.
@@ -581,25 +583,48 @@ function guardarValorDivisa(){
 }
 
 //llamando a guardarValorDivisa() by Estarlin
-// function llamandoguardarValorDivisa(){
-//     swal({
-//         title: 'Seguro que quieres actaualizar?',
-//         text: "Las divisas seran acualizadas",
-//         showCancelButton: true,
-//         confirmButtonText: 'SI'
-//       })
-//       .then(function() {
-//         swal(
-//           'Acualizados!',
-//           'Datos acualizados.',
-//           'success'
-//         );
-//       })
-// }
+function llamandoguardarValorDivisa(){
+    // swal({
+    //     title: '¿Seguro que quieres actaualizar?',
+    //     text: "Las divisas seran acualizadas",
+    //     icon: "error",
+    //     buttons: {
+    //         cancel: true,
+    //         confirm: true,
+    //       },
+    //   })
+    //   .then(function() {
+    //     swal(
+    //       'Acualizados!',
+    //       'Datos acualizados.',
+    //       'success'
+    //     );
+    //   })
 
-//by Estarlin
+
+    swal({
+        title: "Deleted!",
+        text: "Your row has been deleted.",
+        icon: "success", //built in icons: success, warning, error, info
+         buttons: {
+             
+            cancel: {
+              text: "Cancel",
+              value: false,
+              visible: true,
+            },
+
+            confirm: {
+              text: "OK",
+              value: true,
+              visible: true
+            }
+          }
+        });
+}
+
+//ValideKey by Estarlin...
 function valideKey(evt){
-    
     // code is the decimal ASCII representation of the pressed key.
     var code = (evt.which) ? evt.which : evt.keyCode;
     

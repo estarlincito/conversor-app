@@ -587,9 +587,10 @@ function valideKey(evt){
     
     if(code==8) { // backspace.
       return true;
-    } else if(code>=48 && code<=57) { // is a number.
+    } else if(code>=46 && code<=57) { // is a number.
       return true;
     } else{ // other keys.
+        alert('introduzca solo numeros!!')
       return false;
     }
 }

@@ -280,41 +280,64 @@ function convertidor(){
     if(selRango===("KM")){
         switch (selRango2){
             case "KM": document.getElementById ("valor2").value=valor1;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
-            case "MILLA": document.getElementById ("valor2").value=valor1*0.621;
+            case "MILLA": 
+            document.getElementById ("valor2").value=valor1*0.621;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             case "MTS": document.getElementById("valor2").value=valor1*1000;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
         }
-
+        
     }else  if(selRango===("MILLA")){
         switch (selRango2){
-            case "KM": document.getElementById ("valor2").value=valor1/0.621;
+            case "KM": 
+                document.getElementById ("valor2").value=valor1/0.621;
+                if (valor1===""){document.getElementById("valor2").value="";}
                 break;
-            case "MILLA": document.getElementById ("valor2").value=valor1;
+            case "MILLA": 
+            document.getElementById ("valor2").value=valor1;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
-            case "MTS": document.getElementById("valor2").value=valor1*1609.34;
+            case "MTS": 
+            document.getElementById("valor2").value=valor1*1609.34;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
         }
+        
     }else  if(selRango===("MTS")){
         switch (selRango2){
-            case "KM": document.getElementById ("valor2").value=valor1/1000;
+            case "KM": 
+            document.getElementById ("valor2").value=valor1/1000;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
-            case "MILLA": document.getElementById ("valor2").value=valor1/1609.34;
+            case "MILLA": 
+            document.getElementById ("valor2").value=valor1/1609.34;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
-            case "MTS": document.getElementById("valor2").value=valor1;
+            case "MTS": 
+            document.getElementById("valor2").value=valor1;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
         }
-    }
+    } 
 
     //Opciones TIEMPO
     if(selRango===("HR")){
         switch (selRango2){
-            case "HR": document.getElementById ("valor2").value=valor1;
+            case "HR": 
+            document.getElementById ("valor2").value=valor1;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
-            case "MIN": document.getElementById ("valor2").value=valor1*60;
+            case "MIN": 
+            document.getElementById ("valor2").value=valor1*60;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
-            case "SEG": document.getElementById("valor2").value=valor1*3600;
+            case "SEG": 
+            document.getElementById("valor2").value=valor1*3600;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             default:
                 document.getElementById("valor2").value=valor1*0;
@@ -323,11 +346,17 @@ function convertidor(){
         }
     }else  if(selRango===("MIN")){
         switch (selRango2){
-            case "HR": document.getElementById ("valor2").value=valor1/60;
+            case "HR": 
+            document.getElementById ("valor2").value=valor1/60;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
-            case "MIN": document.getElementById ("valor2").value=valor1;
+            case "MIN": 
+            document.getElementById ("valor2").value=valor1;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
-            case "SEG": document.getElementById("valor2").value=valor1*60;
+            case "SEG": 
+            document.getElementById("valor2").value=valor1*60;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             default: 
                 document.getElementById("valor2").value=valor1*0;
@@ -336,11 +365,17 @@ function convertidor(){
         }
     }else  if(selRango===("SEG")){
         switch (selRango2){
-            case "HR": document.getElementById ("valor2").value=valor1/3600;
+            case "HR": 
+            document.getElementById ("valor2").value=valor1/3600;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
-            case "MIN": document.getElementById ("valor2").value=valor1/60;
+            case "MIN": 
+            document.getElementById ("valor2").value=valor1/60;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
-            case "SEG": document.getElementById("valor2").value=valor1;
+            case "SEG": 
+            document.getElementById("valor2").value=valor1;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             default: 
                 document.getElementById("valor2").value=valor1*0;
@@ -352,11 +387,17 @@ function convertidor(){
     //OPCIONES PESO
     if(selRango===("LB")){
         switch (selRango2){
-            case "LB": document.getElementById ("valor2").value=valor1;
+            case "LB": 
+            document.getElementById ("valor2").value=valor1;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
-            case "ONZ": document.getElementById ("valor2").value=valor1*16;
+            case "ONZ": 
+            document.getElementById ("valor2").value=valor1*16;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
-            case "T": document.getElementById("valor2").value=valor1/2204.62;
+            case "T": 
+            document.getElementById("valor2").value=valor1/2204.62;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             default: 
                 document.getElementById("valor2").value=valor1*0;
@@ -365,11 +406,17 @@ function convertidor(){
         }
     }else  if(selRango===("ONZ")){
         switch (selRango2){
-            case "LB": document.getElementById ("valor2").value=valor1/16;
+            case "LB": 
+            document.getElementById ("valor2").value=valor1/16;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
-            case "ONZ": document.getElementById ("valor2").value=valor1;
+            case "ONZ": 
+            document.getElementById ("valor2").value=valor1;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
-            case "T": document.getElementById("valor2").value=valor1/35274;
+            case "T": 
+            document.getElementById("valor2").value=valor1/35274;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             default: 
                 document.getElementById("valor2").value=valor1*0;
@@ -378,11 +425,17 @@ function convertidor(){
         }
     }else  if(selRango===("T")){
         switch (selRango2){
-            case "LB": document.getElementById ("valor2").value=valor1*2204.62;
+            case "LB": 
+            document.getElementById ("valor2").value=valor1*2204.62;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
-            case "ONZ": document.getElementById ("valor2").value=valor1*35274;
+            case "ONZ": 
+            document.getElementById ("valor2").value=valor1*35274;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
-            case "T": document.getElementById("valor2").value=valor1;
+            case "T": 
+            document.getElementById("valor2").value=valor1;
+            if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             default:
                 document.getElementById("valor2").value=valor1*0; 

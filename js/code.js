@@ -504,7 +504,6 @@ if(localStorage.length  === 2){
 }
 
 a = 0;
-b = 0;
 
 //agregar__favotitos by Estarlin
 function agregar__favotitos(){
@@ -514,7 +513,6 @@ function agregar__favotitos(){
     const resultado2 = document.getElementById("valor2").value;
 
     a++;
-    b++;
 
     ver__favotitos.classList.add("hiden"); //icono de favirito
     g__favotitos.classList.remove("hiden"); //icono de favirito++

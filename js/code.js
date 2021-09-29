@@ -30,6 +30,7 @@ var addFavorite = document.getElementById('addFavorite'); //addFavorite
 var form__atras = document.getElementById("form__atras"); //boton atras
 var botonSettingIcon = document.getElementById("botonSettingIcon"); //boton entrar a settings
 var form__button_2__hiden = document.getElementById("form__button_2__hiden"); //boton add favorito
+var contador = localStorage.getItem("totalFav");
 
 //hawel...
 var seleccion = document.getElementById("selConver");//analicis de tipo de convercion escogido by hawel
@@ -493,11 +494,17 @@ function delete__favotitos(comp){
     var id = comp.id;
     localStorage.removeItem(id);
     document.getElementById(`L ${comp.id}`).classList.add('hiden');
+
+    // alert(ConversorApp__Nota.indexOf(comp.id))
+    // ConversorApp__Nota.splice(comp.id, 0);
+    // alert(ConversorApp__Nota.indexOf(comp.id))
+    // console.log(ConversorApp__Nota.indexOf(comp.id))
 }
 
-var ConversorApp__Nota = [];
 a = 0;
 b = 0;
+
+//Total de favoritos creados
 
 //agregar__favotitos by Estarlin
 function agregar__favotitos(){
@@ -532,28 +539,16 @@ function agregar__favotitos(){
     localStorage.setItem("totalFav", a);
     addFavorite.innerHTML += dataFavorite;
 }
-
-//guardando los key en array ConversorApp__Nota
-for(var i = 0; i < localStorage.length; i++){
-    ConversorApp__Nota.push(localStorage.key(i))
-    }
-//obteniendo los key para mostarrlo en pantalla
-for (let valorArrayN = 0; valorArrayN < ConversorApp__Nota.length; valorArrayN++) {
-    var element = ConversorApp__Nota[valorArrayN];
-
-    var GetconversorApp__Nota = localStorage.getItem(`ConversorApp__Nota: ${valorArrayN}`);
-    if(GetconversorApp__Nota === null){
-    }else{
-        addFavorite.innerHTML += GetconversorApp__Nota;
-    }
-}
   
-//Total de favoritos creados
-var contador = localStorage.getItem("totalFav");
-b = contador
-a = contador
+for (let i = 0; i <= contador; i++) {
+    var GetconversorApp__Nota = localStorage.getItem(`ConversorApp__Nota: ${i}`);
 
-
+    if(GetconversorApp__Nota === null){
+        // console.log("null")
+    }else{
+            addFavorite.innerHTML += GetconversorApp__Nota;
+    }    
+}
 
 function guardarValorDivisa(){
     var usdDop1=document.getElementById("usdDop").value;
@@ -639,6 +634,16 @@ function valideKey(evt){
     }
 }
 
+//a sera igual al valor de notas creadas
+a = contador;
+
+//Si el localStorage es igual a 2 reset a... by Estarlin
+if(localStorage.length  === 2){
+    localStorage.setItem("totalFav", 0);
+    a = localStorage.getItem("totalFav");
+}
+
+// alert(a)
 //redondea
 // const resultado11 = document.getElementById("valor1").value;
 // console.log(JSON.parse(document.getElementById("valor1").value).toFixed(4));

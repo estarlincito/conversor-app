@@ -494,17 +494,10 @@ function delete__favotitos(comp){
     var id = comp.id;
     localStorage.removeItem(id);
     document.getElementById(`L ${comp.id}`).classList.add('hiden');
-
-    // alert(ConversorApp__Nota.indexOf(comp.id))
-    // ConversorApp__Nota.splice(comp.id, 0);
-    // alert(ConversorApp__Nota.indexOf(comp.id))
-    // console.log(ConversorApp__Nota.indexOf(comp.id))
 }
 
 a = 0;
 b = 0;
-
-//Total de favoritos creados
 
 //agregar__favotitos by Estarlin
 function agregar__favotitos(){

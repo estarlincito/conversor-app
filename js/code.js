@@ -494,6 +494,13 @@ function delete__favotitos(comp){
     var id = comp.id;
     localStorage.removeItem(id);
     document.getElementById(`L ${comp.id}`).classList.add('hiden');
+
+
+//Si el localStorage es igual a 2 reset a... by Estarlin
+if(localStorage.length  === 2){
+    localStorage.setItem("totalFav", 0);
+    a = localStorage.getItem("totalFav");
+ }
 }
 
 a = 0;
@@ -630,11 +637,6 @@ function valideKey(evt){
 //a sera igual al valor de notas creadas
 a = contador;
 
-//Si el localStorage es igual a 2 reset a... by Estarlin
-if(localStorage.length  === 2){
-    localStorage.setItem("totalFav", 0);
-    a = localStorage.getItem("totalFav");
-}
 
 // alert(a)
 //redondea

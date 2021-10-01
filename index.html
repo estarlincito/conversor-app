@@ -3,14 +3,180 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Convertidor de Divisas</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="icons/bootstrap-icons.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
-  <script>
-    location.href ="currency.html";
-  </script>
+  <div class="contenedor">
+    <div class="form" id="form"> <!--bloque__form-->
+
+      <!-- menu -->
+      <div class="form__menu">
+        <header class="form__title"><a href="https://estarlincito.github.io/conversor-app">ConversorApp</a></header>
+        <i class="bi bi-gem" title="ver favotitos" onclick="favorite()" id="ver__favotitos"></i>
+        <i class="bi bi-bookmark-check-fill hiden" id="g__favotitos"></i>
+      </div>
+
+      <!-- selectMenu -->
+      <div class="form__selectMenu">
+        <select class="form__select form__select2" name="selConver" id="selConver" onchange="optConversion()">
+          <option value="opt1">Currency</option>
+          <option value="opt2">Length</option>
+        </select>
+        <i class="bi bi-chevron-down"></i>
+      </div>
+
+      <!-- form1 -->
+      <form class="form__form" onsubmit="return false">
+        <input class="form__input" value="" id="valor1" onchange="convertidor()" onkeypress="return valideKey(event);">
+          <select class="form__select" id="select1" onchange="cambioselec1()">
+            <option value="USD" id="USD">USD</option>
+            <option value="DOP" id="DOP">DOP</option>
+            <option value="EUR" id="EUR">EUR</option>
+            <option value="HTG" id="HTG">HTG</option>
+          </select>
+        <i class="bi bi-chevron-down"></i>
+      </form>
+
+        <!-- invertir -->
+        <div class="form__invertir">
+              <button type="button" class="form__button" title="invertir"> <!-- invertir -->
+                <i class="bi bi-arrow-down-up form__button_bi"  value="invertir" id="form__button_bi" onclick="invertir1()"></i>
+            </button>
+
+            <button class="form__button form__button_2 hiden" title="agregar a favotitos" id="form__button_2__hiden" onclick="agregar__favotitos()">
+              <i class="bi bi-bookmark-plus form__button_bi" id="form__button_bi2"></i>
+            </button>
+        </div>
+        
+      <!-- form2 -->
+        <form class="form__form form__form2" id="form__form">
+          <input class="form__input form__input2" value="" id="valor2" onchange="convertidor()" onkeypress="return valideKey(event);">
+            <select class="form__select form__select3" id="select2" onchange="convertidor()">
+              <option value="DOP" id="DOP">DOP</option>
+              <option value="USD" id="USD">USD</option>
+              <option value="EUR" id="EUR">EUR</option>
+              <option value="HTG" id="HTG">HTG</option>
+            </select>
+          <i class="bi bi-chevron-down"></i>
+        </form>
+
+        <div class="form__botonSetting">
+                <i class="bi bi-gear" onclick="botonSetting()" id="botonSettingIcon" title="Actualizar el precios de las divisas."></i>
+        </div>
+      </div>
+
+
+      <!-- favorite -->
+      <div class="form hiden form__favorite" id="favorito">
+        <div class="form__menu">
+          <a class="form__atras" id="form__atras" onclick="atrasF()">Atras</a>
+          <header class="form__title"><a href="https://estarlincito.github.io/conversor-app">ConversorApp</a></header>
+        </div>
+
+        <div class="form__selectMenu">
+          <p class="form__parra">Favoritos</p>
+        </div>
+
+        <div class="addFavorite" id="addFavorite"></div>
+      </div>
+
+      <!-- settings -->
+      <div class="form  hiden form__settings" id="settings">
+        <div class="form__menu form__settingsmenu">
+          <a class="form__atras" id="form__atras" onclick="atrasS()">Atras</a>
+          <header class="form__title"><a href="https://estarlincito.github.io/conversor-app">ConversorApp</a></header>
+        </div>
+
+        <div class="form__selectMenu">
+          <p class="form__titileSettings">Actualiza el precios de las divisas.</p>
+        </div>
+        
+          <form action="" class="form__dataSettings">
+            <div class="divisas"> <!-- USD -->
+              <div class="titileDivisas"><label>1 USD =</label></div>
+              
+              <div>
+                <label>DOP:</label>
+                <input id="usdDop" value="56.40" onkeypress="return valideKey(event);">
+              </div>
+  
+              <div>
+                <label>EUR:</label>
+                <input id="usdEur" value="0.85" onkeypress="return valideKey(event);">
+              </div>
+  
+              <div>
+                <label>HTG:</label>
+                <input id="usdHtg" value="100.01" onkeypress="return valideKey(event);">
+              </div>
+            </div>
+
+            <div class="divisas"> <!-- DOP -->
+              <div class="titileDivisas"><label>1 DOP =</label></div>
+
+                <div>
+                  <label>USD:</label>
+                  <input id="dopUsd" value="0.018" onkeypress="return valideKey(event);">
+                </div>
+    
+                <div>
+                  <label>EUR:</label>
+                  <input id="dopEur" value="0.015" onkeypress="return valideKey(event);">
+                </div>
+    
+                <div>
+                  <label>HTG:</label>
+                  <input id="dopHtg" value="1.77" onkeypress="return valideKey(event);">
+                </div>
+            </div>
+
+            <div class="divisas"> <!-- EUR -->
+              <div class="titileDivisas"><label>1 EUR =</label></div>
+
+                <div>
+                  <label>USD:</label>
+                  <input id="eurUsd" value="1.17" onkeypress="return valideKey(event);">
+                </div>
+    
+                <div>
+                  <label>DOP:</label>
+                  <input id="eurDop" value="66.02" onkeypress="return valideKey(event);">
+                </div>
+
+                <div>
+                <label>HTG:</label>
+                <input id="eurHtg" value="117.07" onkeypress="return valideKey(event);">
+                </div>
+            </div>
+           
+            <div class="divisas"> <!-- HTG -->
+              <div class="titileDivisas"><label>1 HTG =</label></div>
+
+                <div>
+                  <label>USD:</label>
+                  <input id="htgUsd" value="0.0100" onkeypress="return valideKey(event);">
+                </div>
+    
+                <div>
+                  <label>DOP:</label>
+                  <input id="htgDop" value="0.56" onkeypress="return valideKey(event);">
+                </div>
+    
+                <div>
+                  <label>EUR:</label>
+                  <input id="htgEur" value="0.0085" onkeypress="return valideKey(event);">
+                </div>
+            </div>
+            
+          <div class="form__submitSettings">
+              <button onclick="guardarValorDivisa()">Actualizar</button>
+          </div>
+    </div>
+
+    <script src="./js/code.js"></script> <!--//js-->
 </body>
 </html>

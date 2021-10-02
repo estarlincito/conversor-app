@@ -207,68 +207,205 @@ function convertidor(){
     // llamando a los dos id de html 
     var select1 = document.getElementById("select1").value;
     var select2 = document.getElementById("select2").value;
+    var num=document.getElementById("valor1").value;;
 
     // primera conversion dolar a a las demas monedas 
     if(select1 === "USD" ){
+        if(num %1==0){ document.getElementById("valor1").value=num;}
+        else{alert ("decimal");
+        num=JSON.parse(valorInput1).toFixed(2);
+        document.getElementById("valor1").value=num;
+        }
         switch(select2){
             case "USD":
-                document.getElementById("valor2").value =  valorInput1;
+
+                
+                
+                //redondearDecimal(num);
+               
+                if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
                 break;
 
             case "DOP":
-                console.log(usdDop);
-                document.getElementById("valor2").value =  valorInput1 * JSON.parse(dataTasaLocalStorage).usdDop;
+                
+                //document.getElementById("valor2").value =  valorInput1 * JSON.parse(dataTasaLocalStorage).usdDop;
+                num=valorInput1 * JSON.parse(dataTasaLocalStorage).usdDop;
+                if(num %1==0){
+                    document.getElementById("valor2").value = num;
+                    }
+                    else{  
+                    num=JSON.parse(num).toFixed(2);
+                    document.getElementById("valor2").value = num;
+                    }
                 break;
             case "EUR":
-                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).usdEur;
+                //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).usdEur;
+                num=valorInput1 * JSON.parse(dataTasaLocalStorage).usdEur;
+                if(num %1==0){
+                    document.getElementById("valor2").value = num;
+                    }
+                    else{  
+                    num=JSON.parse(num).toFixed(2);
+                    document.getElementById("valor2").value = num;
+                    }
                 break;
             case "HTG":
-                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).usdHtg;
+                //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).usdHtg;
+                num=valorInput1 * JSON.parse(dataTasaLocalStorage).usdHtg;
+                if(num %1==0){
+                    document.getElementById("valor2").value = num;
+                    }
+                    else{  
+                    num=JSON.parse(num).toFixed(2);
+                    document.getElementById("valor2").value = num;
+                    }
                 break;      
         }
     }else if(select1 === "DOP"){ // conversion de pesos a las demas moneads
         switch(select2){
             case "USD":
-                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).dopUsd;
+                //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).dopUsd;
+                num=valorInput1 * JSON.parse(dataTasaLocalStorage).dopUsd;
+                if(num %1==0){
+                    document.getElementById("valor2").value = num;
+                    }
+                    else{  
+                    num=JSON.parse(num).toFixed(2);
+                    document.getElementById("valor2").value = num;
+                    }
                 break;
             case "DOP":
-                document.getElementById("valor2").value = valorInput1;
+                //document.getElementById("valor2").value = valorInput1;
+                num=valorInput1;
+                if(num %1==0){
+                    document.getElementById("valor2").value = num;
+                    }
+                    else{  
+                    num=JSON.parse(num).toFixed(2);
+                    document.getElementById("valor2").value = num;
+                    }
                 break;
             case "EUR":
-                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).dopEur;
+                //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).dopEur;
+                num=valorInput1 * JSON.parse(dataTasaLocalStorage).dopEur;
+                if(num %1==0){
+                    document.getElementById("valor2").value = num;
+                    }
+                    else{  
+                    num=JSON.parse(num).toFixed(2);
+                    document.getElementById("valor2").value = num;
+                    }
                 break;
             case "HTG":
-                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).dopHtg;
+                //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).dopHtg;
+                num=valorInput1 * JSON.parse(dataTasaLocalStorage).dopHtg;
+                if(num %1==0){
+                    document.getElementById("valor2").value = num;
+                    }
+                    else{  
+                    num=JSON.parse(num).toFixed(2);
+                    document.getElementById("valor2").value = num;
+                    }
                 break;
         }  
     }else if(select1 === "EUR"){ // conversion de euro a las demas moneadas
         switch(select2){
             case "USD":
-                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).eurUsd;
+                //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).eurUsd;
+                num=valorInput1 * JSON.parse(dataTasaLocalStorage).eurUsd;
+                if(num %1==0){
+                    document.getElementById("valor2").value = num;
+                    }
+                    else{  
+                    num=JSON.parse(num).toFixed(2);
+                    document.getElementById("valor2").value = num;
+                    }
                 break;
             case "DOP":
-                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).eurDop;
+                //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).eurDop;
+                num=valorInput1 * JSON.parse(dataTasaLocalStorage).eurDop;
+                if(num %1==0){
+                    document.getElementById("valor2").value = num;
+                    }
+                    else{  
+                    num=JSON.parse(num).toFixed(2);
+                    document.getElementById("valor2").value = num;
+                    }
                 break;
             case "EUR":
-                document.getElementById("valor2").value = valorInput1 ;
+                //document.getElementById("valor2").value = valorInput1 ;
+                num=valorInput1;
+                if(num %1==0){
+                    document.getElementById("valor2").value = num;
+                    }
+                    else{  
+                    num=JSON.parse(num).toFixed(2);
+                    document.getElementById("valor2").value = num;
+                    }
                 break;
             case "HTG":
-                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).eurHtg;
+                //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).eurHtg;
+                num=valorInput1 * JSON.parse(dataTasaLocalStorage).eurHtg;
+                if(num %1==0){
+                    document.getElementById("valor2").value = num;
+                    }
+                    else{  
+                    num=JSON.parse(num).toFixed(2);
+                    document.getElementById("valor2").value = num;
+                    }
                 break;
         }
     }else if(select1 === "HTG"){  // conversion de htg a los demas monedas
         switch(select2){
             case "USD":
-                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).htgUsd;
+                //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).htgUsd;
+                num=valorInput1 * JSON.parse(dataTasaLocalStorage).htgUsd;
+                if(num %1==0){
+                    document.getElementById("valor2").value = num;
+                    }
+                    else{  
+                    num=JSON.parse(num).toFixed(2);
+                    document.getElementById("valor2").value = num;
+                    }
                 break;
             case "DOP":
-                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).htgDop;
+                //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).htgDop;
+                num=valorInput1 * JSON.parse(dataTasaLocalStorage).htgDop;
+                if(num %1==0){
+                    document.getElementById("valor2").value = num;
+                    }
+                    else{  
+                    num=JSON.parse(num).toFixed(2);
+                    document.getElementById("valor2").value = num;
+                    }
                 break;
             case "EUR":
-                document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).htgEur;
+                //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).htgEur;
+                num=valorInput1 * JSON.parse(dataTasaLocalStorage).htgEur;
+                if(num %1==0){
+                    document.getElementById("valor2").value = num;
+                    }
+                    else{  
+                    num=JSON.parse(num).toFixed(2);
+                    document.getElementById("valor2").value = num;
+                    }
                 break;
             case "HTG":
-                document.getElementById("valor2").value = valorInput1;
+                //document.getElementById("valor2").value = valorInput1;
+                num=valorInput1;
+                if(num %1==0){
+                    document.getElementById("valor2").value = num;
+                    }
+                    else{  
+                    num=JSON.parse(num).toFixed(2);
+                    document.getElementById("valor2").value = num;
+                    }
                 break; 
         }     
     }
@@ -276,18 +413,51 @@ function convertidor(){
     
     //limpiar entrada de valores
     if (valor1===""){document.getElementById("valor2").value="";}
-
+    if(num %1==0){ document.getElementById("valor1").value=num;}
+    else{
+    num=JSON.parse(valorInput1).toFixed(2);
+    document.getElementById("valor1").value=num;
+    }
     //OPCIONES DISTANCIA:
     if(selRango===("KM")){
+   
         switch (selRango2){
-            case "KM": document.getElementById ("valor2").value=valor1;
+            case "KM": 
+            //document.getElementById ("valor2").value=valor1;
+            num=valorInput1;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             case "MILLA": 
-            document.getElementById ("valor2").value=valor1*0.621;
+            //document.getElementById ("valor2").value=valor1*0.621;
+            num=valorInput1*0.621;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
-            case "MTS": document.getElementById("valor2").value=valor1*1000;
+            case "MTS": //document.getElementById("valor2").value=valor1*1000;
+            num=valorInput1*1000;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
         }
@@ -295,15 +465,42 @@ function convertidor(){
     }else  if(selRango===("MILLA")){
         switch (selRango2){
             case "KM": 
-                document.getElementById ("valor2").value=valor1/0.621;
+                //document.getElementById ("valor2").value=valor1/0.621;
+                num=valorInput1/0.621;
+                if(num %1==0){
+                    document.getElementById("valor2").value = num;
+                    }
+                    else{  
+                    num=JSON.parse(num).toFixed(2);
+                    document.getElementById("valor2").value = num;
+                    }
+                //
                 if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             case "MILLA": 
-            document.getElementById ("valor2").value=valor1;
+            //document.getElementById ("valor2").value=valor1;
+            num=valorInput1;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             case "MTS": 
-            document.getElementById("valor2").value=valor1*1609.34;
+            //document.getElementById("valor2").value=valor1*1609.34;
+            num=valorInput1*1609.34;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
         }
@@ -311,15 +508,42 @@ function convertidor(){
     }else  if(selRango===("MTS")){
         switch (selRango2){
             case "KM": 
-            document.getElementById ("valor2").value=valor1/1000;
+            //document.getElementById ("valor2").value=valor1/1000;
+            num=valorInput1/1000;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             case "MILLA": 
-            document.getElementById ("valor2").value=valor1/1609.34;
+            //document.getElementById ("valor2").value=valor1/1609.34;
+            num=valorInput1/1609.34;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             case "MTS": 
-            document.getElementById("valor2").value=valor1;
+            //document.getElementById("valor2").value=valor1;
+            num=valorInput1;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
         }
@@ -329,15 +553,42 @@ function convertidor(){
     if(selRango===("HR")){
         switch (selRango2){
             case "HR": 
-            document.getElementById ("valor2").value=valor1;
+            //document.getElementById ("valor2").value=valor1;
+            num=valorInput1;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             case "MIN": 
-            document.getElementById ("valor2").value=valor1*60;
+            //document.getElementById ("valor2").value=valor1*60;
+            num=valorInput1*1.60;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             case "SEG": 
-            document.getElementById("valor2").value=valor1*3600;
+            //document.getElementById("valor2").value=valor1*3600;
+            num=valorInput1*3600;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             default:
@@ -348,15 +599,42 @@ function convertidor(){
     }else  if(selRango===("MIN")){
         switch (selRango2){
             case "HR": 
-            document.getElementById ("valor2").value=valor1/60;
+            //document.getElementById ("valor2").value=valor1/60;
+            num=valorInput1/60;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             case "MIN": 
-            document.getElementById ("valor2").value=valor1;
+            //document.getElementById ("valor2").value=valor1;
+            num=valorInput1;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             case "SEG": 
-            document.getElementById("valor2").value=valor1*60;
+            //document.getElementById("valor2").value=valor1*60;
+            num=valorInput1*60;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             default: 
@@ -367,15 +645,42 @@ function convertidor(){
     }else  if(selRango===("SEG")){
         switch (selRango2){
             case "HR": 
-            document.getElementById ("valor2").value=valor1/3600;
+            //document.getElementById ("valor2").value=valor1/3600;
+            num=valorInput1/3600;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             case "MIN": 
-            document.getElementById ("valor2").value=valor1/60;
+            //document.getElementById ("valor2").value=valor1/60;
+            num=valorInput1/60;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             case "SEG": 
-            document.getElementById("valor2").value=valor1;
+            //document.getElementById("valor2").value=valor1;
+            num=valorInput1;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             default: 
@@ -389,15 +694,42 @@ function convertidor(){
     if(selRango===("LB")){
         switch (selRango2){
             case "LB": 
-            document.getElementById ("valor2").value=valor1;
+            //document.getElementById ("valor2").value=valor1;
+            num=valorInput1;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             case "ONZ": 
-            document.getElementById ("valor2").value=valor1*16;
+            //document.getElementById ("valor2").value=valor1*16;
+            num=valorInput1*16;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             case "T": 
-            document.getElementById("valor2").value=valor1/2204.62;
+            //document.getElementById("valor2").value=valor1/2204.62;
+            num=valorInput1/2204.62;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             default: 
@@ -408,15 +740,42 @@ function convertidor(){
     }else  if(selRango===("ONZ")){
         switch (selRango2){
             case "LB": 
-            document.getElementById ("valor2").value=valor1/16;
+            //document.getElementById ("valor2").value=valor1/16;
+            num=valorInput1/16;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             case "ONZ": 
-            document.getElementById ("valor2").value=valor1;
+            //document.getElementById ("valor2").value=valor1;
+            num=valorInput1;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             case "T": 
-            document.getElementById("valor2").value=valor1/35274;
+            //document.getElementById("valor2").value=valor1/35274;
+            num=valorInput1/35274;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             default: 
@@ -427,15 +786,42 @@ function convertidor(){
     }else  if(selRango===("T")){
         switch (selRango2){
             case "LB": 
-            document.getElementById ("valor2").value=valor1*2204.62;
+            //document.getElementById ("valor2").value=valor1*2204.62;
+            num=valorInput1*2204.62;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             case "ONZ": 
-            document.getElementById ("valor2").value=valor1*35274;
+            //document.getElementById ("valor2").value=valor1*35274;
+            num=valorInput1*35274;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             case "T": 
-            document.getElementById("valor2").value=valor1;
+            //document.getElementById("valor2").value=valor1;
+            num=valorInput1;
+            if(num %1==0){
+                document.getElementById("valor2").value = num;
+                }
+                else{  
+                num=JSON.parse(num).toFixed(2);
+                document.getElementById("valor2").value = num;
+                }
+            //
             if (valor1===""){document.getElementById("valor2").value="";}
                 break;
             default:
@@ -530,10 +916,10 @@ function agregar__favotitos(){
         <input class="hiden" id="contador" value="${b}"></input>
         `;
 
-    localStorage.setItem(a, dataFavorite);
+    localStorage.setItem(a, dataFavorite);  
     localStorage.setItem("totalFav", totalFav);
     addFavorite.innerHTML += localStorage.getItem(a);
-}
+    }
 
 //devolviendo el resultado del localStorege by Estarlin
 for(var i =0; i < localStorage.length; i++){
@@ -618,5 +1004,20 @@ function valideKey(evt){
 }
 
 //redondea
+function redondearDecimal(max) {
+if(max %1===0)
+    {
+        return max;
+
+    }
+    else 
+    {
+        var max=JSON.parse(max).toFixed(2);
+        
+
+        return max;
+    }
+
+}
 // const resultado11 = document.getElementById("valor1").value;
 // console.log(JSON.parse(document.getElementById("valor1").value).toFixed(4));

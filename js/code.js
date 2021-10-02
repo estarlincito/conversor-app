@@ -225,7 +225,7 @@ function convertidor(){
                 break;
 
             case "DOP":
-<<<<<<< HEAD
+
                 
                 //document.getElementById("valor2").value =  valorInput1 * JSON.parse(dataTasaLocalStorage).usdDop;
                 num=valorInput1 * JSON.parse(dataTasaLocalStorage).usdDop;
@@ -236,9 +236,9 @@ function convertidor(){
                     num=JSON.parse(num).toFixed(2);
                     document.getElementById("valor2").value = num;
                     }
-=======
+                    
                 document.getElementById("valor2").value =  valorInput1 * JSON.parse(dataTasaLocalStorage).usdDop;
->>>>>>> 0965ff8737c2851834c63aae4b18e4112b843e5a
+ 
                 break;
             case "EUR":
                 //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).usdEur;
@@ -924,7 +924,7 @@ function agregar__favotitos(){
         </div>    
         `;
 
-<<<<<<< HEAD
+
     var totalFav = `
         <input class="hiden" id="contador" value="${b}"></input>
         `;
@@ -946,11 +946,11 @@ for(var i =0; i < localStorage.length; i++){
 
     var element = localStorage.getItem(localStorage.key(i));
     addFavorite.innerHTML += element;
-=======
+
     localStorage.setItem(`ConversorApp__Nota: ${a}`, dataFavorite);
     localStorage.setItem("totalFav", a);
     addFavorite.innerHTML += dataFavorite;
->>>>>>> 0965ff8737c2851834c63aae4b18e4112b843e5a
+
 }
   
 for (let i = 0; i <= contador; i++) {

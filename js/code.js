@@ -225,8 +225,7 @@ function convertidor(){
                 break;
 
             case "DOP":
-
-                
+  
                 //document.getElementById("valor2").value =  valorInput1 * JSON.parse(dataTasaLocalStorage).usdDop;
                 num=valorInput1 * JSON.parse(dataTasaLocalStorage).usdDop;
                 if(num %1==0){
@@ -236,7 +235,7 @@ function convertidor(){
                     num=JSON.parse(num).toFixed(2);
                     document.getElementById("valor2").value = num;
                     }
-                    
+
                 document.getElementById("valor2").value =  valorInput1 * JSON.parse(dataTasaLocalStorage).usdDop;
  
                 break;

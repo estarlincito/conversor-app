@@ -192,6 +192,15 @@ function convertidor(){
     var selRango = document.getElementById("select1").value;
     var selRango2 = document.getElementById("select2").value;
 
+    //mostrando y ocultando boton favorito by Estarlin
+    if(valor1 >= 0.1){
+        form__button_2__hiden.classList.remove("hiden"); 
+    }else if(valor1 === "" || valor1 < 0.1){
+        form__button_2__hiden.classList.add("hiden");
+    }else if(valor1 === "."){
+        swal('introduzca solo numeros!!','','error');
+        valor2 = "";
+    }
     // extrajendo los valores con el id y value
     var valorInput1 = document.getElementById("valor1").value;
     var valorInput2 = document.getElementById("valor2").value;
@@ -203,15 +212,13 @@ function convertidor(){
 
     // primera conversion dolar a a las demas monedas 
     if(select1 === "USD" ){
-        if(num %1==0){ document.getElementById("valor1").value=num;}
-        else{alert ("decimal");
-        num=JSON.parse(valorInput1).toFixed(2);
-        document.getElementById("valor1").value=num;
-        }
         switch(select2){
             case "USD":
-
-                
+                if(num %1==0){ document.getElementById("valor1").value=num;}
+                else {
+                num=JSON.parse(valorInput1).toFixed(3);
+                document.getElementById("valor1").value=num;
+                }
                 
                 //redondearDecimal(num);
                
@@ -219,186 +226,276 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
                 break;
 
-            case "DOP":
-  
+            case "DOP": 
+                    if(num %1==0){alert(num); document.getElementById("valor1").value=num;}
+            else {alert(num);
+            num=JSON.parse(valorInput1).toFixed(3);
+            document.getElementById("valor1").value=num;
+            }
                 //document.getElementById("valor2").value =  valorInput1 * JSON.parse(dataTasaLocalStorage).usdDop;
                 num=valorInput1 * JSON.parse(dataTasaLocalStorage).usdDop;
                 if(num %1==0){
                     document.getElementById("valor2").value = num;
                     }
                     else{  
-                    num=JSON.parse(num).toFixed(2);
+                    num=JSON.parse(num).toFixed(3);
                     document.getElementById("valor2").value = num;
                     }
-
-                document.getElementById("valor2").value =  valorInput1 * JSON.parse(dataTasaLocalStorage).usdDop;
- 
                 break;
             case "EUR":
+                if(num %1==0){ document.getElementById("valor1").value=num;}
+        else {
+        num=JSON.parse(valorInput1).toFixed(3);
+        document.getElementById("valor1").value=num;
+        }
                 //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).usdEur;
                 num=valorInput1 * JSON.parse(dataTasaLocalStorage).usdEur;
                 if(num %1==0){
                     document.getElementById("valor2").value = num;
                     }
                     else{  
-                    num=JSON.parse(num).toFixed(2);
+                    num=JSON.parse(num).toFixed(3);
                     document.getElementById("valor2").value = num;
                     }
                 break;
             case "HTG":
+                if(num %1==0){ document.getElementById("valor1").value=num;}
+        else {
+        num=JSON.parse(valorInput1).toFixed(3);
+        document.getElementById("valor1").value=num;
+        }
                 //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).usdHtg;
                 num=valorInput1 * JSON.parse(dataTasaLocalStorage).usdHtg;
                 if(num %1==0){
                     document.getElementById("valor2").value = num;
                     }
                     else{  
-                    num=JSON.parse(num).toFixed(2);
+                    num=JSON.parse(num).toFixed(3);
                     document.getElementById("valor2").value = num;
                     }
                 break;      
         }
     }else if(select1 === "DOP"){ // conversion de pesos a las demas moneads
+        if(num %1==0){ document.getElementById("valor1").value=num;}
+        else {
+        num=JSON.parse(valorInput1).toFixed(3);
+        document.getElementById("valor1").value=num;
+        }
         switch(select2){
             case "USD":
+                if(num %1==0){ document.getElementById("valor1").value=num;}
+        else {
+        num=JSON.parse(valorInput1).toFixed(3);
+        document.getElementById("valor1").value=num;
+        }
                 //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).dopUsd;
                 num=valorInput1 * JSON.parse(dataTasaLocalStorage).dopUsd;
                 if(num %1==0){
                     document.getElementById("valor2").value = num;
                     }
                     else{  
-                    num=JSON.parse(num).toFixed(2);
+                    num=JSON.parse(num).toFixed(3);
                     document.getElementById("valor2").value = num;
                     }
                 break;
             case "DOP":
+
+                if(num %1==0){ document.getElementById("valor1").value=num;}
+                else {
+                num=JSON.parse(valorInput1).toFixed(3);
+                document.getElementById("valor1").value=num;
+                }
                 //document.getElementById("valor2").value = valorInput1;
                 num=valorInput1;
                 if(num %1==0){
                     document.getElementById("valor2").value = num;
                     }
                     else{  
-                    num=JSON.parse(num).toFixed(2);
+                    num=JSON.parse(num).toFixed(3);
                     document.getElementById("valor2").value = num;
                     }
                 break;
             case "EUR":
+
+                if(num %1==0){ document.getElementById("valor1").value=num;}
+                else {
+                num=JSON.parse(valorInput1).toFixed(3);
+                document.getElementById("valor1").value=num;
+                }
                 //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).dopEur;
                 num=valorInput1 * JSON.parse(dataTasaLocalStorage).dopEur;
                 if(num %1==0){
                     document.getElementById("valor2").value = num;
                     }
                     else{  
-                    num=JSON.parse(num).toFixed(2);
+                    num=JSON.parse(num).toFixed(3);
                     document.getElementById("valor2").value = num;
                     }
                 break;
             case "HTG":
+
+                if(num %1==0){ document.getElementById("valor1").value=num;}
+                else {
+                num=JSON.parse(valorInput1).toFixed(3);
+                document.getElementById("valor1").value=num;
+                }
                 //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).dopHtg;
                 num=valorInput1 * JSON.parse(dataTasaLocalStorage).dopHtg;
                 if(num %1==0){
                     document.getElementById("valor2").value = num;
                     }
                     else{  
-                    num=JSON.parse(num).toFixed(2);
+                    num=JSON.parse(num).toFixed(3);
                     document.getElementById("valor2").value = num;
                     }
                 break;
         }  
-    }else if(select1 === "EUR"){ // conversion de euro a las demas moneadas
+    }
+    else if(select1 === "EUR"){ // conversion de euro a las demas moneadas
+        if(num %1==0){ document.getElementById("valor1").value=num;}
+        else {
+        num=JSON.parse(valorInput1).toFixed(3);
+        document.getElementById("valor1").value=num;
+        }
         switch(select2){
             case "USD":
+                if(num %1==0){ document.getElementById("valor1").value=num;}
+        else {
+        num=JSON.parse(valorInput1).toFixed(3);
+        document.getElementById("valor1").value=num;
+        }
                 //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).eurUsd;
                 num=valorInput1 * JSON.parse(dataTasaLocalStorage).eurUsd;
                 if(num %1==0){
                     document.getElementById("valor2").value = num;
                     }
                     else{  
-                    num=JSON.parse(num).toFixed(2);
+                    num=JSON.parse(num).toFixed(3);
                     document.getElementById("valor2").value = num;
                     }
                 break;
             case "DOP":
+                if(num %1==0){ document.getElementById("valor1").value=num;}
+        else {
+        num=JSON.parse(valorInput1).toFixed(3);
+        document.getElementById("valor1").value=num;
+        }
                 //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).eurDop;
                 num=valorInput1 * JSON.parse(dataTasaLocalStorage).eurDop;
                 if(num %1==0){
                     document.getElementById("valor2").value = num;
                     }
                     else{  
-                    num=JSON.parse(num).toFixed(2);
+                    num=JSON.parse(num).toFixed(3);
                     document.getElementById("valor2").value = num;
                     }
                 break;
             case "EUR":
+                if(num %1==0){ document.getElementById("valor1").value=num;}
+        else {
+        num=JSON.parse(valorInput1).toFixed(3);
+        document.getElementById("valor1").value=num;
+        }
                 //document.getElementById("valor2").value = valorInput1 ;
                 num=valorInput1;
                 if(num %1==0){
                     document.getElementById("valor2").value = num;
                     }
                     else{  
-                    num=JSON.parse(num).toFixed(2);
+                    num=JSON.parse(num).toFixed(3);
                     document.getElementById("valor2").value = num;
                     }
                 break;
             case "HTG":
+                if(num %1==0){ document.getElementById("valor1").value=num;}
+        else {
+        num=JSON.parse(valorInput1).toFixed(3);
+        document.getElementById("valor1").value=num;
+        }
                 //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).eurHtg;
                 num=valorInput1 * JSON.parse(dataTasaLocalStorage).eurHtg;
                 if(num %1==0){
                     document.getElementById("valor2").value = num;
                     }
                     else{  
-                    num=JSON.parse(num).toFixed(2);
+                    num=JSON.parse(num).toFixed(3);
                     document.getElementById("valor2").value = num;
                     }
                 break;
         }
     }else if(select1 === "HTG"){  // conversion de htg a los demas monedas
+        if(num %1==0){ document.getElementById("valor1").value=num;}
+        else {
+        num=JSON.parse(valorInput1).toFixed(3);
+        document.getElementById("valor1").value=num;
+        }
         switch(select2){
             case "USD":
+                if(num %1==0){ document.getElementById("valor1").value=num;}
+        else {
+        num=JSON.parse(valorInput1).toFixed(3);
+        document.getElementById("valor1").value=num;
+        }
                 //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).htgUsd;
                 num=valorInput1 * JSON.parse(dataTasaLocalStorage).htgUsd;
                 if(num %1==0){
                     document.getElementById("valor2").value = num;
                     }
                     else{  
-                    num=JSON.parse(num).toFixed(2);
+                    num=JSON.parse(num).toFixed(3);
                     document.getElementById("valor2").value = num;
                     }
                 break;
             case "DOP":
+                if(num %1==0){ document.getElementById("valor1").value=num;}
+        else {
+        num=JSON.parse(valorInput1).toFixed(3);
+        document.getElementById("valor1").value=num;
+        }
                 //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).htgDop;
                 num=valorInput1 * JSON.parse(dataTasaLocalStorage).htgDop;
                 if(num %1==0){
                     document.getElementById("valor2").value = num;
                     }
                     else{  
-                    num=JSON.parse(num).toFixed(2);
+                    num=JSON.parse(num).toFixed(3);
                     document.getElementById("valor2").value = num;
                     }
                 break;
             case "EUR":
+                if(num %1==0){ document.getElementById("valor1").value=num;}
+        else {
+        num=JSON.parse(valorInput1).toFixed(3);
+        document.getElementById("valor1").value=num;
+        }
                 //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).htgEur;
                 num=valorInput1 * JSON.parse(dataTasaLocalStorage).htgEur;
                 if(num %1==0){
                     document.getElementById("valor2").value = num;
                     }
                     else{  
-                    num=JSON.parse(num).toFixed(2);
+                    num=JSON.parse(num).toFixed(3);
                     document.getElementById("valor2").value = num;
                     }
                 break;
             case "HTG":
+                if(num %1==0){ document.getElementById("valor1").value=num;}
+        else {
+        num=JSON.parse(valorInput1).toFixed(3);
+        document.getElementById("valor1").value=num;
+        }
                 //document.getElementById("valor2").value = valorInput1;
                 num=valorInput1;
                 if(num %1==0){
                     document.getElementById("valor2").value = num;
                     }
                     else{  
-                    num=JSON.parse(num).toFixed(2);
+                    num=JSON.parse(num).toFixed(3);
                     document.getElementById("valor2").value = num;
                     }
                 break; 
@@ -408,9 +505,10 @@ function convertidor(){
     
     //limpiar entrada de valores
     if (valor1===""){document.getElementById("valor2").value="";}
+    num=valorInput1;
     if(num %1==0){ document.getElementById("valor1").value=num;}
     else{
-    num=JSON.parse(valorInput1).toFixed(2);
+    num=JSON.parse(valorInput1).toFixed(3);
     document.getElementById("valor1").value=num;
     }
     //OPCIONES DISTANCIA:
@@ -424,7 +522,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -437,7 +535,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -449,7 +547,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -466,7 +564,7 @@ function convertidor(){
                     document.getElementById("valor2").value = num;
                     }
                     else{  
-                    num=JSON.parse(num).toFixed(2);
+                    num=JSON.parse(num).toFixed(3);
                     document.getElementById("valor2").value = num;
                     }
                 //
@@ -479,7 +577,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -492,7 +590,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -509,7 +607,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -522,7 +620,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -535,7 +633,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -554,7 +652,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -567,7 +665,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -580,7 +678,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -600,7 +698,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -613,7 +711,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -626,7 +724,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -646,7 +744,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -659,7 +757,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -672,7 +770,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -695,7 +793,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -708,7 +806,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -721,7 +819,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -741,7 +839,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -754,7 +852,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -767,7 +865,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -787,7 +885,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -800,7 +898,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -813,7 +911,7 @@ function convertidor(){
                 document.getElementById("valor2").value = num;
                 }
                 else{  
-                num=JSON.parse(num).toFixed(2);
+                num=JSON.parse(num).toFixed(3);
                 document.getElementById("valor2").value = num;
                 }
             //
@@ -825,18 +923,8 @@ function convertidor(){
                 document.getElementById(select2).value=hawel;
         }
     }
-
-    //mostrando y ocultando boton favorito by Estarlin
-    if(valor1 >= 0.1){
-        form__button_2__hiden.classList.remove("hiden"); 
-    }else if(valor1 === "" || valor1 < 0.1){
-        form__button_2__hiden.classList.add("hiden");
-    }else if(valor1 === "."){
-        form__button_2__hiden.classList.add("hiden");
-        swal('introduzca solo numeros!!','','error');
-        document.getElementById("valor2").value = "";
-    }
 }
+
 
 //funcion invertir valores.
 function invertir1 (){
@@ -894,6 +982,7 @@ if(localStorage.length  === 2){
 }
 
 a = 0;
+b = 0;
 
 //agregar__favotitos by Estarlin
 function agregar__favotitos(){
@@ -903,6 +992,7 @@ function agregar__favotitos(){
     const resultado2 = document.getElementById("valor2").value;
 
     a++;
+    b++;
 
     ver__favotitos.classList.add("hiden"); //icono de favirito
     g__favotitos.classList.remove("hiden"); //icono de favirito++
@@ -923,33 +1013,9 @@ function agregar__favotitos(){
         </div>    
         `;
 
-
-    var totalFav = `
-        <input class="hiden" id="contador" value="${b}"></input>
-        `;
-
-    localStorage.setItem(a, dataFavorite);  
-    localStorage.setItem("totalFav", totalFav);
-    addFavorite.innerHTML += localStorage.getItem(a);
-    }
-
-//devolviendo el resultado del localStorege by Estarlin
-for(var i =0; i < localStorage.length; i++){
-    
-    if(localStorage.key(i)=="Data Divisa"){
-        i=i+1;
-
-    }if (localStorage.key(i)==null){
-            break;
-        }
-
-    var element = localStorage.getItem(localStorage.key(i));
-    addFavorite.innerHTML += element;
-
     localStorage.setItem(`ConversorApp__Nota: ${a}`, dataFavorite);
     localStorage.setItem("totalFav", a);
     addFavorite.innerHTML += dataFavorite;
-
 }
   
 for (let i = 0; i <= contador; i++) {
@@ -1052,20 +1118,5 @@ a = contador;
 
 // alert(a)
 //redondea
-function redondearDecimal(max) {
-if(max %1===0)
-    {
-        return max;
-
-    }
-    else 
-    {
-        var max=JSON.parse(max).toFixed(2);
-        
-
-        return max;
-    }
-
-}
 // const resultado11 = document.getElementById("valor1").value;
 // console.log(JSON.parse(document.getElementById("valor1").value).toFixed(4));

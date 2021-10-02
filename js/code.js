@@ -232,8 +232,8 @@ function convertidor(){
                 break;
 
             case "DOP": 
-                    if(num %1==0){alert(num); document.getElementById("valor1").value=num;}
-            else {alert(num);
+                    if(num %1==0){ document.getElementById("valor1").value=num;}
+            else {
             num=JSON.parse(valorInput1).toFixed(3);
             document.getElementById("valor1").value=num;
             }

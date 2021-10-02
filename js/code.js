@@ -30,6 +30,7 @@ var addFavorite = document.getElementById('addFavorite'); //addFavorite
 var form__atras = document.getElementById("form__atras"); //boton atras
 var botonSettingIcon = document.getElementById("botonSettingIcon"); //boton entrar a settings
 var form__button_2__hiden = document.getElementById("form__button_2__hiden"); //boton add favorito
+var contador = localStorage.getItem("totalFav");
 
 //hawel...
 var seleccion = document.getElementById("selConver");//analicis de tipo de convercion escogido by hawel
@@ -191,15 +192,6 @@ function convertidor(){
     var selRango = document.getElementById("select1").value;
     var selRango2 = document.getElementById("select2").value;
 
-    //mostrando y ocultando boton favorito by Estarlin
-    if(valor1 >= 0.1){
-        form__button_2__hiden.classList.remove("hiden"); 
-    }else if(valor1 === "" || valor1 < 0.1){
-        form__button_2__hiden.classList.add("hiden");
-    }else if(valor1 === "."){
-        swal('introduzca solo numeros!!','','error');
-        valor2 = "";
-    }
     // extrajendo los valores con el id y value
     var valorInput1 = document.getElementById("valor1").value;
     var valorInput2 = document.getElementById("valor2").value;
@@ -233,6 +225,7 @@ function convertidor(){
                 break;
 
             case "DOP":
+<<<<<<< HEAD
                 
                 //document.getElementById("valor2").value =  valorInput1 * JSON.parse(dataTasaLocalStorage).usdDop;
                 num=valorInput1 * JSON.parse(dataTasaLocalStorage).usdDop;
@@ -243,6 +236,9 @@ function convertidor(){
                     num=JSON.parse(num).toFixed(2);
                     document.getElementById("valor2").value = num;
                     }
+=======
+                document.getElementById("valor2").value =  valorInput1 * JSON.parse(dataTasaLocalStorage).usdDop;
+>>>>>>> 0965ff8737c2851834c63aae4b18e4112b843e5a
                 break;
             case "EUR":
                 //document.getElementById("valor2").value = valorInput1 * JSON.parse(dataTasaLocalStorage).usdEur;
@@ -830,6 +826,17 @@ function convertidor(){
                 document.getElementById(select2).value=hawel;
         }
     }
+
+    //mostrando y ocultando boton favorito by Estarlin
+    if(valor1 >= 0.1){
+        form__button_2__hiden.classList.remove("hiden"); 
+    }else if(valor1 === "" || valor1 < 0.1){
+        form__button_2__hiden.classList.add("hiden");
+    }else if(valor1 === "."){
+        form__button_2__hiden.classList.add("hiden");
+        swal('introduzca solo numeros!!','','error');
+        document.getElementById("valor2").value = "";
+    }
 }
 
 //funcion invertir valores.
@@ -873,15 +880,21 @@ function favorite(){
     favorito.classList.toggle('hiden');
 }
 
-a = 0;
-b = 0;
-
 //Delete__favotitos by Estarlin
 function delete__favotitos(comp){
     var id = comp.id;
     localStorage.removeItem(id);
-    document.getElementById("l"+id).classList.add('hiden');
+    document.getElementById(`L ${comp.id}`).classList.add('hiden');
+
+
+//Si el localStorage es igual a 2 reset a... by Estarlin
+if(localStorage.length  === 2){
+    localStorage.setItem("totalFav", 0);
+    a = localStorage.getItem("totalFav");
+ }
 }
+
+a = 0;
 
 //agregar__favotitos by Estarlin
 function agregar__favotitos(){
@@ -891,7 +904,6 @@ function agregar__favotitos(){
     const resultado2 = document.getElementById("valor2").value;
 
     a++;
-    b++;
 
     ver__favotitos.classList.add("hiden"); //icono de favirito
     g__favotitos.classList.remove("hiden"); //icono de favirito++
@@ -902,16 +914,17 @@ function agregar__favotitos(){
     }, 500);
 
     var dataFavorite = `
-        <div id=l${a}>
+        <div id="L ConversorApp__Nota: ${a}">
         <p>
             <b>-</b> ${resultado1} <b>${seleccion1}</b> = ${resultado2} <b>${seleccion2}</b> 
         </p>    
-            <button id=${a} onclick="delete__favotitos(this)">
+            <button id="ConversorApp__Nota: ${a}" onclick="delete__favotitos(this)">
                 Delete
             </button>
         </div>    
         `;
 
+<<<<<<< HEAD
     var totalFav = `
         <input class="hiden" id="contador" value="${b}"></input>
         `;
@@ -933,13 +946,21 @@ for(var i =0; i < localStorage.length; i++){
 
     var element = localStorage.getItem(localStorage.key(i));
     addFavorite.innerHTML += element;
+=======
+    localStorage.setItem(`ConversorApp__Nota: ${a}`, dataFavorite);
+    localStorage.setItem("totalFav", a);
+    addFavorite.innerHTML += dataFavorite;
+>>>>>>> 0965ff8737c2851834c63aae4b18e4112b843e5a
 }
   
-//Total de favoritos creados
-var contador = document.getElementById("contador");
-if (contador!=null){
-    b = contador.value;
-    a = contador.value;
+for (let i = 0; i <= contador; i++) {
+    var GetconversorApp__Nota = localStorage.getItem(`ConversorApp__Nota: ${i}`);
+
+    if(GetconversorApp__Nota === null){
+        // console.log("null")
+    }else{
+            addFavorite.innerHTML += GetconversorApp__Nota;
+    }    
 }
 
 function guardarValorDivisa(){
@@ -967,25 +988,48 @@ function guardarValorDivisa(){
 }
 
 //llamando a guardarValorDivisa() by Estarlin
-// function llamandoguardarValorDivisa(){
-//     swal({
-//         title: 'Seguro que quieres actaualizar?',
-//         text: "Las divisas seran acualizadas",
-//         showCancelButton: true,
-//         confirmButtonText: 'SI'
-//       })
-//       .then(function() {
-//         swal(
-//           'Acualizados!',
-//           'Datos acualizados.',
-//           'success'
-//         );
-//       })
-// }
+function llamandoguardarValorDivisa(){
+    // swal({
+    //     title: '¿Seguro que quieres actaualizar?',
+    //     text: "Las divisas seran acualizadas",
+    //     icon: "error",
+    //     buttons: {
+    //         cancel: true,
+    //         confirm: true,
+    //       },
+    //   })
+    //   .then(function() {
+    //     swal(
+    //       'Acualizados!',
+    //       'Datos acualizados.',
+    //       'success'
+    //     );
+    //   })
 
-//by Estarlin
+
+    swal({
+        title: "Deleted!",
+        text: "Your row has been deleted.",
+        icon: "success", //built in icons: success, warning, error, info
+         buttons: {
+             
+            cancel: {
+              text: "Cancel",
+              value: false,
+              visible: true,
+            },
+
+            confirm: {
+              text: "OK",
+              value: true,
+              visible: true
+            }
+          }
+        });
+}
+
+//ValideKey by Estarlin...
 function valideKey(evt){
-    
     // code is the decimal ASCII representation of the pressed key.
     var code = (evt.which) ? evt.which : evt.keyCode;
     
@@ -1003,6 +1047,11 @@ function valideKey(evt){
     }
 }
 
+//a sera igual al valor de notas creadas
+a = contador;
+
+
+// alert(a)
 //redondea
 function redondearDecimal(max) {
 if(max %1===0)
